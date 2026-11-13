@@ -1,0 +1,6 @@
+{
+  "name": "journal-reading-plugin",
+  "description": "Paket journal reading untuk PPDS: slide Canva siap presentasi, Brief & Checklist (DOCX dan HTML), skrip presentasi, dan audio latihan dari satu paper (studi primer, SR-MA, guideline, atau review article).",
+  "version": "1.0.0",
+  "author": { "name": "Auctus Academy" }
+}

@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "judul_paper": "Probiotik Multi-strain untuk Pencegahan Diare Terkait Antibiotik pada Pasien Dewasa Rawat Inap: Uji Acak Terkontrol Plasebo (PAPER LATIHAN FIKTIF)",
+    "sitasi": "Santoso A, et al. J Clin Gastro Indones. 2025;12(3):145-56. doi:10.0000/fiktif.2025.001",
+    "penyaji": "dr. Contoh Residen",
+    "prodi": "PPDS Ilmu Penyakit Dalam semester 3",
+    "departemen": "Departemen Ilmu Penyakit Dalam",
+    "pembimbing": "dr. Konsulen Contoh, Sp.PD-KGEH",
+    "tanggal": "Kamis, 12 November 2026",
+    "durasi_menit": 30,
+    "desain_studi": "RCT paralel, double-blind, plasebo, 3 RS",
+    "tool_appraisal": "Cochrane RoB 2",
+    "warna": "navy",
+    "nama_file": "brief-contoh-probiotik"
+  },
+  "ringkasan": "RCT tiga senter ini menguji apakah probiotik multi-strain yang diberikan bersamaan dengan antibiotik dan dilanjutkan 7 hari setelahnya dapat mencegah diare terkait antibiotik (AAD) pada pasien dewasa rawat inap. Dari 340 pasien yang dirandomisasi, 300 dianalisis secara per-protocol. AAD dalam 30 hari terjadi pada 8% kelompok probiotik dibanding 18% kelompok plasebo (RR 0,44; ARR 10%; NNT 10), dan lama rawat lebih pendek 0,8 hari. Efeknya terlihat besar, tetapi appraisal menemukan masalah penting: penyimpanan daftar acak tidak dijelaskan, penilai outcome tidak disebut di-blind, loss to follow-up tidak seimbang dengan analisis per-protocol, outcome primer berbeda dari registrasi, dan studi didanai produsen probiotik. Kesimpulan penyaji: bukti berkepastian rendah, layak didiskusikan, belum cukup untuk protokol rutin.",
+  "bottom_line": "Probiotik mungkin menurunkan diare terkait antibiotik (NNT 10), tetapi risiko bias tinggi dan CI lebar, sehingga belum cukup untuk dijadikan protokol rutin di RS kita.",
+  "konteks": {
+    "penyakit": [
+      "Diare terkait antibiotik (AAD) adalah diare yang tidak dapat dijelaskan penyebab lain, muncul selama terapi antibiotik sampai sekitar 8 minggu setelahnya. Insidensnya pada pasien rawat inap berkisar 5-30% tergantung jenis antibiotik dan populasi.",
+      "Sebagian kecil AAD disebabkan Clostridioides difficile (CDI), yang berhubungan dengan morbiditas, lama rawat, dan mortalitas lebih tinggi. Outcome paper ini adalah AAD secara umum, bukan khusus CDI, jadi jangan disamakan.",
+      "Faktor risiko: antibiotik spektrum luas (klindamisin, sefalosporin generasi 2-3, fluorokuinolon, amoksisilin-klavulanat), usia lanjut, rawat inap lama, PPI, dan riwayat AAD."
+    ],
+    "standar_terapi": [
+      "Pencegahan utama adalah stewardship antibiotik: indikasi tepat, spektrum sesempit mungkin, durasi sesingkat mungkin.",
+      "Probiotik tidak masuk rekomendasi rutin semua guideline. Sebagian guideline gastroenterologi memberi rekomendasi kondisional untuk strain tertentu pada populasi berisiko, sementara guideline infeksi umumnya belum merekomendasikan karena kualitas bukti dan heterogenitas strain. [CEK guideline terbaru yang berlaku di departemen]",
+      "Tata laksana AAD ringan: hidrasi, hentikan atau ganti antibiotik bila memungkinkan; curigai CDI bila diare 3 kali atau lebih per 24 jam dengan faktor risiko."
+    ],
+    "mekanisme": [
+      "Antibiotik mengganggu mikrobiota usus (dysbiosis), menurunkan fermentasi karbohidrat menjadi asam lemak rantai pendek sehingga terjadi diare osmotik, dan membuka ruang bagi patogen oportunistik.",
+      "Probiotik diduga bekerja lewat kompetisi kolonisasi, produksi bakteriosin, penguatan barier epitel, dan modulasi imun. Efeknya spesifik strain dan dosis, sehingga hasil satu produk tidak otomatis berlaku untuk produk lain.",
+      "Risiko probiotik pada pasien imunokompromais atau dengan kateter vena sentral: kasus bakteremia/fungemia terkait probiotik pernah dilaporkan. Ini relevan untuk applicability di bangsal penyakit dalam."
+    ],
+    "istilah": [
+      {"istilah": "ITT vs per-protocol", "arti": "ITT menganalisis semua pasien sesuai kelompok randomisasi; per-protocol hanya yang patuh. Per-protocol dengan attrition tidak seimbang bisa membesarkan efek."},
+      {"istilah": "Allocation concealment", "arti": "Penyembunyian urutan acak sampai pasien resmi masuk kelompok. Berbeda dari blinding."},
+      {"istilah": "RR, RRR, ARR, NNT", "arti": "RR = EER/CER; RRR = 1 - RR; ARR = CER - EER; NNT = 1/ARR, jumlah pasien yang perlu diobati untuk mencegah 1 kejadian."},
+      {"istilah": "Selective reporting", "arti": "Outcome yang dilaporkan berbeda dari yang direncanakan di protokol/registrasi; domain 5 RoB 2."},
+      {"istilah": "GRADE", "arti": "Sistem penilaian kepastian bukti per outcome: RCT mulai tinggi, turun karena risk of bias, inkonsistensi, indirectness, imprecision, publication bias."}
+    ]
+  },
+  "paper": {
+    "pico": {
+      "P": "Dewasa 18 tahun ke atas, rawat inap, baru mulai antibiotik sistemik, tanpa diare saat masuk (Methods, hal. 146).",
+      "I": "Probiotik multi-strain (Lactobacillus dan Bifidobacterium, 10 miliar CFU) 2 kali sehari selama antibiotik ditambah 7 hari.",
+      "C": "Plasebo identik dengan jadwal sama.",
+      "O": "Primer: AAD dalam 30 hari. Sekunder: lama rawat, lama diare, efek samping."
+    },
+    "desain": [
+      "RCT paralel 1:1, double-blind, di 3 RS pendidikan; randomisasi blok komputer (Methods, hal. 146).",
+      "Perhitungan sampel: 150 per kelompok untuk mendeteksi penurunan AAD dari 20% ke 9% dengan power 80%, alfa 5%.",
+      "Analisis utama per-protocol; ITT tidak dilaporkan. Uji chi-square untuk outcome primer, t-test untuk lama rawat.",
+      "Registrasi uji klinis ada, tetapi outcome primer di registrasi tertulis 'diare apa pun' tanpa batas definisi AAD. [CEK nomor registrasi]",
+      "Pendanaan dari produsen probiotik yang diuji; peran sponsor dalam analisis tidak dijelaskan."
+    ],
+    "hasil": [
+      {"outcome": "AAD dalam 30 hari (primer)", "intervensi": "12/150 (8,0%)", "kontrol": "27/150 (18,0%)", "efek": "RR 0,44 (0,23 sampai 0,84)", "catatan": "ARR 10%, NNT 10; p = 0,010"},
+      {"outcome": "Lama rawat (hari)", "intervensi": "5,2 ± 1,8", "kontrol": "6,0 ± 2,1", "efek": "MD -0,8 (-1,24 sampai -0,36)", "catatan": "p < 0,001"},
+      {"outcome": "Lama diare pada yang diare", "intervensi": "median 3 (IQR 2-5)", "kontrol": "[CEK]", "efek": "tidak dilaporkan", "catatan": "hanya pada subgrup yang diare"},
+      {"outcome": "Efek samping serius", "intervensi": "[CEK]", "kontrol": "[CEK]", "efek": "tidak ada perbedaan menurut penulis", "catatan": "angka per kelompok di Tabel 3"}
+    ],
+    "angka_kunci": [
+      "CER 18%, EER 8%, ARR 10% (95% CI 2,5% sampai 17,5%), NNT 10 (95% CI sekitar 6 sampai 41), dihitung ulang dengan effect_calc.py.",
+      "RRR 56%: jangan tampilkan sendirian, karena terdengar lebih besar dari efek absolut.",
+      "NNT lokal: bila risiko dasar AAD di bangsal kita 5%, ARR = 5% x 0,56 = 2,8% sehingga NNT sekitar 36."
+    ]
+  },
+  "appraisal": {
+    "validity": [
+      {"domain": "D1 Proses randomisasi", "penilaian": "Some concerns", "bukti": "Urutan acak blok komputer (hal. 146), tetapi cara menyimpan daftar acak tidak dijelaskan. Baseline Tabel 1 seimbang."},
+      {"domain": "D2 Deviasi dari intervensi", "penilaian": "High", "bukti": "Analisis per-protocol; 15 vs 25 pasien dikeluarkan setelah randomisasi, alasan berbeda antar kelompok (Figure 1)."},
+      {"domain": "D3 Data outcome hilang", "penilaian": "Some concerns", "bukti": "Loss 9% vs 14%; tidak ada analisis sensitivitas atau imputasi."},
+      {"domain": "D4 Pengukuran outcome", "penilaian": "Some concerns", "bukti": "Diare dicatat perawat; tidak disebut apakah penilai outcome blind. Plasebo identik membantu."},
+      {"domain": "D5 Pelaporan selektif", "penilaian": "High", "bukti": "Outcome primer di registrasi 'diare apa pun', di paper menjadi AAD dengan definisi tertentu."}
+    ],
+    "validity_overall": "Overall High risk of bias karena dua domain High (D2 dan D5). Arah bias kemungkinan membesarkan efek probiotik.",
+    "importance": [
+      "Efek absolut bermakna secara klinis: ARR 10%, NNT 10 pada populasi dengan risiko dasar 18%.",
+      "Presisi rendah: CI NNT 6 sampai 41, artinya efek bisa besar atau kecil.",
+      "Lama rawat turun 0,8 hari, relevan untuk bed occupancy, tetapi outcome ini juga terdampak analisis per-protocol.",
+      "Data harm kurang rinci; angka efek samping serius per kelompok perlu dicek di Tabel 3."
+    ],
+    "applicability": [
+      "Populasi dewasa rawat inap umum mirip bangsal kita, tetapi pasien imunokompromais dan dengan CVC dieksklusi.",
+      "Produk multi-strain dengan strain dan dosis spesifik; belum tentu sama dengan probiotik yang tersedia di formularium RS.",
+      "Probiotik umumnya tidak ditanggung JKN untuk indikasi ini; perlu dihitung biaya per kasus dicegah (NNT x harga regimen).",
+      "Risiko dasar AAD di RS kita belum diketahui; tanpa data lokal, NNT lokal hanya perkiraan."
+    ],
+    "grade": {
+      "outcome": "AAD 30 hari",
+      "rating": "Low",
+      "alasan": "Mulai tinggi (RCT), turun 1 untuk risk of bias (per-protocol, selective reporting) dan turun 1 untuk imprecision (CI lebar, event sedikit). Satu studi, jadi inkonsistensi tidak dapat dinilai."
+    }
+  },
+  "kekuatan": [
+    "Desain RCT double-blind dengan plasebo identik dan multisenter, meningkatkan generalisasi dalam setting RS pendidikan.",
+    "Perhitungan sampel dilaporkan dan target tercapai; baseline kedua kelompok seimbang (Tabel 1).",
+    "Outcome primer klinis dan relevan untuk pasien, bukan surrogate."
+  ],
+  "kelemahan": [
+    "Analisis per-protocol dengan loss tidak seimbang (15 vs 25): cenderung membesarkan efek.",
+    "Outcome primer berubah dari registrasi: risiko selective reporting.",
+    "Pendanaan produsen tanpa penjelasan peran sponsor; temuan penyaji: ITT tidak dilaporkan sama sekali dan penulis tidak membahasnya sebagai keterbatasan."
+  ],
+  "rencana_presentasi": [
+    {"slide": "Cover, identitas, alasan memilih", "pesan": "Paper RCT terindeks, relevan dengan kasus AAD di bangsal, didanai industri (sebut sejak awal).", "menit": 2},
+    {"slide": "Latar belakang, PICO", "pesan": "AAD sering, belum ada protokol probiotik; PICO dari Methods, bukan dari abstrak.", "menit": 3},
+    {"slide": "Metode 1/2, 2/2", "pesan": "Randomisasi blok, double-blind, analisis per-protocol (tandai sebagai masalah).", "menit": 3},
+    {"slide": "Alur partisipan, karakteristik dasar", "pesan": "340 ke 300; loss 15 vs 25; baseline seimbang.", "menit": 2},
+    {"slide": "Hasil utama, figur kunci", "pesan": "8% vs 18%, RR 0,44, ARR 10%, NNT 10 dengan CI lebar; lama rawat -0,8 hari.", "menit": 4},
+    {"slide": "Validity RCT (RoB 2)", "pesan": "Overall High: D2 dan D5; tiap domain dengan bukti halaman.", "menit": 4},
+    {"slide": "Importance & applicability", "pesan": "Efek bermakna klinis tapi tidak presisi; NNT lokal sekitar 36 bila risiko dasar 5%.", "menit": 2},
+    {"slide": "Kekuatan & kelemahan, GRADE", "pesan": "Kelemahan temuan penyaji: ITT tidak ada; GRADE Low.", "menit": 2},
+    {"slide": "Kesimpulan, diskusi, referensi", "pesan": "Bedakan kesimpulan penulis vs penyaji; ajukan 3 pertanyaan diskusi.", "menit": 3}
+  ],
+  "pertanyaan": [
+    {"kategori": "Pemilihan", "pertanyaan": "Kenapa memilih paper ini?", "jawaban": "AAD sering kami temui di bangsal dan RS belum punya protokol probiotik. Paper ini RCT dengan outcome klinis yang relevan dan terindeks. Setelah appraisal, risk of bias-nya tinggi, jadi saya memakainya untuk mendiskusikan apakah buktinya cukup, bukan untuk langsung mengubah praktik."},
+    {"kategori": "PICO", "pertanyaan": "Sebutkan PICO-nya dan dari mana Anda ambil.", "jawaban": "P dewasa rawat inap yang baru mulai antibiotik, I probiotik multi-strain selama antibiotik ditambah 7 hari, C plasebo identik, O AAD dalam 30 hari. Saya ambil dari kriteria inklusi dan definisi outcome di Methods halaman 146."},
+    {"kategori": "Metode", "pertanyaan": "Analisisnya ITT atau per-protocol? Apa konsekuensinya?", "jawaban": "Per-protocol, ITT tidak dilaporkan. Karena 25 pasien plasebo dan 15 pasien probiotik dikeluarkan dengan alasan berbeda, keseimbangan hasil randomisasi bisa hilang dan efek cenderung membesar. Ini alasan saya menilai domain 2 High."},
+    {"kategori": "Metode", "pertanyaan": "Apa bedanya allocation concealment dengan blinding? Di paper ini bagaimana?", "jawaban": "Concealment melindungi proses memasukkan pasien ke kelompok sebelum randomisasi; blinding melindungi setelahnya. Urutan acaknya jelas (blok komputer), tetapi cara menyimpan daftarnya tidak dijelaskan, jadi saya nilai some concerns. Blinding pasien dan klinisi ada lewat plasebo identik."},
+    {"kategori": "Statistik", "pertanyaan": "Berapa NNT-nya dan bagaimana menghitungnya?", "jawaban": "CER 18%, EER 8%, ARR 10%, jadi NNT 1 dibagi 0,10 sama dengan 10. Saya hitung ulang sendiri. CI NNT sekitar 6 sampai 41, jadi presisinya rendah."},
+    {"kategori": "Statistik", "pertanyaan": "RRR 56% kan besar. Kenapa Anda menekankan angka absolut?", "jawaban": "Efek relatif bergantung risiko dasar. Di RS dengan risiko dasar 5%, RRR yang sama hanya memberi ARR sekitar 2,8% dan NNT sekitar 36. Angka absolut lebih jujur untuk keputusan klinis dan biaya."},
+    {"kategori": "Statistik", "pertanyaan": "Lama rawat turun 0,8 hari dengan p < 0,001. Itu bermakna klinis?", "jawaban": "Bermakna statistik karena CI -1,24 sampai -0,36 tidak memotong 0. Secara klinis 0,8 hari cukup relevan untuk bed occupancy, tetapi outcome ini juga terdampak per-protocol, dan tidak ada MCID baku untuk lama rawat. Perlu ditimbang dengan biaya probiotik."},
+    {"kategori": "Appraisal", "pertanyaan": "Overall risk of bias-nya apa dan kenapa?", "jawaban": "High, karena dua domain High: deviasi dari intervensi (per-protocol dengan attrition tidak seimbang) dan pelaporan selektif (outcome primer berbeda dari registrasi). Menurut aturan RoB 2, satu domain High sudah cukup membuat overall High."},
+    {"kategori": "Appraisal", "pertanyaan": "Outcome primernya berubah dari registrasi. Seberapa serius?", "jawaban": "Serius, karena membuka kemungkinan penulis memilih definisi yang hasilnya paling baik. Bersama pendanaan produsen, ini menambah kekhawatiran bias pelaporan. Saya tidak menuduh, tetapi menurunkan keyakinan."},
+    {"kategori": "Appraisal", "pertanyaan": "Didanai industri. Jadi hasilnya tidak bisa dipercaya?", "jawaban": "Pendanaan industri tidak otomatis membatalkan hasil. Yang dinilai adalah apakah desain dan pelaporan melindungi dari bias. Di sini peran sponsor tidak dijelaskan dan ada masalah pelaporan selektif, sehingga kekhawatirannya bertambah."},
+    {"kategori": "Applicability", "pertanyaan": "Bisa diterapkan di bangsal kita?", "jawaban": "Populasinya mirip pasien rawat inap umum, tetapi imunokompromais dan pasien dengan CVC dieksklusi, padahal di bangsal kita banyak. Produk dan strainnya belum tentu sama dengan yang ada di formularium, dan umumnya tidak ditanggung JKN. Jadi penerapannya terbatas dan perlu data lokal."},
+    {"kategori": "Applicability", "pertanyaan": "Apakah aman untuk pasien imunokompromais?", "jawaban": "Paper ini tidak bisa menjawab karena pasien imunokompromais dieksklusi. Di literatur ada laporan kasus bakteremia dan fungemia terkait probiotik pada pasien dengan CVC atau imunosupresi, jadi saya tidak akan menggeneralisasi ke kelompok itu."},
+    {"kategori": "Kesimpulan", "pertanyaan": "Kesimpulan Anda berbeda dengan penulis. Kenapa?", "jawaban": "Penulis menyimpulkan probiotik efektif. Setelah appraisal, saya menilai buktinya low certainty karena risk of bias tinggi dan CI lebar. Belum cukup untuk protokol rutin; usul saya menunggu SR atau RCT dengan ITT, atau mengumpulkan data risiko dasar AAD di RS kita."},
+    {"kategori": "Jebakan", "pertanyaan": "Berapa angka CDI di masing-masing kelompok?", "jawaban": "Data CDI tidak dilaporkan terpisah di paper ini; outcome-nya AAD secara umum. Saya tidak mau menebak. Itu justru keterbatasan, karena CDI adalah outcome yang paling penting secara klinis."},
+    {"kategori": "Jebakan", "pertanyaan": "Kalau begitu, bagaimana Anda akan mendesain studi yang lebih baik?", "jawaban": "RCT dengan concealment terpusat, penilai outcome blind, analisis ITT dengan penanganan data hilang, outcome primer terdaftar sebelum mulai dan sama di laporan, CDI sebagai outcome sekunder wajib, serta pendanaan independen."}
+  ],
+  "checklist": [
+    {"waktu": "H-7 sampai H-5: pahami paper", "items": [
+      "Baca paper lengkap 3 lapis: abstrak dan figur, lalu Methods dan Results, lalu Discussion dan supplementary.",
+      "Unduh protokol dan registrasi uji klinis; bandingkan outcome primer dengan paper.",
+      "Tulis PICO dari Methods dan cek ulang dengan abstrak.",
+      "Isi worksheet RoB 2 per domain dengan bukti halaman/tabel.",
+      "Hitung ulang RR, ARR, NNT, dan MD dengan widget atau effect_calc.py."
+    ]},
+    {"waktu": "H-4 sampai H-3: siapkan slide", "items": [
+      "Isi semua placeholder di slide; tidak ada [kurung siku] tersisa.",
+      "Hapus kotak kuning PETUNJUK dan slide validity yang tidak dipakai.",
+      "Tempel figur asli (CONSORT, tabel hasil) dengan keterangan sumber.",
+      "Baris kesimpulan di slide Hasil Utama sudah diisi 1 kalimat dengan angka absolut.",
+      "Kirim draf slide ke pembimbing untuk masukan."
+    ]},
+    {"waktu": "H-2 sampai H-1: latihan", "items": [
+      "Latihan presentasi dengan timer; target 25 menit, sisakan 5 menit diskusi.",
+      "Latihan menjawab 15 mockup pertanyaan dengan suara keras tanpa melihat jawaban.",
+      "Siapkan jawaban untuk 3 pertanyaan diskusi di speaker notes.",
+      "Baca guideline terbaru yang relevan dan cek status probiotik di formularium RS.",
+      "Selesaikan semua item di daftar 'Wajib dicek ulang'."
+    ]},
+    {"waktu": "H-0: hari presentasi", "items": [
+      "Simpan slide dalam PPTX dan PDF di laptop dan flashdisk; cek font dan figur di laptop ruang presentasi.",
+      "Bawa cetakan paper dengan stabilo dan nomor halaman yang sering dirujuk.",
+      "Ulangi take-home message 1 kalimat sebelum masuk ruangan."
+    ]}
+  ],
+  "cek_ulang": [
+    "Nomor registrasi uji klinis dan bunyi outcome primer di registrasi.",
+    "Lama diare kelompok plasebo dan angka efek samping serius per kelompok (Tabel 3).",
+    "Guideline AAD/probiotik terbaru yang dipakai departemen."
+  ],
+  "referensi": [
+    "Santoso A, et al. Probiotik multi-strain untuk pencegahan diare terkait antibiotik pada pasien dewasa rawat inap: uji acak terkontrol plasebo. J Clin Gastro Indones. 2025;12(3):145-56. (paper latihan fiktif)",
+    "Sterne JAC, et al. RoB 2: a revised tool for assessing risk of bias in randomised trials. BMJ. 2019;366:l4898.",
+    "Guyatt GH, et al. GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. BMJ. 2008;336:924-6.",
+    "Straus SE, et al. Evidence-Based Medicine: How to Practice and Teach EBM. 5th ed. Elsevier; 2018."
+  ]
+}
