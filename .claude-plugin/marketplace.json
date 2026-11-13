@@ -1,0 +1,16 @@
+{
+  "name": "auctus-journal-reading",
+  "owner": {
+    "name": "Auctus Academy"
+  },
+  "plugins": [
+    {
+      "name": "journal-reading-plugin",
+      "source": "./",
+      "description": "Paket journal reading untuk PPDS: slide Canva, brief, skrip presentasi, dan audio latihan dari satu paper."
+    }
+  ],
+  "metadata": {
+    "description": "Plugin internal Auctus untuk paket journal reading PPDS."
+  }
+}

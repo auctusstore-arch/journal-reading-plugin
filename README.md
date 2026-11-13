@@ -22,6 +22,17 @@ Plugin internal Auctus untuk membuat paket journal reading PPDS dari satu paper.
 - Guideline, konsensus, PNPK (PDF wajib; rekomendasi dipilih pemesan lewat peta rekomendasi).
 - Review article non-sistematis (narrative, scoping).
 
+## Pemasangan
+
+Repo ini privat, jadi akun GitHub di mesin tersebut harus punya akses.
+
+```
+/plugin marketplace add auctusstore-arch/journal-reading-plugin
+/plugin install journal-reading-plugin@auctus-journal-reading
+```
+
+Setelah terpasang, skill muncul sebagai `journal-reading-plugin:journal-reading-builder`. Untuk mencoba tanpa memasang: `claude --plugin-dir <folder repo ini>`.
+
 ## Prasyarat
 
 - Koneksi MCP Canva dengan akses ke tiga master template.
