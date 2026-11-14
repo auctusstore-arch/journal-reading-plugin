@@ -22,6 +22,7 @@ REQUIRED = ["meta", "ringkasan", "bottom_line", "konteks", "paper", "appraisal",
 KP_HEAD = ["No", "Klaim kunci", "Bukti pendukung", "Kekuatan bukti", "Cek sitasi & catatan"]
 REC_HEAD = ["No", "Rekomendasi", "COR", "LOE", "Bukti dasar", "Status & catatan"]
 CMP_HEAD = ["Topik", "Guideline ini", "Pembanding", "Catatan"]
+EDISI_HEAD = ["Topik", "Perubahan", "Edisi sebelumnya", "Edisi ini"]
 
 
 def is_guideline(b):
@@ -42,6 +43,10 @@ def kp_rows(pa):
 def rec_rows(pa):
     return [[r["no"], (f'[{r["bagian"]}] ' if r.get("bagian") else "") + r["teks"], r["cor"], r["loe"], r["bukti"],
              " · ".join(x for x in (r.get("status", ""), r.get("catatan", "")) if x)] for r in pa["rekomendasi"]]
+
+
+def edisi_rows(pa):
+    return [[c.get("topik", ""), c.get("jenis", ""), c.get("lama", ""), c.get("baru", "")] for c in pa.get("perbandingan_edisi", [])]
 
 
 def cmp_rows(pa):
@@ -70,6 +75,13 @@ def check(b):
             for f in ("no", "teks", "cor", "loe", "bukti"):
                 if not str(r.get(f, "")).strip():
                     errs.append(f"rekomendasi ke-{i}: field '{f}' kosong")
+        sp = b.get("meta", {}).get("sumber_perbandingan", "")
+        if not sp:
+            errs.append("meta.sumber_perbandingan kosong: tulis sumber perbandingan dengan edisi sebelumnya (bagian atau tabel "
+                        "perubahan di guideline ini + halaman, atau PDF edisi lama yang dilampirkan), atau 'edisi pertama' "
+                        "bila guideline ini tidak punya edisi sebelumnya")
+        elif not sp.lower().startswith("edisi pertama") and not b.get("paper", {}).get("perbandingan_edisi"):
+            errs.append("paper.perbandingan_edisi kosong: slide Perbandingan dengan Edisi Sebelumnya wajib pada jalur guideline")
         if not b.get("meta", {}).get("rekomendasi_disetujui"):
             errs.append("meta.rekomendasi_disetujui kosong: tulis siapa yang menyetujui pilihan rekomendasi dan kapan "
                         "(gerbang persetujuan peta rekomendasi belum dilewati?)")
@@ -156,8 +168,11 @@ def build_html(b, pal):
         parts.append(f'<h3>Rekomendasi yang dipresentasikan ({len(pa["rekomendasi"])})</h3>'
                      f'<p class="ov">Dipilih lewat peta rekomendasi, disetujui: {esc(m.get("rekomendasi_disetujui", ""))}</p>'
                      + table(REC_HEAD, rec_rows(pa)))
+        if pa.get("perbandingan_edisi"):
+            parts.append("<h3>Perbandingan dengan edisi sebelumnya</h3>"
+                         + f'<p class="ov">Sumber: {esc(m.get("sumber_perbandingan", ""))}</p>' + table(EDISI_HEAD, edisi_rows(pa)))
         if pa.get("perbandingan"):
-            parts.append("<h3>Perbandingan dengan edisi sebelumnya, PNPK, dan guideline lain</h3>" + table(CMP_HEAD, cmp_rows(pa)))
+            parts.append("<h3>Perbandingan dengan PNPK dan guideline lain</h3>" + table(CMP_HEAD, cmp_rows(pa)))
         if pa.get("tidak_dipresentasikan"):
             parts.append("<h3>Bagian yang tidak dipresentasikan (siap bila ditanya)</h3>" + ul(pa["tidak_dipresentasikan"]))
         if pa.get("angka_kunci"):
@@ -357,8 +372,12 @@ def build_docx(b, pal, path):
         doc.add_heading(f'Rekomendasi yang dipresentasikan ({len(pa["rekomendasi"])})', 2)
         para(f'Dipilih lewat peta rekomendasi, disetujui: {m.get("rekomendasi_disetujui", "")}', italic=True, size=9.5, color="#5b6472")
         tbl(REC_HEAD, rec_rows(pa), [1.3, 6.2, 1.2, 1.3, 3.8, 3.2])
+        if pa.get("perbandingan_edisi"):
+            doc.add_heading("Perbandingan dengan edisi sebelumnya", 2)
+            para(f'Sumber: {m.get("sumber_perbandingan", "")}', italic=True, size=9.5, color="#5b6472")
+            tbl(EDISI_HEAD, edisi_rows(pa), [3, 2, 6, 6])
         if pa.get("perbandingan"):
-            doc.add_heading("Perbandingan dengan edisi sebelumnya, PNPK, dan guideline lain", 2)
+            doc.add_heading("Perbandingan dengan PNPK dan guideline lain", 2)
             tbl(CMP_HEAD, cmp_rows(pa), [3, 4.7, 4.7, 4.6])
         if pa.get("tidak_dipresentasikan"):
             doc.add_heading("Bagian yang tidak dipresentasikan (siap bila ditanya)", 2); bullets(pa["tidak_dipresentasikan"])

@@ -65,7 +65,7 @@ Dua hal yang perlu diketahui saat inventaris:
 | 32 | Pembahasan Tematik (slide bebas) | PEMBAHASAN TEMATIK | Judul [tema]; dua kartu dengan [subjudul] + 3 poin; batang "Pesan utama" [1 kalimat]. Digandakan per tema |
 | 33 | Figur & Pembahasan (slide bebas) | FIGUR & PEMBAHASAN | Judul [figur atau tema]; kotak kiri untuk figur/tabel/algoritma asli + sumber; kartu kanan "Pembahasan": yang ditunjukkan, poin penting, kaitan dengan rekomendasi/praktik, catatan kritis penyaji. Digandakan per figur |
 
-### Halaman desain visual (34 sampai 38)
+### Halaman desain visual (34 sampai 39)
 
 Ditambahkan 12 November 2026 setelah masukan desain. Aturan pakai dan kode warna ada di `desain-visual.md`.
 
@@ -76,6 +76,7 @@ Ditambahkan 12 November 2026 setelah masukan desain. Aturan pakai dan kode warna
 | 36 | Rangkuman Do / Consider / Don't | RANGKUMAN BAGIAN | Judul [No dan judul bagian]; tiga kartu hijau, jingga, merah dengan lencana ikon dan poin-poin; batang gelap "PESAN UTAMA" berisi 2 sampai 3 poin |
 | 37 | Algoritma | ALGORITMA | Judul [Judul algoritma]; baris sumber; kotak [Titik masuk], kotak hijau [Langkah untuk semua pasien (kelas)], 4 cabang masing-masing kepala [Cabang n] + 3 kotak [Tindakan (kelas)], kotak [Catatan lintas cabang]. Kotak tindakan netral, diwarnai saat diisi |
 | 38 | Tabel bebas | TABEL | Judul [Judul tabel]; tabel 3 kolom x 5 baris ([Kolom n], [Baris n]); baris sumber di bawah tabel |
+| 39 | Perbandingan dengan Edisi Sebelumnya | PERBANDINGAN | Wajib pada jalur guideline. Tabel 5 baris x 3 kolom: [Topik · baru / diubah / dihapus] / [Rekomendasi lama + kelas, level, hal.] / [Rekomendasi baru + kelas, level, hal.]; kepala kolom "Edisi sebelumnya ([tahun])" dan "Edisi ini ([tahun])". Sumber hanya bagian perubahan di guideline baru atau PDF edisi lama (lihat `jalur-guideline.md` G2b). Salinan tata letak halaman 27. |
 
 Halaman 26 diubah di tempat menjadi gaya baru: kolom Kelas · Level, Inti rekomendasi, Rincian, Bukti dasar, Hal.; tiap baris punya strip tipis di tepi kiri (bentuk lepas, netral) yang diwarnai menurut kelas bersama sel pertamanya. Halaman 32 tidak lagi punya kicker.
 
@@ -85,7 +86,7 @@ Halaman 32 dan 33 adalah slide serbaguna untuk guideline dan review article. Pak
 
 Halaman 25, 27, dan 29 dipakai bersama oleh guideline dan review, jadi label barisnya dibuat netral atau berupa placeholder.
 
-Guideline = 2-5, 25, 34, 35, 12 (opsional), 32 (sesuai tema), lalu per bagian 36 + 26 (digandakan), 37 dan 38 bila ada, 27, 28, 29, 18, 20-23. Rincian di `jalur-guideline.md` bagian G5.
+Guideline = 2-5, 25, 34, 35, 12 (opsional), 32 (sesuai tema), lalu per bagian 36 + 26 (digandakan), 37 dan 38 bila ada, 39 (wajib), 27 (opsional), 28, 29, 18, 20-23. Rincian di `jalur-guideline.md` bagian G5.
 Review = 2-5, 25, 32/33 (sesuai tema yang disetujui), 30 (digandakan), 27, 31, 29, 18, 20-23.
 
 `merge-designs` menyalin tiap nomor halaman satu kali. Untuk menggandakan halaman 26, 30, 32, atau 33, tulis nomornya berulang di `page_numbers` (mis. `[..., 32, 32, 33, 26, 26, ...]`).

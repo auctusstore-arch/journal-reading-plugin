@@ -70,7 +70,12 @@ paper:
   rekomendasi             [{no, bagian, teks, cor, loe, bukti, status, catatan}]
                           hanya yang disetujui di peta rekomendasi. no = ID di peta; cor/loe persis sistem guideline;
                           bukti = studi dasar + angka + halaman; status = baru / berubah / tetap / tidak ditandai
-  perbandingan            [{topik, guideline_ini, pembanding, catatan}] edisi sebelumnya, PNPK, guideline lain (opsional tetapi dianjurkan)
+  perbandingan_edisi      [{topik, jenis, lama, baru}] WAJIB. Perbandingan dengan edisi sebelumnya dari organisasi yang sama.
+                          jenis: baru / diubah / dihapus. lama dan baru memuat bunyi rekomendasi + kelas, level, halaman.
+                          Boleh kosong hanya bila meta.sumber_perbandingan diawali "edisi pertama".
+  perbandingan            [{topik, guideline_ini, pembanding, catatan}] PNPK dan guideline organisasi lain (opsional; hanya sumber yang benar-benar dibaca)
+  meta.sumber_perbandingan  WAJIB. Dari mana perbandingan edisi diambil: "Tabel What is New, hal. e12-e14" atau
+                          "PDF edisi 2015 dilampirkan pemesan (Hemphill et al., Stroke 2015)" atau "edisi pertama, tidak ada edisi sebelumnya".
   tidak_dipresentasikan   [poin] 1 baris per bagian guideline yang tidak masuk slide
   angka_kunci             [poin] angka studi pendukung yang sudah dicek ke paper aslinya (opsional)
 appraisal:

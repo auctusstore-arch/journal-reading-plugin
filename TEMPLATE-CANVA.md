@@ -1,6 +1,6 @@
 # Template Canva journal reading
 
-Tiga master template, isinya sama dan hanya berbeda warna. Masing-masing 38 halaman. **Jangan mengedit master**: skill selalu menyalin halaman yang dibutuhkan ke desain baru.
+Tiga master template, isinya sama dan hanya berbeda warna. Masing-masing 39 halaman. **Jangan mengedit master**: skill selalu menyalin halaman yang dibutuhkan ke desain baru.
 
 | Warna | Design ID | Tautan |
 |---|---|---|
@@ -24,6 +24,7 @@ Tautan hanya terbuka untuk akun Canva yang punya akses ke desain tersebut.
 | 30 sampai 31 | Jalur review: Poin Kunci Review, Validity SANRA |
 | 32 sampai 33 | Slide bebas: Pembahasan tematik, Figur & Pembahasan |
 | 34 sampai 38 | Daftar Isi, Peta Topik, Rangkuman Do / Consider / Don't, Algoritma, Tabel bebas |
+| 39 | Perbandingan dengan Edisi Sebelumnya (wajib pada jalur guideline) |
 
 Rincian tiap halaman (placeholder, posisi, catatan bawaan) ada di `skills/journal-reading-builder/references/template-map.md`.
 
@@ -32,6 +33,7 @@ Rincian tiap halaman (placeholder, posisi, catatan bawaan) ada di `skills/journa
 - Tidak ada footer nama penyaji di kiri bawah slide; nomor slide di kanan bawah tetap ada.
 - Halaman 26 tidak punya baris legenda warna.
 - Placeholder dan speaker notes bawaan tidak memakai kata "kita".
+- Halaman 39 khusus membandingkan guideline dengan edisi sebelumnya dari organisasi yang sama; isinya hanya dari bagian perubahan di guideline baru atau PDF edisi lama yang dilampirkan.
 - Kotak kuning PETUNJUK ada di tiap halaman master dan dihapus saat deck dibuat.
 
 ## Ikon

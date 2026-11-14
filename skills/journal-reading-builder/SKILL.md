@@ -51,7 +51,7 @@ Disetujui pembimbing
 
 | Butir | Wajib? | Bila kosong (".") atau tidak ada |
 |---|---|---|
-| Paper (PDF, DOI, atau tautan full text) | Wajib | Minta. Untuk guideline, PDF wajib. |
+| Paper (PDF, DOI, atau tautan full text) | Wajib | Minta. Untuk guideline, PDF wajib. Untuk guideline juga tanyakan apakah PDF edisi sebelumnya (organisasi yang sama) bisa dilampirkan; itu dibutuhkan bila guideline baru tidak memuat bagian perbandingan sendiri. |
 | Penyaji | Wajib | Minta. |
 | Departemen | Wajib | Minta. |
 | Prodi & semester | Wajib | Minta. Bila hanya prodi tanpa semester, pakai apa adanya dan jangan mengarang semester. |
@@ -77,7 +77,7 @@ Aturan gerbang:
 Tentukan jenis paper sejak intake, karena menentukan jalur kerja:
 
 - Studi primer atau SR-MA (termasuk systematic review tanpa meta-analisis): ikuti Langkah 2 sampai 6 di bawah.
-- **Guideline, konsensus, atau PNPK**: baca `references/jalur-guideline.md` dan ikuti jalur itu. Bedanya yang paling penting: setelah ekstraksi, buat peta semua rekomendasi lalu **berhenti dan minta user menyetujui rekomendasi mana yang masuk slide**. Jangan memilih sendiri.
+- **Guideline, konsensus, atau PNPK**: baca `references/jalur-guideline.md` dan ikuti jalur itu. Slide "Perbandingan dengan Edisi Sebelumnya" wajib dan hanya boleh diisi dari bagian perubahan di guideline baru atau dari PDF edisi lama yang dilampirkan (G2b). Bedanya yang paling penting: setelah ekstraksi, buat peta semua rekomendasi lalu **berhenti dan minta user menyetujui rekomendasi mana yang masuk slide**. Jangan memilih sendiri.
 - **Review article yang bukan systematic review (narrative review, scoping review)**: baca `references/jalur-review.md`. Klasifikasikan dulu jenis review-nya dari bagian Metode (R0). Polanya sama dengan guideline: peta isi berisi semua klaim kunci, lalu **user menyetujui klaim mana yang masuk slide**.
 
 User story/kebutuhan PPDS adalah input utama: alasan memilih paper, kasus pemicu, dan fokus konsulen masuk ke slide 4, ke mockup pertanyaan, dan ke bagian applicability. Bila PPDS tidak memberi kasus pemicu, hapus kotaknya atau isi "[perlu diisi]" merah dan tandai di laporan akhir. Jangan mengarang kasus atau identitas pasien.
@@ -278,6 +278,7 @@ Laporkan ke user secara singkat:
 
 ## Kesalahan yang sering terjadi
 
+- **Mengisi perbandingan edisi dari ingatan.** Pada guideline, perubahan dari edisi sebelumnya hanya diambil dari bagian perubahan di guideline baru atau dari PDF edisi lama; bila tidak ada, minta PDF-nya.
 - **Langsung mengerjakan begitu menerima PDF.** Tunggu formulir intake lengkap (Langkah 1); tanpa itu hanya boleh meminta formulir.
 - **Memakai angka dari abstrak.** Abstrak kadang berbeda dari tabel. Ambil dari Results/tabel.
 - **Hanya menampilkan RRR.** Selalu tampilkan angka absolut (n/N, %) dan ARR/NNT.

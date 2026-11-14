@@ -19,6 +19,7 @@ Pada PDF dua kolom, `pdftotext` mengeluarkan kolom kelas, level, dan teks rekome
 Tulis ke `extract.md`:
 
 - Identitas: judul, organisasi penerbit, ketua penulis, jurnal, tahun;vol(no):hal, DOI, edisi yang digantikan (tahun dan sitasi).
+- Bagian atau tabel perubahan dari edisi sebelumnya ("What is New", "Changes Since", penanda new/revised) beserta halamannya; catat juga bila tidak ada. Ini menentukan apakah PDF edisi lama harus diminta (G2b).
 - Ruang lingkup: populasi/kondisi yang dicakup dan yang dikecualikan, pengguna sasaran.
 - Metodologi penyusunan: komposisi panel (spesialisasi, wakil pasien), metode penelusuran bukti dan tanggal batas penelusuran, cara mencapai konsensus (voting, ambang), telaah eksternal, rencana pembaruan, pendanaan, kebijakan dan pengungkapan COI.
 - Sistem kelas rekomendasi dan level bukti **persis seperti dipakai guideline itu**. Jangan dikonversi ke sistem lain. Contoh yang sering muncul:
@@ -76,6 +77,26 @@ User boleh memutuskan **semua** rekomendasi, tema, dan figur masuk, untuk dipila
 - Brief memuat tabel semua rekomendasi, sehingga jumlah kata jauh di atas target; peringatan panjang dari `build_brief.py` boleh diabaikan dan disebut di laporan.
 - `rencana_presentasi` tetap menganjurkan 6 sampai 10 rekomendasi untuk dibawakan.
 
+## G2b. Perbandingan dengan edisi sebelumnya (wajib, tanpa asumsi)
+
+Setiap journal reading guideline **wajib** punya slide khusus "Perbandingan dengan Edisi Sebelumnya" (halaman master 39): apa yang berubah dibanding versi lawas dari **organisasi yang sama** (mis. AHA/ASA 2022 dibanding AHA/ASA 2015). Pembanding lain (PNPK, guideline organisasi lain) bukan pengganti slide ini; itu slide terpisah di halaman 27 dan sifatnya opsional.
+
+Isinya hanya boleh berasal dari salah satu dari dua sumber:
+
+1. **Guideline baru sendiri menuliskannya.** Cari saat ekstraksi (G1): tabel atau bagian "What is New", "Changes Since", "New or Revised Recommendations", "Top Take-Home Messages" yang menyebut perubahan, lampiran perbandingan, atau penanda "new" / "revised" di tabel rekomendasi. Catat halaman tiap perubahan.
+2. **PDF edisi lama dilampirkan pemesan** dan dibaca langsung. Rekomendasi lama dikutip dari PDF itu beserta kelas, level, dan halamannya.
+
+Yang **tidak boleh**: mengisi dari ingatan atau pengetahuan umum, dari abstrak atau ringkasan pihak ketiga, dari kalimat samar seperti "rekomendasi diperbarui" tanpa bunyi rekomendasi lamanya, atau menyimpulkan perubahan hanya karena suatu rekomendasi tidak kita kenali.
+
+Alur:
+
+- Tentukan edisi sebelumnya dari guideline baru (biasanya disebut di pendahuluan: "replaces the 20XX guideline"). Bila guideline menyatakan ini edisi pertama, tulis `meta.sumber_perbandingan: "edisi pertama, tidak ada edisi sebelumnya"` dan slide diisi satu kalimat itu.
+- Nilai apakah sumber 1 cukup: cukup bila tiap baris perbandingan bisa diisi **kedua sisinya** (bunyi lama dan bunyi baru) dari teks guideline baru. Daftar "yang baru" tanpa bunyi rekomendasi lama hanya cukup untuk baris berjenis "baru".
+- Bila sumber 1 tidak cukup, **minta pemesan melampirkan PDF edisi lama**. Ajukan permintaan ini bersamaan dengan gerbang persetujuan peta rekomendasi (satu pesan, bukan dua kali bolak-balik), sebutkan judul dan tahun edisi lama yang dimaksud.
+- **Jangan membuat slide perbandingan, dan jangan menyerahkan deck sebagai selesai, sebelum salah satu sumber tersedia.** Sambil menunggu, pekerjaan lain (pendalaman, AGREE II, slide lain) boleh berjalan. Bila pemesan menyatakan PDF edisi lama tidak bisa didapat, slide tetap ada dengan isi `[perlu diisi]` merah dan dilaporkan saat serah terima; jangan diisi perkiraan dan jangan dihapus diam-diam.
+- Bandingkan hanya rekomendasi yang masuk slide (status "masuk" di peta) ditambah perubahan besar yang disorot guideline sendiri. Tiap baris: topik, jenis perubahan (baru / diubah / dihapus), bunyi lama dan baru dengan kelas, level, halaman. Perubahan kelas atau level ditulis eksplisit ("2b menjadi 2a").
+- Catat sumbernya di `brief.json` pada `meta.sumber_perbandingan` dan isi `paper.perbandingan_edisi`; `build_brief.py` menolak mode guideline tanpa keduanya. Sumber juga disebut di speaker notes slide.
+
 ## G3. Pendalaman rekomendasi terpilih
 
 Untuk guideline besar (puluhan rekomendasi), bagi pendalaman ke subagen per kelompok bagian (sekitar 15 sampai 25 rekomendasi per subagen) dan minta hasil terstruktur per rekomendasi: `bukti_slide` (maks 90 karakter: nama studi, desain, n), `bukti_detail` (1 sampai 3 kalimat dengan angka persis dan nomor rujukan), `catatan_kritis` (keterbatasan yang disebut guideline sendiri), dan `cek` (apa pun yang tidak terbaca pasti). Instruksikan: hanya dari teks guideline, tanpa pengetahuan luar, tanpa menebak. Teks pendukung pada PDF dua kolom sering berpindah tempat, jadi beri rentang baca yang tumpang tindih. Setelah hasil masuk, uji petik beberapa angka ke teks sumber, dan masukkan semua `cek` ke `cek_ulang`.
@@ -85,7 +106,7 @@ Untuk tiap rekomendasi yang disetujui, tambahkan ke `extract.md`:
 - Teks rekomendasi persis (bahasa asli) + COR + LOE + halaman.
 - Bukti dasar dari teks pendukung guideline: nama studi, desain, n, hasil utama dengan angka, dan nomor referensinya. Bila angka penting untuk presentasi, cek ke paper aslinya; bila tidak sempat, tandai `[CEK]`.
 - Ketidaksesuaian kekuatan dan bukti (mis. COR 1 dengan LOE C-EO): catat alasan yang diberikan panel.
-- Perubahan dari edisi sebelumnya, bila terverifikasi.
+- Perubahan dari edisi sebelumnya (lihat G2b; hanya dari guideline baru sendiri atau PDF edisi lama).
 - Posisi pembanding: PNPK/pedoman Indonesia yang berlaku dan 1 guideline internasional lain (mis. ESO untuk stroke). Hanya yang benar-benar dibaca; sisanya `[CEK]`.
 - Kemutakhiran: studi besar yang terbit setelah tanggal batas penelusuran dan bisa mengubah rekomendasi. Boleh dicari di PubMed; jangan mengandalkan ingatan. Yang belum terverifikasi masuk `cek_ulang`.
 
@@ -130,7 +151,8 @@ Baca `desain-visual.md` dulu. Urutan untuk guideline:
 | 10 | per bagian: 36 Rangkuman, lalu 26 Tabel rekomendasi (digandakan) | lihat "Slide per bagian" di bawah |
 | 11 | 37 Algoritma (digandakan) | algoritma guideline disusun ulang sendiri, kotak diwarnai menurut kelas |
 | 12 | 38 Tabel bebas (digandakan) | tabel guideline yang diketik ulang ringkas, dengan sumber |
-| 13 | 27 Perbandingan | edisi sebelumnya, PNPK, guideline lain |
+| 13 | **39 Perbandingan dengan edisi sebelumnya (wajib, digandakan bila lebih dari 5 baris)** | lihat G2b: hanya dari bagian perubahan di guideline baru atau PDF edisi lama yang dilampirkan |
+| 13b | 27 Perbandingan dengan sumber lain (opsional) | PNPK atau guideline organisasi lain, hanya bila benar-benar dibaca |
 | 14 | 28 Validity AGREE II | skor 6 domain + bukti + penilaian keseluruhan + catatan satu penilai |
 | 15 | 29 Penerapan di RS setempat | yang sudah sesuai praktik, yang belum beserta hambatannya, langkah realistis |
 | 16 | 18 Kekuatan & kelemahan | kelemahan mencakup domain AGREE terlemah dan rekomendasi kuat berbukti lemah |
@@ -182,6 +204,7 @@ Jebakan yang harus dijawab jujur: rekomendasi yang tidak dibahas guideline, data
 - Baca teks pendukung tiap rekomendasi terpilih, bukan hanya tabelnya.
 - Buka minimal 2 studi pendukung utama dan cocokkan angkanya.
 - Hafalkan definisi tiap kelas dan level yang dipakai guideline.
+- Baca slide Perbandingan dengan Edisi Sebelumnya sampai hafal: apa yang baru, diubah, dihapus, dan studi yang mengubahnya.
 - Bandingkan dengan PNPK terbaru dan catat tahun terbitnya.
 - Cek ketersediaan obat/alat rekomendasi terpilih di RS sendiri dan status Fornas.
 - Baca ringkasan 1 baris bagian yang tidak dipresentasikan.
