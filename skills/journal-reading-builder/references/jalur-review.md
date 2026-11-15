@@ -103,7 +103,7 @@ Sebutkan kepada audiens bahwa scoping review memetakan bukti dan tidak dirancang
 
 ### Di brief.json
 
-`appraisal.validity` berisi baris per item SANRA (`penilaian`: "2/2", "1/2", "0/2") atau per aspek PRISMA-ScR ("dilaporkan", "sebagian", "tidak dilaporkan"), dengan `kelas` ("ok" / "mid" / "bad"). `appraisal.grade` dikosongkan. `appraisal.importance` berisi dampak klinis klaim terpilih; `appraisal.applicability` berisi penerapan di RS Indonesia.
+`appraisal.validity` berisi baris per item SANRA (`penilaian`: "2/2", "1/2", "0/2") atau per aspek PRISMA-ScR ("dilaporkan", "sebagian", "tidak dilaporkan"), dengan `kelas` ("ok" / "mid" / "bad"), `bukti` berlokasi, dan `alasan` mengapa item itu mendapat skor tersebut (wajib, lihat `brief-schema.md`). `appraisal.grade` dikosongkan. `appraisal.importance` berisi dampak klinis klaim terpilih; `appraisal.applicability` berisi penerapan di RS Indonesia.
 
 ## R5. Susunan slide
 

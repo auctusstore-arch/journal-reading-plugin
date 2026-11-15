@@ -40,7 +40,9 @@ paper:
   hasil            [{outcome, intervensi, kontrol, efek, catatan}] angka persis dari paper
   angka_kunci      [poin] hasil hitung ulang effect_calc.py + NNT lokal
 appraisal:
-  validity         [{domain, penilaian, bukti}] penilaian memakai istilah tool (Low/Some concerns/High, bintang NOS, L/H/U, Yes/Partial/No)
+  validity         [{kelompok, domain, penilaian, kelas, bukti, alasan}] SATU BARIS PER ITEM instrumen, bukan per domain (lihat "Appraisal berbasis instrumen" di bawah).
+                   domain = nama item; kelompok = domain induknya (opsional, mis. "Selection"); penilaian memakai istilah tool (Low/Some concerns/High, bintang NOS, Yes/Partial/No);
+                   kelas ok|mid|bad; bukti = apa yang tertulis di paper + lokasi; alasan = MENGAPA dinilai demikian
   validity_overall kalimat kesimpulan + arah bias
   importance       [poin]
   applicability    [poin] pasien, sumber daya RS, Fornas/JKN, preferensi pasien
@@ -113,3 +115,13 @@ appraisal:
 `pertanyaan` memakai daftar R6 di `jalur-review.md` (kategori tambahan: Jenis review, Bukti dasar, Perbandingan).
 
 Penanda `[CEK ...]` boleh muncul di dalam teks brief untuk data yang tidak pasti, tetapi setiap penanda wajib juga tercantum di `cek_ulang`, supaya PPDS tahu apa yang harus diverifikasi.
+
+
+## Appraisal berbasis instrumen (NOS, AGREE II, AMSTAR 2, QUADAS-2, RoB 2, SANRA, PRISMA-ScR)
+
+Wajib dan dicek `build_brief.py` (exit dengan MASALAH bila dilanggar):
+
+- **Satu baris per item**, bukan ringkasan per domain. Contoh NOS: Selection punya 4 item, Comparability 1, Outcome 3, masing-masing satu baris dengan `kelompok` = nama domainnya. Minimum baris: NOS 7, AMSTAR 2 16, AGREE II 23 (boleh ditambah baris skor domain), SANRA 6, PRISMA-ScR 6. QUADAS-2 (11 signalling question) dan RoB 2 (sekitar 20 pertanyaan penuntun) memberi peringatan bila kurang. Baris penilaian domain boleh ditambah di akhir tiap kelompok dengan `"rangkuman": true` (tidak perlu lokasi, tetap perlu `alasan`).
+- `bukti`: apa yang tertulis di paper, dengan lokasi (hal./Tabel/Figure/Metode), atau "tidak dilaporkan". Itu bukti, bukan alasan.
+- `alasan` (min 8 kata): MENGAPA bukti itu menghasilkan penilaian tersebut. Hubungkan bukti dengan kriteria item di instrumen (mis. "NOS item Representativeness memberi bintang bila sampel mewakili populasi sasaran; sampel hanya dari satu RS rujukan, jadi tidak diberi bintang"). Untuk item yang kena batasan aturan resmi, sebut aturannya. Jangan mengulang bukti, jangan "sesuai kriteria".
+- Penilaian "tidak ada informasi" atau tidak diberi bintang karena paper diam harus dinyatakan begitu di `alasan`, bukan ditulis seolah paper salah.

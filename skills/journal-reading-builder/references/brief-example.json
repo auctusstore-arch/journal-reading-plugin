@@ -32,11 +32,26 @@
       "Risiko probiotik pada pasien imunokompromais atau dengan kateter vena sentral: kasus bakteremia/fungemia terkait probiotik pernah dilaporkan. Ini relevan untuk applicability di bangsal penyakit dalam."
     ],
     "istilah": [
-      {"istilah": "ITT vs per-protocol", "arti": "ITT menganalisis semua pasien sesuai kelompok randomisasi; per-protocol hanya yang patuh. Per-protocol dengan attrition tidak seimbang bisa membesarkan efek."},
-      {"istilah": "Allocation concealment", "arti": "Penyembunyian urutan acak sampai pasien resmi masuk kelompok. Berbeda dari blinding."},
-      {"istilah": "RR, RRR, ARR, NNT", "arti": "RR = EER/CER; RRR = 1 - RR; ARR = CER - EER; NNT = 1/ARR, jumlah pasien yang perlu diobati untuk mencegah 1 kejadian."},
-      {"istilah": "Selective reporting", "arti": "Outcome yang dilaporkan berbeda dari yang direncanakan di protokol/registrasi; domain 5 RoB 2."},
-      {"istilah": "GRADE", "arti": "Sistem penilaian kepastian bukti per outcome: RCT mulai tinggi, turun karena risk of bias, inkonsistensi, indirectness, imprecision, publication bias."}
+      {
+        "istilah": "ITT vs per-protocol",
+        "arti": "ITT menganalisis semua pasien sesuai kelompok randomisasi; per-protocol hanya yang patuh. Per-protocol dengan attrition tidak seimbang bisa membesarkan efek."
+      },
+      {
+        "istilah": "Allocation concealment",
+        "arti": "Penyembunyian urutan acak sampai pasien resmi masuk kelompok. Berbeda dari blinding."
+      },
+      {
+        "istilah": "RR, RRR, ARR, NNT",
+        "arti": "RR = EER/CER; RRR = 1 - RR; ARR = CER - EER; NNT = 1/ARR, jumlah pasien yang perlu diobati untuk mencegah 1 kejadian."
+      },
+      {
+        "istilah": "Selective reporting",
+        "arti": "Outcome yang dilaporkan berbeda dari yang direncanakan di protokol/registrasi; domain 5 RoB 2."
+      },
+      {
+        "istilah": "GRADE",
+        "arti": "Sistem penilaian kepastian bukti per outcome: RCT mulai tinggi, turun karena risk of bias, inkonsistensi, indirectness, imprecision, publication bias."
+      }
     ]
   },
   "paper": {
@@ -54,10 +69,34 @@
       "Pendanaan dari produsen probiotik yang diuji; peran sponsor dalam analisis tidak dijelaskan."
     ],
     "hasil": [
-      {"outcome": "AAD dalam 30 hari (primer)", "intervensi": "12/150 (8,0%)", "kontrol": "27/150 (18,0%)", "efek": "RR 0,44 (0,23 sampai 0,84)", "catatan": "ARR 10%, NNT 10; p = 0,010"},
-      {"outcome": "Lama rawat (hari)", "intervensi": "5,2 ± 1,8", "kontrol": "6,0 ± 2,1", "efek": "MD -0,8 (-1,24 sampai -0,36)", "catatan": "p < 0,001"},
-      {"outcome": "Lama diare pada yang diare", "intervensi": "median 3 (IQR 2-5)", "kontrol": "[CEK]", "efek": "tidak dilaporkan", "catatan": "hanya pada subgrup yang diare"},
-      {"outcome": "Efek samping serius", "intervensi": "[CEK]", "kontrol": "[CEK]", "efek": "tidak ada perbedaan menurut penulis", "catatan": "angka per kelompok di Tabel 3"}
+      {
+        "outcome": "AAD dalam 30 hari (primer)",
+        "intervensi": "12/150 (8,0%)",
+        "kontrol": "27/150 (18,0%)",
+        "efek": "RR 0,44 (0,23 sampai 0,84)",
+        "catatan": "ARR 10%, NNT 10; p = 0,010"
+      },
+      {
+        "outcome": "Lama rawat (hari)",
+        "intervensi": "5,2 ± 1,8",
+        "kontrol": "6,0 ± 2,1",
+        "efek": "MD -0,8 (-1,24 sampai -0,36)",
+        "catatan": "p < 0,001"
+      },
+      {
+        "outcome": "Lama diare pada yang diare",
+        "intervensi": "median 3 (IQR 2-5)",
+        "kontrol": "[CEK]",
+        "efek": "tidak dilaporkan",
+        "catatan": "hanya pada subgrup yang diare"
+      },
+      {
+        "outcome": "Efek samping serius",
+        "intervensi": "[CEK]",
+        "kontrol": "[CEK]",
+        "efek": "tidak ada perbedaan menurut penulis",
+        "catatan": "angka per kelompok di Tabel 3"
+      }
     ],
     "angka_kunci": [
       "CER 18%, EER 8%, ARR 10% (95% CI 2,5% sampai 17,5%), NNT 10 (95% CI sekitar 6 sampai 41), dihitung ulang dengan effect_calc.py.",
@@ -67,11 +106,219 @@
   },
   "appraisal": {
     "validity": [
-      {"domain": "D1 Proses randomisasi", "penilaian": "Some concerns", "bukti": "Urutan acak blok komputer (hal. 146), tetapi cara menyimpan daftar acak tidak dijelaskan. Baseline Tabel 1 seimbang."},
-      {"domain": "D2 Deviasi dari intervensi", "penilaian": "High", "bukti": "Analisis per-protocol; 15 vs 25 pasien dikeluarkan setelah randomisasi, alasan berbeda antar kelompok (Figure 1)."},
-      {"domain": "D3 Data outcome hilang", "penilaian": "Some concerns", "bukti": "Loss 9% vs 14%; tidak ada analisis sensitivitas atau imputasi."},
-      {"domain": "D4 Pengukuran outcome", "penilaian": "Some concerns", "bukti": "Diare dicatat perawat; tidak disebut apakah penilai outcome blind. Plasebo identik membantu."},
-      {"domain": "D5 Pelaporan selektif", "penilaian": "High", "bukti": "Outcome primer di registrasi 'diare apa pun', di paper menjadi AAD dengan definisi tertentu."}
+      {
+        "kelompok": "D1 Proses randomisasi",
+        "domain": "1.1 Urutan alokasi acak?",
+        "penilaian": "Ya",
+        "kelas": "ok",
+        "bukti": "Urutan acak blok komputer, Metode hal. 146.",
+        "alasan": "Pembangkitan urutan dengan komputer memenuhi definisi acak sejati di RoB 2, jadi jawabannya Ya."
+      },
+      {
+        "kelompok": "D1 Proses randomisasi",
+        "domain": "1.2 Alokasi tersembunyi?",
+        "penilaian": "Tidak ada informasi",
+        "kelas": "mid",
+        "bukti": "Cara menyimpan dan mengakses daftar acak tidak dijelaskan, Metode hal. 146.",
+        "alasan": "RoB 2 hanya menerima Ya bila ada mekanisme konkret (mis. amplop buram atau pusat sentral). Paper diam, sehingga tidak boleh diasumsikan baik: Tidak ada informasi."
+      },
+      {
+        "kelompok": "D1 Proses randomisasi",
+        "domain": "1.3 Perbedaan baseline mengarah ke masalah randomisasi?",
+        "penilaian": "Tidak",
+        "kelas": "ok",
+        "bukti": "Karakteristik dasar seimbang antar kelompok, Tabel 1.",
+        "alasan": "Ketidakseimbangan di luar kewajaran akan mencurigakan; Tabel 1 seimbang, jadi tidak ada petunjuk randomisasi gagal."
+      },
+      {
+        "kelompok": "D1 Proses randomisasi",
+        "domain": "Penilaian domain D1",
+        "penilaian": "Some concerns",
+        "kelas": "mid",
+        "bukti": "Gabungan 1.1 sampai 1.3.",
+        "alasan": "Randomisasi baik dan baseline seimbang, tetapi concealment tidak diketahui. Aturan RoB 2: informasi kunci hilang tanpa tanda masalah lain menghasilkan Some concerns.",
+        "rangkuman": true
+      },
+      {
+        "kelompok": "D2 Deviasi dari intervensi",
+        "domain": "2.1 Peserta tahu alokasi?",
+        "penilaian": "Tidak",
+        "kelas": "ok",
+        "bukti": "Plasebo identik dalam bentuk dan rasa, Metode hal. 146.",
+        "alasan": "Plasebo identik membuat peserta praktis tidak bisa menebak kelompoknya."
+      },
+      {
+        "kelompok": "D2 Deviasi dari intervensi",
+        "domain": "2.2 Tenaga pelaksana tahu alokasi?",
+        "penilaian": "Tidak",
+        "kelas": "ok",
+        "bukti": "Tenaga farmasi menyiapkan sediaan berkode, Metode hal. 146.",
+        "alasan": "Sediaan berkode menjaga tenaga yang memberikan terapi tidak mengetahui alokasi."
+      },
+      {
+        "kelompok": "D2 Deviasi dari intervensi",
+        "domain": "2.3 Deviasi karena konteks uji yang memengaruhi hasil?",
+        "penilaian": "Tidak ada informasi",
+        "kelas": "mid",
+        "bukti": "Tidak dibahas di Metode atau Hasil.",
+        "alasan": "Deviasi seperti pemberian antibiotik berbeda antar kelompok tidak dilaporkan, sehingga tidak bisa dikatakan tidak ada."
+      },
+      {
+        "kelompok": "D2 Deviasi dari intervensi",
+        "domain": "2.4 Deviasi seimbang antar kelompok?",
+        "penilaian": "Tidak ada informasi",
+        "kelas": "mid",
+        "bukti": "Tidak dilaporkan, lihat Figure 1.",
+        "alasan": "Karena 2.3 tidak jelas, keseimbangan deviasi tidak dapat dinilai dari paper."
+      },
+      {
+        "kelompok": "D2 Deviasi dari intervensi",
+        "domain": "2.5 Analisis tepat untuk menilai efek penugasan (ITT)?",
+        "penilaian": "Tidak",
+        "kelas": "bad",
+        "bukti": "Analisis per-protocol, Metode hal. 147.",
+        "alasan": "Efek penugasan harus dinilai dengan intention-to-treat. Per-protocol membuang pasien yang tidak patuh dan merusak keseimbangan hasil randomisasi."
+      },
+      {
+        "kelompok": "D2 Deviasi dari intervensi",
+        "domain": "2.6 Ada pasien yang dikeluarkan karena itu?",
+        "penilaian": "Ya, 15 vs 25",
+        "kelas": "bad",
+        "bukti": "15 dan 25 pasien dikeluarkan setelah randomisasi, Figure 1.",
+        "alasan": "Jumlah dikeluarkan berbeda antar kelompok dan terjadi setelah randomisasi, cukup besar untuk memengaruhi hasil."
+      },
+      {
+        "kelompok": "D2 Deviasi dari intervensi",
+        "domain": "2.7 Dampak potensial pengeluaran terhadap hasil?",
+        "penilaian": "Substansial",
+        "kelas": "bad",
+        "bukti": "Alasan pengeluaran berbeda antar kelompok, Figure 1.",
+        "alasan": "Pasien yang dikeluarkan tidak setara (alasan berbeda), jadi bias menuju efek probiotik yang lebih besar."
+      },
+      {
+        "kelompok": "D2 Deviasi dari intervensi",
+        "domain": "Penilaian domain D2",
+        "penilaian": "High",
+        "kelas": "bad",
+        "bukti": "Gabungan 2.1 sampai 2.7.",
+        "alasan": "Blinding baik, tetapi analisis per-protocol dengan pengeluaran tidak setara membuat satu pertanyaan kunci gagal. Aturan RoB 2: satu jawaban yang menentukan sudah membuat domain High.",
+        "rangkuman": true
+      },
+      {
+        "kelompok": "D3 Data outcome hilang",
+        "domain": "3.1 Data tersedia untuk (hampir) semua pasien yang diacak?",
+        "penilaian": "Tidak",
+        "kelas": "mid",
+        "bukti": "Kehilangan data 9% vs 14%, Figure 1.",
+        "alasan": "Ambang resmi tidak ditetapkan RoB 2, tetapi kehilangan yang tidak setara antar kelompok menurunkan keyakinan."
+      },
+      {
+        "kelompok": "D3 Data outcome hilang",
+        "domain": "3.2 Bukti hasil tidak bias oleh data hilang?",
+        "penilaian": "Tidak",
+        "kelas": "mid",
+        "bukti": "Tidak ada analisis sensitivitas atau imputasi, Metode hal. 147.",
+        "alasan": "Tanpa analisis sensitivitas, tidak ada bukti hasil kokoh bila data hilang diisi dengan skenario berbeda."
+      },
+      {
+        "kelompok": "D3 Data outcome hilang",
+        "domain": "3.3 Hilangnya data bisa bergantung nilai sebenarnya?",
+        "penilaian": "Mungkin tidak",
+        "kelas": "mid",
+        "bukti": "Alasan hilang: pindah RS dan menarik diri, Figure 1.",
+        "alasan": "Alasannya tidak langsung terkait outcome, tetapi tidak dapat disingkirkan sepenuhnya."
+      },
+      {
+        "kelompok": "D3 Data outcome hilang",
+        "domain": "Penilaian domain D3",
+        "penilaian": "Some concerns",
+        "kelas": "mid",
+        "bukti": "Gabungan 3.1 sampai 3.3.",
+        "alasan": "Kehilangan data berbeda antar kelompok tanpa sensitivitas, tetapi tidak ada bukti terkait outcome, jadi Some concerns dan bukan High.",
+        "rangkuman": true
+      },
+      {
+        "kelompok": "D4 Pengukuran outcome",
+        "domain": "4.1 Metode pengukuran outcome tidak tepat?",
+        "penilaian": "Tidak",
+        "kelas": "ok",
+        "bukti": "Definisi AAD tertulis jelas, Metode hal. 146.",
+        "alasan": "Definisi operasional diare terkait antibiotik tertulis dan lazim dipakai."
+      },
+      {
+        "kelompok": "D4 Pengukuran outcome",
+        "domain": "4.2 Pengukuran berbeda antar kelompok?",
+        "penilaian": "Tidak",
+        "kelas": "ok",
+        "bukti": "Protokol pencatatan sama, Metode hal. 146.",
+        "alasan": "Pencatatan harian dengan formulir yang sama untuk kedua kelompok."
+      },
+      {
+        "kelompok": "D4 Pengukuran outcome",
+        "domain": "4.3 Penilai outcome tahu alokasi?",
+        "penilaian": "Tidak ada informasi",
+        "kelas": "mid",
+        "bukti": "Diare dicatat perawat; status blinding penilai tidak disebut, Metode hal. 146.",
+        "alasan": "Paper tidak menyatakan perawat buta terhadap alokasi, jadi tidak bisa dianggap buta."
+      },
+      {
+        "kelompok": "D4 Pengukuran outcome",
+        "domain": "4.4 Penilaian bisa dipengaruhi pengetahuan alokasi?",
+        "penilaian": "Mungkin ya",
+        "kelas": "mid",
+        "bukti": "Diare dicatat berdasarkan laporan dan observasi, Metode hal. 146.",
+        "alasan": "Frekuensi dan konsistensi tinja bersifat subjektif, sehingga rentan dipengaruhi pengetahuan alokasi."
+      },
+      {
+        "kelompok": "D4 Pengukuran outcome",
+        "domain": "4.5 Besar kemungkinan dipengaruhi?",
+        "penilaian": "Mungkin tidak",
+        "kelas": "mid",
+        "bukti": "Plasebo identik, Metode hal. 146.",
+        "alasan": "Plasebo yang identik meredam sebagian risiko, tetapi tidak menghilangkannya."
+      },
+      {
+        "kelompok": "D4 Pengukuran outcome",
+        "domain": "Penilaian domain D4",
+        "penilaian": "Some concerns",
+        "kelas": "mid",
+        "bukti": "Gabungan 4.1 sampai 4.5.",
+        "alasan": "Pengukuran tepat dan seragam, namun status blinding penilai pada outcome subjektif tidak diketahui.",
+        "rangkuman": true
+      },
+      {
+        "kelompok": "D5 Pelaporan selektif",
+        "domain": "5.1 Analisis sesuai rencana yang ditetapkan sebelum data tersedia?",
+        "penilaian": "Tidak",
+        "kelas": "bad",
+        "bukti": "Outcome primer di registrasi 'diare apa pun', di paper menjadi AAD, registrasi dan Metode hal. 145.",
+        "alasan": "Outcome primer berubah dari yang didaftarkan tanpa alasan terbuka; ini inti pelaporan selektif."
+      },
+      {
+        "kelompok": "D5 Pelaporan selektif",
+        "domain": "5.2 Hasil dipilih dari beberapa pengukuran outcome?",
+        "penilaian": "Mungkin ya",
+        "kelas": "mid",
+        "bukti": "Beberapa definisi diare diukur, Tabel 2.",
+        "alasan": "Ada lebih dari satu definisi diare yang dianalisis, sehingga pemilihan definisi yang menguntungkan tidak dapat disingkirkan."
+      },
+      {
+        "kelompok": "D5 Pelaporan selektif",
+        "domain": "5.3 Hasil dipilih dari beberapa analisis?",
+        "penilaian": "Tidak ada informasi",
+        "kelas": "mid",
+        "bukti": "Tidak disebut rencana analisis statistik, Metode hal. 147.",
+        "alasan": "Tanpa rencana analisis tertulis, tidak bisa dinilai apakah analisis dipilih belakangan."
+      },
+      {
+        "kelompok": "D5 Pelaporan selektif",
+        "domain": "Penilaian domain D5",
+        "penilaian": "High",
+        "kelas": "bad",
+        "bukti": "Gabungan 5.1 sampai 5.3.",
+        "alasan": "Perubahan outcome primer dari registrasi sudah cukup menetapkan High pada domain ini.",
+        "rangkuman": true
+      }
     ],
     "validity_overall": "Overall High risk of bias karena dua domain High (D2 dan D5). Arah bias kemungkinan membesarkan efek probiotik.",
     "importance": [
@@ -103,60 +350,168 @@
     "Pendanaan produsen tanpa penjelasan peran sponsor; temuan penyaji: ITT tidak dilaporkan sama sekali dan penulis tidak membahasnya sebagai keterbatasan."
   ],
   "rencana_presentasi": [
-    {"slide": "Cover, identitas, alasan memilih", "pesan": "Paper RCT terindeks, relevan dengan kasus AAD di bangsal, didanai industri (sebut sejak awal).", "menit": 2},
-    {"slide": "Latar belakang, PICO", "pesan": "AAD sering, belum ada protokol probiotik; PICO dari Methods, bukan dari abstrak.", "menit": 3},
-    {"slide": "Metode 1/2, 2/2", "pesan": "Randomisasi blok, double-blind, analisis per-protocol (tandai sebagai masalah).", "menit": 3},
-    {"slide": "Alur partisipan, karakteristik dasar", "pesan": "340 ke 300; loss 15 vs 25; baseline seimbang.", "menit": 2},
-    {"slide": "Hasil utama, figur kunci", "pesan": "8% vs 18%, RR 0,44, ARR 10%, NNT 10 dengan CI lebar; lama rawat -0,8 hari.", "menit": 4},
-    {"slide": "Validity RCT (RoB 2)", "pesan": "Overall High: D2 dan D5; tiap domain dengan bukti halaman.", "menit": 4},
-    {"slide": "Importance & applicability", "pesan": "Efek bermakna klinis tapi tidak presisi; NNT lokal sekitar 36 bila risiko dasar 5%.", "menit": 2},
-    {"slide": "Kekuatan & kelemahan, GRADE", "pesan": "Kelemahan temuan penyaji: ITT tidak ada; GRADE Low.", "menit": 2},
-    {"slide": "Kesimpulan, diskusi, referensi", "pesan": "Bedakan kesimpulan penulis vs penyaji; ajukan 3 pertanyaan diskusi.", "menit": 3}
+    {
+      "slide": "Cover, identitas, alasan memilih",
+      "pesan": "Paper RCT terindeks, relevan dengan kasus AAD di bangsal, didanai industri (sebut sejak awal).",
+      "menit": 2
+    },
+    {
+      "slide": "Latar belakang, PICO",
+      "pesan": "AAD sering, belum ada protokol probiotik; PICO dari Methods, bukan dari abstrak.",
+      "menit": 3
+    },
+    {
+      "slide": "Metode 1/2, 2/2",
+      "pesan": "Randomisasi blok, double-blind, analisis per-protocol (tandai sebagai masalah).",
+      "menit": 3
+    },
+    {
+      "slide": "Alur partisipan, karakteristik dasar",
+      "pesan": "340 ke 300; loss 15 vs 25; baseline seimbang.",
+      "menit": 2
+    },
+    {
+      "slide": "Hasil utama, figur kunci",
+      "pesan": "8% vs 18%, RR 0,44, ARR 10%, NNT 10 dengan CI lebar; lama rawat -0,8 hari.",
+      "menit": 4
+    },
+    {
+      "slide": "Validity RCT (RoB 2)",
+      "pesan": "Overall High: D2 dan D5; tiap domain dengan bukti halaman.",
+      "menit": 4
+    },
+    {
+      "slide": "Importance & applicability",
+      "pesan": "Efek bermakna klinis tapi tidak presisi; NNT lokal sekitar 36 bila risiko dasar 5%.",
+      "menit": 2
+    },
+    {
+      "slide": "Kekuatan & kelemahan, GRADE",
+      "pesan": "Kelemahan temuan penyaji: ITT tidak ada; GRADE Low.",
+      "menit": 2
+    },
+    {
+      "slide": "Kesimpulan, diskusi, referensi",
+      "pesan": "Bedakan kesimpulan penulis vs penyaji; ajukan 3 pertanyaan diskusi.",
+      "menit": 3
+    }
   ],
   "pertanyaan": [
-    {"kategori": "Pemilihan", "pertanyaan": "Kenapa memilih paper ini?", "jawaban": "AAD sering kami temui di bangsal dan RS belum punya protokol probiotik. Paper ini RCT dengan outcome klinis yang relevan dan terindeks. Setelah appraisal, risk of bias-nya tinggi, jadi saya memakainya untuk mendiskusikan apakah buktinya cukup, bukan untuk langsung mengubah praktik."},
-    {"kategori": "PICO", "pertanyaan": "Sebutkan PICO-nya dan dari mana Anda ambil.", "jawaban": "P dewasa rawat inap yang baru mulai antibiotik, I probiotik multi-strain selama antibiotik ditambah 7 hari, C plasebo identik, O AAD dalam 30 hari. Saya ambil dari kriteria inklusi dan definisi outcome di Methods halaman 146."},
-    {"kategori": "Metode", "pertanyaan": "Analisisnya ITT atau per-protocol? Apa konsekuensinya?", "jawaban": "Per-protocol, ITT tidak dilaporkan. Karena 25 pasien plasebo dan 15 pasien probiotik dikeluarkan dengan alasan berbeda, keseimbangan hasil randomisasi bisa hilang dan efek cenderung membesar. Ini alasan saya menilai domain 2 High."},
-    {"kategori": "Metode", "pertanyaan": "Apa bedanya allocation concealment dengan blinding? Di paper ini bagaimana?", "jawaban": "Concealment melindungi proses memasukkan pasien ke kelompok sebelum randomisasi; blinding melindungi setelahnya. Urutan acaknya jelas (blok komputer), tetapi cara menyimpan daftarnya tidak dijelaskan, jadi saya nilai some concerns. Blinding pasien dan klinisi ada lewat plasebo identik."},
-    {"kategori": "Statistik", "pertanyaan": "Berapa NNT-nya dan bagaimana menghitungnya?", "jawaban": "CER 18%, EER 8%, ARR 10%, jadi NNT 1 dibagi 0,10 sama dengan 10. Saya hitung ulang sendiri. CI NNT sekitar 6 sampai 41, jadi presisinya rendah."},
-    {"kategori": "Statistik", "pertanyaan": "RRR 56% kan besar. Kenapa Anda menekankan angka absolut?", "jawaban": "Efek relatif bergantung risiko dasar. Di RS dengan risiko dasar 5%, RRR yang sama hanya memberi ARR sekitar 2,8% dan NNT sekitar 36. Angka absolut lebih jujur untuk keputusan klinis dan biaya."},
-    {"kategori": "Statistik", "pertanyaan": "Lama rawat turun 0,8 hari dengan p < 0,001. Itu bermakna klinis?", "jawaban": "Bermakna statistik karena CI -1,24 sampai -0,36 tidak memotong 0. Secara klinis 0,8 hari cukup relevan untuk bed occupancy, tetapi outcome ini juga terdampak per-protocol, dan tidak ada MCID baku untuk lama rawat. Perlu ditimbang dengan biaya probiotik."},
-    {"kategori": "Appraisal", "pertanyaan": "Overall risk of bias-nya apa dan kenapa?", "jawaban": "High, karena dua domain High: deviasi dari intervensi (per-protocol dengan attrition tidak seimbang) dan pelaporan selektif (outcome primer berbeda dari registrasi). Menurut aturan RoB 2, satu domain High sudah cukup membuat overall High."},
-    {"kategori": "Appraisal", "pertanyaan": "Outcome primernya berubah dari registrasi. Seberapa serius?", "jawaban": "Serius, karena membuka kemungkinan penulis memilih definisi yang hasilnya paling baik. Bersama pendanaan produsen, ini menambah kekhawatiran bias pelaporan. Saya tidak menuduh, tetapi menurunkan keyakinan."},
-    {"kategori": "Appraisal", "pertanyaan": "Didanai industri. Jadi hasilnya tidak bisa dipercaya?", "jawaban": "Pendanaan industri tidak otomatis membatalkan hasil. Yang dinilai adalah apakah desain dan pelaporan melindungi dari bias. Di sini peran sponsor tidak dijelaskan dan ada masalah pelaporan selektif, sehingga kekhawatirannya bertambah."},
-    {"kategori": "Applicability", "pertanyaan": "Bisa diterapkan di bangsal kita?", "jawaban": "Populasinya mirip pasien rawat inap umum, tetapi imunokompromais dan pasien dengan CVC dieksklusi, padahal di bangsal kita banyak. Produk dan strainnya belum tentu sama dengan yang ada di formularium, dan umumnya tidak ditanggung JKN. Jadi penerapannya terbatas dan perlu data lokal."},
-    {"kategori": "Applicability", "pertanyaan": "Apakah aman untuk pasien imunokompromais?", "jawaban": "Paper ini tidak bisa menjawab karena pasien imunokompromais dieksklusi. Di literatur ada laporan kasus bakteremia dan fungemia terkait probiotik pada pasien dengan CVC atau imunosupresi, jadi saya tidak akan menggeneralisasi ke kelompok itu."},
-    {"kategori": "Kesimpulan", "pertanyaan": "Kesimpulan Anda berbeda dengan penulis. Kenapa?", "jawaban": "Penulis menyimpulkan probiotik efektif. Setelah appraisal, saya menilai buktinya low certainty karena risk of bias tinggi dan CI lebar. Belum cukup untuk protokol rutin; usul saya menunggu SR atau RCT dengan ITT, atau mengumpulkan data risiko dasar AAD di RS kita."},
-    {"kategori": "Jebakan", "pertanyaan": "Berapa angka CDI di masing-masing kelompok?", "jawaban": "Data CDI tidak dilaporkan terpisah di paper ini; outcome-nya AAD secara umum. Saya tidak mau menebak. Itu justru keterbatasan, karena CDI adalah outcome yang paling penting secara klinis."},
-    {"kategori": "Jebakan", "pertanyaan": "Kalau begitu, bagaimana Anda akan mendesain studi yang lebih baik?", "jawaban": "RCT dengan concealment terpusat, penilai outcome blind, analisis ITT dengan penanganan data hilang, outcome primer terdaftar sebelum mulai dan sama di laporan, CDI sebagai outcome sekunder wajib, serta pendanaan independen."}
+    {
+      "kategori": "Pemilihan",
+      "pertanyaan": "Kenapa memilih paper ini?",
+      "jawaban": "AAD sering kami temui di bangsal dan RS belum punya protokol probiotik. Paper ini RCT dengan outcome klinis yang relevan dan terindeks. Setelah appraisal, risk of bias-nya tinggi, jadi saya memakainya untuk mendiskusikan apakah buktinya cukup, bukan untuk langsung mengubah praktik."
+    },
+    {
+      "kategori": "PICO",
+      "pertanyaan": "Sebutkan PICO-nya dan dari mana Anda ambil.",
+      "jawaban": "P dewasa rawat inap yang baru mulai antibiotik, I probiotik multi-strain selama antibiotik ditambah 7 hari, C plasebo identik, O AAD dalam 30 hari. Saya ambil dari kriteria inklusi dan definisi outcome di Methods halaman 146."
+    },
+    {
+      "kategori": "Metode",
+      "pertanyaan": "Analisisnya ITT atau per-protocol? Apa konsekuensinya?",
+      "jawaban": "Per-protocol, ITT tidak dilaporkan. Karena 25 pasien plasebo dan 15 pasien probiotik dikeluarkan dengan alasan berbeda, keseimbangan hasil randomisasi bisa hilang dan efek cenderung membesar. Ini alasan saya menilai domain 2 High."
+    },
+    {
+      "kategori": "Metode",
+      "pertanyaan": "Apa bedanya allocation concealment dengan blinding? Di paper ini bagaimana?",
+      "jawaban": "Concealment melindungi proses memasukkan pasien ke kelompok sebelum randomisasi; blinding melindungi setelahnya. Urutan acaknya jelas (blok komputer), tetapi cara menyimpan daftarnya tidak dijelaskan, jadi saya nilai some concerns. Blinding pasien dan klinisi ada lewat plasebo identik."
+    },
+    {
+      "kategori": "Statistik",
+      "pertanyaan": "Berapa NNT-nya dan bagaimana menghitungnya?",
+      "jawaban": "CER 18%, EER 8%, ARR 10%, jadi NNT 1 dibagi 0,10 sama dengan 10. Saya hitung ulang sendiri. CI NNT sekitar 6 sampai 41, jadi presisinya rendah."
+    },
+    {
+      "kategori": "Statistik",
+      "pertanyaan": "RRR 56% kan besar. Kenapa Anda menekankan angka absolut?",
+      "jawaban": "Efek relatif bergantung risiko dasar. Di RS dengan risiko dasar 5%, RRR yang sama hanya memberi ARR sekitar 2,8% dan NNT sekitar 36. Angka absolut lebih jujur untuk keputusan klinis dan biaya."
+    },
+    {
+      "kategori": "Statistik",
+      "pertanyaan": "Lama rawat turun 0,8 hari dengan p < 0,001. Itu bermakna klinis?",
+      "jawaban": "Bermakna statistik karena CI -1,24 sampai -0,36 tidak memotong 0. Secara klinis 0,8 hari cukup relevan untuk bed occupancy, tetapi outcome ini juga terdampak per-protocol, dan tidak ada MCID baku untuk lama rawat. Perlu ditimbang dengan biaya probiotik."
+    },
+    {
+      "kategori": "Appraisal",
+      "pertanyaan": "Overall risk of bias-nya apa dan kenapa?",
+      "jawaban": "High, karena dua domain High: deviasi dari intervensi (per-protocol dengan attrition tidak seimbang) dan pelaporan selektif (outcome primer berbeda dari registrasi). Menurut aturan RoB 2, satu domain High sudah cukup membuat overall High."
+    },
+    {
+      "kategori": "Appraisal",
+      "pertanyaan": "Outcome primernya berubah dari registrasi. Seberapa serius?",
+      "jawaban": "Serius, karena membuka kemungkinan penulis memilih definisi yang hasilnya paling baik. Bersama pendanaan produsen, ini menambah kekhawatiran bias pelaporan. Saya tidak menuduh, tetapi menurunkan keyakinan."
+    },
+    {
+      "kategori": "Appraisal",
+      "pertanyaan": "Didanai industri. Jadi hasilnya tidak bisa dipercaya?",
+      "jawaban": "Pendanaan industri tidak otomatis membatalkan hasil. Yang dinilai adalah apakah desain dan pelaporan melindungi dari bias. Di sini peran sponsor tidak dijelaskan dan ada masalah pelaporan selektif, sehingga kekhawatirannya bertambah."
+    },
+    {
+      "kategori": "Applicability",
+      "pertanyaan": "Bisa diterapkan di bangsal kita?",
+      "jawaban": "Populasinya mirip pasien rawat inap umum, tetapi imunokompromais dan pasien dengan CVC dieksklusi, padahal di bangsal kita banyak. Produk dan strainnya belum tentu sama dengan yang ada di formularium, dan umumnya tidak ditanggung JKN. Jadi penerapannya terbatas dan perlu data lokal."
+    },
+    {
+      "kategori": "Applicability",
+      "pertanyaan": "Apakah aman untuk pasien imunokompromais?",
+      "jawaban": "Paper ini tidak bisa menjawab karena pasien imunokompromais dieksklusi. Di literatur ada laporan kasus bakteremia dan fungemia terkait probiotik pada pasien dengan CVC atau imunosupresi, jadi saya tidak akan menggeneralisasi ke kelompok itu."
+    },
+    {
+      "kategori": "Kesimpulan",
+      "pertanyaan": "Kesimpulan Anda berbeda dengan penulis. Kenapa?",
+      "jawaban": "Penulis menyimpulkan probiotik efektif. Setelah appraisal, saya menilai buktinya low certainty karena risk of bias tinggi dan CI lebar. Belum cukup untuk protokol rutin; usul saya menunggu SR atau RCT dengan ITT, atau mengumpulkan data risiko dasar AAD di RS kita."
+    },
+    {
+      "kategori": "Jebakan",
+      "pertanyaan": "Berapa angka CDI di masing-masing kelompok?",
+      "jawaban": "Data CDI tidak dilaporkan terpisah di paper ini; outcome-nya AAD secara umum. Saya tidak mau menebak. Itu justru keterbatasan, karena CDI adalah outcome yang paling penting secara klinis."
+    },
+    {
+      "kategori": "Jebakan",
+      "pertanyaan": "Kalau begitu, bagaimana Anda akan mendesain studi yang lebih baik?",
+      "jawaban": "RCT dengan concealment terpusat, penilai outcome blind, analisis ITT dengan penanganan data hilang, outcome primer terdaftar sebelum mulai dan sama di laporan, CDI sebagai outcome sekunder wajib, serta pendanaan independen."
+    }
   ],
   "checklist": [
-    {"waktu": "H-7 sampai H-5: pahami paper", "items": [
-      "Baca paper lengkap 3 lapis: abstrak dan figur, lalu Methods dan Results, lalu Discussion dan supplementary.",
-      "Unduh protokol dan registrasi uji klinis; bandingkan outcome primer dengan paper.",
-      "Tulis PICO dari Methods dan cek ulang dengan abstrak.",
-      "Isi worksheet RoB 2 per domain dengan bukti halaman/tabel.",
-      "Hitung ulang RR, ARR, NNT, dan MD dengan widget atau effect_calc.py."
-    ]},
-    {"waktu": "H-4 sampai H-3: siapkan slide", "items": [
-      "Isi semua placeholder di slide; tidak ada [kurung siku] tersisa.",
-      "Hapus kotak kuning PETUNJUK dan slide validity yang tidak dipakai.",
-      "Tempel figur asli (CONSORT, tabel hasil) dengan keterangan sumber.",
-      "Baris kesimpulan di slide Hasil Utama sudah diisi 1 kalimat dengan angka absolut.",
-      "Kirim draf slide ke pembimbing untuk masukan."
-    ]},
-    {"waktu": "H-2 sampai H-1: latihan", "items": [
-      "Latihan presentasi dengan timer; target 25 menit, sisakan 5 menit diskusi.",
-      "Latihan menjawab 15 mockup pertanyaan dengan suara keras tanpa melihat jawaban.",
-      "Siapkan jawaban untuk 3 pertanyaan diskusi di speaker notes.",
-      "Baca guideline terbaru yang relevan dan cek status probiotik di formularium RS.",
-      "Selesaikan semua item di daftar 'Wajib dicek ulang'."
-    ]},
-    {"waktu": "H-0: hari presentasi", "items": [
-      "Simpan slide dalam PPTX dan PDF di laptop dan flashdisk; cek font dan figur di laptop ruang presentasi.",
-      "Bawa cetakan paper dengan stabilo dan nomor halaman yang sering dirujuk.",
-      "Ulangi take-home message 1 kalimat sebelum masuk ruangan."
-    ]}
+    {
+      "waktu": "H-7 sampai H-5: pahami paper",
+      "items": [
+        "Baca paper lengkap 3 lapis: abstrak dan figur, lalu Methods dan Results, lalu Discussion dan supplementary.",
+        "Unduh protokol dan registrasi uji klinis; bandingkan outcome primer dengan paper.",
+        "Tulis PICO dari Methods dan cek ulang dengan abstrak.",
+        "Isi worksheet RoB 2 per domain dengan bukti halaman/tabel.",
+        "Hitung ulang RR, ARR, NNT, dan MD dengan widget atau effect_calc.py."
+      ]
+    },
+    {
+      "waktu": "H-4 sampai H-3: siapkan slide",
+      "items": [
+        "Isi semua placeholder di slide; tidak ada [kurung siku] tersisa.",
+        "Hapus kotak kuning PETUNJUK dan slide validity yang tidak dipakai.",
+        "Tempel figur asli (CONSORT, tabel hasil) dengan keterangan sumber.",
+        "Baris kesimpulan di slide Hasil Utama sudah diisi 1 kalimat dengan angka absolut.",
+        "Kirim draf slide ke pembimbing untuk masukan."
+      ]
+    },
+    {
+      "waktu": "H-2 sampai H-1: latihan",
+      "items": [
+        "Latihan presentasi dengan timer; target 25 menit, sisakan 5 menit diskusi.",
+        "Latihan menjawab 15 mockup pertanyaan dengan suara keras tanpa melihat jawaban.",
+        "Siapkan jawaban untuk 3 pertanyaan diskusi di speaker notes.",
+        "Baca guideline terbaru yang relevan dan cek status probiotik di formularium RS.",
+        "Selesaikan semua item di daftar 'Wajib dicek ulang'."
+      ]
+    },
+    {
+      "waktu": "H-0: hari presentasi",
+      "items": [
+        "Simpan slide dalam PPTX dan PDF di laptop dan flashdisk; cek font dan figur di laptop ruang presentasi.",
+        "Bawa cetakan paper dengan stabilo dan nomor halaman yang sering dirujuk.",
+        "Ulangi take-home message 1 kalimat sebelum masuk ruangan."
+      ]
+    }
   ],
   "cek_ulang": [
     "Nomor registrasi uji klinis dan bunyi outcome primer di registrasi.",

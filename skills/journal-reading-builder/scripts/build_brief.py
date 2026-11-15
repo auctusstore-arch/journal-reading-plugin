@@ -64,6 +64,47 @@ def words(obj):
     return 0
 
 
+LOKASI = re.compile(r"(hal\.?|halaman|tabel|table|figure|gambar|fig\.|suppl|appendix|lampiran|metode|methods|abstrak|abstract|tidak dilaporkan|not reported)", re.I)
+# (kata kunci di meta.tool_appraisal, jumlah minimum baris per item, apakah error bila kurang, nama)
+ITEM_MIN = [
+    ("newcastle", 7, True, "NOS (7 item cross-sectional, 8 item kohort/case-control)"),
+    ("nos", 7, True, "NOS (7 item cross-sectional, 8 item kohort/case-control)"),
+    ("amstar", 16, True, "AMSTAR 2 (16 item)"),
+    ("agree", 23, True, "AGREE II (23 item; boleh ditambah baris skor domain)"),
+    ("sanra", 6, True, "SANRA (6 item)"),
+    ("prisma-scr", 6, True, "PRISMA-ScR (6 aspek)"),
+    ("quadas", 11, False, "QUADAS-2 (11 signalling question: 3+2+2+4)"),
+    ("rob 2", 20, False, "RoB 2 (pertanyaan penuntun per domain, sekitar 20 baris)"),
+]
+
+
+def check_validity(b):
+    """Appraisal berbasis instrumen: tiap baris = satu ITEM, wajib ada bukti berlokasi dan alasan penilaian."""
+    errs = []
+    ap = b.get("appraisal", {})
+    rows = ap.get("validity", [])
+    tool = b.get("meta", {}).get("tool_appraisal", "").lower()
+    for i, v in enumerate(rows, 1):
+        nama = v.get("domain", f"baris {i}")
+        if not v.get("rangkuman") and (not str(v.get("bukti", "")).strip() or not LOKASI.search(str(v.get("bukti", "")))):
+            errs.append(f"validity '{nama}': 'bukti' harus memuat lokasi di paper (hal./tabel/figure) atau 'tidak dilaporkan'")
+        al = str(v.get("alasan", "")).strip()
+        if len(al.split()) < 8:
+            errs.append(f"validity '{nama}': 'alasan' wajib (min 8 kata): jelaskan MENGAPA dinilai demikian, "
+                        "hubungkan bukti di paper dengan kriteria item instrumen, bukan mengulang bukti")
+    for kunci, minimum, keras, nama in ITEM_MIN:
+        if kunci in tool:
+            if len(rows) < minimum:
+                msg = (f"validity hanya {len(rows)} baris; {nama} harus dibreakdown PER ITEM (min {minimum} baris), "
+                       "bukan ringkasan per domain")
+                if keras:
+                    errs.append(msg)
+                else:
+                    print("PERINGATAN:", msg)
+            break
+    return errs
+
+
 def check(b):
     errs, warns = [], []
     for k in REQUIRED:
@@ -97,13 +138,14 @@ def check(b):
         for f in ("pico", "hasil"):
             if f not in pa:
                 errs.append(f"field wajib hilang: paper.{f} (atau paper.rekomendasi untuk guideline, paper.poin_kunci untuk review)")
+    errs.extend(check_validity(b))
     raw = json.dumps(b, ensure_ascii=False)
     if "\u2014" in raw:
         errs.append("ada em dash di brief.json; ganti dengan koma, titik dua, atau kurung")
     n = words(b)
     if n < 2200:
         warns.append(f"{n} kata: terlalu pendek untuk brief ukuran sedang (target 2.200-4.000)")
-    elif n > 4000:
+    elif n > 4000 + words(b.get("appraisal", {}).get("validity", [])):
         warns.append(f"{n} kata: terlalu panjang, pangkas (target 2.200-4.000)")
     ceks = len(re.findall(r"\[CEK", raw))
     if ceks:
@@ -202,13 +244,17 @@ def build_html(b, pal):
         sec.append(f'''<section><h2><span>3</span>Isi paper</h2>{pico_html}<h3>Desain & metode</h3>{ul(pa["desain"])}
 <h3>Hasil utama</h3>{res}{("<h3>Angka kunci (sudah dihitung ulang)</h3>" + ul(pa["angka_kunci"])) if pa.get("angka_kunci") else ""}</section>''')
 
-    vrows = "".join(
-        f'<tr><td>{esc(v["domain"])}</td><td><span class="j {judgement_cls(v["penilaian"], v.get("kelas"))}">{esc(v["penilaian"])}</span></td><td>{esc(v["bukti"])}</td></tr>'
-        for v in ap["validity"])
+    vrows, _last = "", None
+    for v in ap["validity"]:
+        kel = v.get("kelompok", "")
+        kcell = esc(kel) if kel and kel != _last else ""
+        _last = kel or _last
+        vrows += (f'<tr><td>{kcell}</td><td>{esc(v["domain"])}</td><td><span class="j {judgement_cls(v["penilaian"], v.get("kelas"))}">{esc(v["penilaian"])}</span></td>'
+                  f'<td>{esc(v["bukti"])}</td><td>{esc(v["alasan"])}</td></tr>')
     g = ap.get("grade", {})
     sec.append(f'''<section><h2><span>4</span>Critical appraisal</h2>
 <h3>Validity ({esc(m.get("tool_appraisal", ""))})</h3>
-<div class="tw"><table><thead><tr><th>Domain</th><th>Penilaian</th><th>Bukti di paper</th></tr></thead><tbody>{vrows}</tbody></table></div>
+<div class="tw"><table><thead><tr><th>Kelompok</th><th>Item</th><th>Penilaian</th><th>Bukti di paper</th><th>Mengapa dinilai demikian</th></tr></thead><tbody>{vrows}</tbody></table></div>
 <p class="ov"><b>Kesimpulan validity:</b> {esc(ap["validity_overall"])}</p>
 <div class="two"><div><h3>Importance</h3>{ul(ap["importance"])}</div><div><h3>Applicability</h3>{ul(ap["applicability"])}</div></div>
 {f'<p class="ov"><b>GRADE ({esc(g.get("outcome", "outcome primer"))}): {esc(g.get("rating", ""))}.</b> {esc(g.get("alasan", ""))}</p>' if g else ""}
@@ -410,10 +456,15 @@ def build_docx(b, pal, path):
 
     doc.add_heading("4. Critical appraisal", 1)
     doc.add_heading(f'Validity ({m.get("tool_appraisal", "")})', 2)
-    vt = tbl(["Domain", "Penilaian", "Bukti di paper"], [[v["domain"], v["penilaian"], v["bukti"]] for v in ap["validity"]], [4.5, 3, 9.5])
+    _vr, _last = [], None
+    for v in ap["validity"]:
+        kel = v.get("kelompok", "")
+        _vr.append([kel if kel and kel != _last else "", v["domain"], v["penilaian"], v["bukti"], v["alasan"]])
+        _last = kel or _last
+    vt = tbl(["Kelompok", "Item", "Penilaian", "Bukti di paper", "Mengapa dinilai demikian"], _vr, [2.2, 3.0, 2.0, 4.6, 5.2])
     colors = {"ok": "d8f1e3", "mid": "fff0c2", "bad": "fbdcdc"}
     for i, v in enumerate(ap["validity"], 1):
-        shade(vt.rows[i].cells[1], colors[judgement_cls(v["penilaian"], v.get("kelas"))])
+        shade(vt.rows[i].cells[2], colors[judgement_cls(v["penilaian"], v.get("kelas"))])
     p = para(""); p.add_run("Kesimpulan validity: ").bold = True; p.add_run(ap["validity_overall"])
     doc.add_heading("Importance", 2); bullets(ap["importance"])
     doc.add_heading("Applicability", 2); bullets(ap["applicability"])

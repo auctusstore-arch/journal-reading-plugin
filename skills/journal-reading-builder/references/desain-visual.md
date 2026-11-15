@@ -30,7 +30,7 @@ Kartu **Do / Consider / Don't**: Do memuat kelas 1 dan 2a, Consider memuat 2b, D
 
 ## Pustaka ikon
 
-24 ikon garis buatan Auctus (berkas SVG di `assets/ikon/`, pratinjau `assets/ikon/_lembar-ikon.png`). Yang sudah diunggah ke akun Canva Auctus sebagai gambar putih transparan:
+42 ikon garis buatan Auctus (berkas SVG di `assets/ikon/`; pratinjau `_lembar-ikon.png` untuk 24 ikon pertama dan `_lembar-ikon-2.png` untuk 18 ikon tambahan 15 November 2026). Yang sudah diunggah ke akun Canva Auctus sebagai gambar putih transparan:
 
 | Nama | asset_id Canva | Dipakai untuk |
 |---|---|---|
@@ -57,6 +57,25 @@ Kartu **Do / Consider / Don't**: Do memuat kelas 1 dan 2a, Consider memuat 2b, D
 | `tanya` | MAHar-tKQxc | pertimbangkan, belum pasti, Consider |
 | `tetes` | MAHasGKGADw | darah, perdarahan, cairan |
 | `tim` | MAHasF3JJhk | tim multidisiplin, pasien dan keluarga |
+
+| `bandingkan` | MAHa9i6A4k8 | perbandingan, pre vs post, edisi lama vs baru |
+| `bayi` | MAHa9l-OOPo | neonatus, luaran perinatal, pediatrik |
+| `bendera` | MAHa9iLhl6c | kesimpulan, take-home message, tonggak |
+| `biaya` | MAHa9uBJo5k | biaya, pembiayaan, JKN, tarif |
+| `bintang` | MAHa9lCJCHQ | kualitas, skor NOS, kekuatan |
+| `dokumen` | MAHa9izALHE | identitas artikel, naskah, PNPK |
+| `gelembung` | MAHa9umLbxk | diskusi, pertanyaan konsulen, pendapat |
+| `gerigi` | MAHa9kJ6Rk4 | implementasi, proses, metode |
+| `grafik` | MAHa9m-HtAI | hasil, data, statistik |
+| `kacapembesar` | MAHa9lCNR_k | appraisal, penelusuran, telaah kritis |
+| `kalender` | MAHa9tthygo | periode studi, jadwal, tahun |
+| `klipboard` | MAHa9sInS3o | kriteria inklusi, checklist metode |
+| `kurva` | MAHa9r8k9u8 | distribusi, p-value, interval kepercayaan |
+| `lokasi` | MAHa9sWlJkY | setting, negara, daerah, rujukan |
+| `orang` | MAHa9tTiUUs | populasi, pasien, penyaji |
+| `rahim` | MAHa9pQCpC0 | obstetri, persalinan, kehamilan |
+| `rumahsakit` | MAHa9vCgg98 | RS, fasilitas, kapasitas ruang |
+| `timbangan` | MAHa9qPHcRk | risiko vs manfaat, keseimbangan, etika |
 
 Ikon `tambah` belum diunggah (unggah dari `assets/ikon/tambah.svg` bila perlu, setelah diubah ke PNG).
 
@@ -111,3 +130,32 @@ Pemesan menyunting sendiri deck guideline ICH setelah diserahkan. Perubahannya d
 - **Identitas ringkas.** Penulis ditulis "Greenberg SM (Chair); AHA/ASA", bukan daftar panjang. Kalimat tambahan di baris sumber ("Tabel asli memuat lebih banyak dokumen") dibuang.
 - **Nomor bagian memakai titik**: "3. Organization of ..." bukan "3 Organization of ...".
 - **Ukuran huruf rincian tabel jangan di bawah 19 px**; bila tidak muat, ringkas teksnya.
+
+### Pemetaan ikon untuk jalur studi (RCT, kohort, diagnostik, SR-MA)
+
+Aturan 5 di atas (minimal 2 sampai 3 ikon per slide isi) berlaku untuk **semua** deck, termasuk jalur studi, bukan hanya guideline. Pada deck JR dr. Putri Nabila (15 November 2026) ikon belum dipakai karena `desain-visual.md` tidak dibaca sebelum mengisi slide; jangan diulang. Pola yang dipakai pada deck acuan pemesan: lencana bulat berwarna aksen berisi ikon putih di pojok kanan atas kartu atau di sel pertama tabel.
+
+| Slide | Ikon yang disarankan |
+|---|---|
+| Identitas artikel | `dokumen`, `kalender`, `buku` |
+| Alasan memilih | `lampu` (relevansi), `sasaran` (kebaruan), `bintang` (kualitas) |
+| Latar belakang | `buku` (yang diketahui), `tanya` (knowledge gap), `sasaran` (tujuan) |
+| PICO | `orang` (P), `pil` atau `gerigi` (I), `bandingkan` (C), `sasaran` (O) |
+| Metode | `klipboard` (kriteria), `kalender` (periode), `gerigi` (analisis) |
+| Alur partisipan dan karakteristik dasar | `orang`, `tim` |
+| Hasil utama dan tabel | `grafik`, `kurva`, `naik`, `peringatan` (harm) |
+| Validity | `kacapembesar`, `bintang` |
+| Importance & applicability | `timbangan`, `rumahsakit`, `biaya`, `lokasi` |
+| Kekuatan & kelemahan | `centang` (kekuatan), `peringatan` (kelemahan) |
+| Level of evidence | `bintang`, `perisai` |
+| Perbandingan | `bandingkan`, `buku` |
+| Strategi daerah | `peta`, `lokasi`, `rumahsakit`, `jam` |
+| Kesimpulan | `bendera`, `lampu` |
+| Diskusi | `gelembung`, `tanya` |
+| Obstetri (isi klinis) | `rahim`, `bayi` |
+
+Cara memasang tetap seperti catatan di bawah (lencana `insert_shape`, ikon `insert_fill`, naikkan grup ke depan bila perlu). Tinggi kartu ikut berubah saat teks diganti, jadi pasang ikon setelah teks final.
+
+### Aturan: judul utama slide tidak diberi ikon
+
+Keputusan pemesan (15 November 2026): **heading utama slide (judul besar 54 px di kiri atas) tidak boleh diberi ikon atau lencana**, baik di kiri maupun di samping judul. Ikon hanya untuk kartu, baris tabel, daftar bernomor, atau kotak isi. Untuk slide yang isinya hanya satu tabel berbaris pendek (mis. Methods: Outcomes & Statistics, NOS, dua slide Comparison), cukup tanpa ikon atau beri ikon pada baris tabel bila tinggi barisnya 100 px atau lebih. Kolom "Slide" dengan "lencana judul" di pemetaan di atas tidak berlaku lagi.

@@ -373,3 +373,16 @@ Flag: `B` = teks berisi [placeholder] yang harus diganti, `P` = teks PETUNJUK (d
 - `B` [Nama bagian, mis. Metode]
 - `B` [Opsional. Duplikat slide ini untuk tiap bagian: Pendahuluan, Metode, Hasil, Appraisal, Kesimpulan]
 - Notes bawaan: SLIDE OPSIONAL. Pakai sebagai pembatas bagian bila presentasi panjang. Hapus bila tidak dipakai.
+### Halaman variasi berbutir (40 sampai 42, ketiga master)
+
+Ditambahkan 15 November 2026 dari slide hasil rapikan pemesan pada JR dr. Putri Nabila. Isinya semua berupa butir pendek (list disc), bukan paragraf. Pakai sebagai pengganti halaman asalnya, jangan menyertakan keduanya.
+
+| No | Pengganti halaman | Isi dan placeholder |
+|---|---|---|
+| 40 | 4 (Alasan memilih) | 3 kartu atas (Relevansi klinis berbutir, Kebaruan & dampak, Kualitas sumber, judul kartu 40 px) + kotak bawah PERTANYAAN KLINIS. Kartu atas top 225 tinggi 437, kotak bawah top 700. |
+| 41 | 6 (PICO) | Kartu P, I, C, O berbutir + kotak Desain Studi (Desain, Follow-up, Setting) berbutir. Kartu top 270 tinggi 465, kotak bawah top 760 tinggi 190. |
+| 42 | 20 (Kesimpulan & implikasi) | Kartu Kesimpulan penulis dan penyaji berbutir (top 240 tinggi 250), tiga kartu Praktik klinis, Sistem/kebijakan, Penelitian (top 515 tinggi 230), kotak TAKE-HOME MESSAGE (top 775). |
+
+Gunakan `find_and_replace_text` per butir (bukan `replace_text` pada seluruh kotak) bila ingin mempertahankan format list. Halaman 40 sampai 42 ada di master hijau, navy, dan maroon (navy dan maroon disalin dari hijau lalu diwarnai ulang dengan palet masing-masing pada 15 November 2026). Jumlah halaman ketiga master sekarang 42.
+
+Catatan penting saat mengisi: bentuk kartu dalam grup ikut menyesuaikan tinggi teks. Setelah `replace_text` atau `find_and_replace_text`, cek tinggi kartu dan samakan lagi (halaman 41: kartu 465 px, kotak Desain Studi top 760 tinggi 205; halaman 42: lihat tabel di atas).
