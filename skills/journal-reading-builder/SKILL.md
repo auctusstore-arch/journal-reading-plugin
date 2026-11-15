@@ -5,13 +5,14 @@ description: Tim internal Auctus. Membuat paket journal reading lengkap untuk PP
 
 # Journal Reading Builder
 
-Tujuan: dari 1 paper + kebutuhan 1 PPDS, hasilkan 5 deliverable yang bisa langsung dipakai tanpa diedit lagi:
+Tujuan: dari 1 paper + kebutuhan 1 PPDS, hasilkan 6 deliverable yang bisa langsung dipakai tanpa diedit lagi:
 
 1. **Desain Canva** berisi slide journal reading terisi penuh. Tautan Canva itulah yang diserahkan; tidak ada ekspor PPTX atau PDF.
 2. **Brief & Checklist Persiapan** dalam `.docx`.
 3. **Brief & Checklist Persiapan** dalam `.html` mandiri (checklist bisa dicentang, jawaban mockup bisa dibuka-tutup).
 4. **Skrip presentasi** dalam `.txt`, siap dibacakan TTS, untuk didengarkan PPDS sebagai latihan (dibuat setelah slide final).
 5. **Audio latihan** per slide (`.mp3`, Edge TTS) dari skrip itu, dibacakan kata demi kata.
+6. **Rangkuman TLDR** satu berkas `.txt` (`tldr-jurnal-reading.txt`) yang meringkas journal reading dan audionya (lihat Langkah 5c).
 
 "Siap presentasi" artinya tidak ada `[kurung siku]`, kotak kuning PETUNJUK, atau slide validity yang salah desain tersisa. Nomor slide sudah benar (tidak ada footer nama penyaji), figur asli paper sudah ditempel, dan speaker notes berisi poin bicara serta jawaban pertanyaan konsulen. Konsulen akan mengecek angka ke paper, jadi akurasi lebih penting daripada kecepatan. Satu angka karangan bisa mempermalukan PPDS di depan departemennya.
 
@@ -59,7 +60,7 @@ Disetujui pembimbing
 | Durasi (menit) | Wajib | Minta; jangan mengasumsikan 30 menit. |
 | Bahasa Slide | Wajib | Minta. Menentukan bahasa slide, notes, skrip, dan suara audio. |
 | Warna template | Wajib | Minta (navy / maroon / hijau). |
-| Status slide | Wajib | Minta. "belum" = buat dari awal; status lain = tanyakan desain yang sudah ada sebelum membuat baru. |
+| Status slide | Wajib | Minta. "belum" = buat dari awal. Bila PPDS sudah punya draf (PPTX, PDF, tautan Canva/Google Slides), minta berkasnya dan ikuti `references/jalur-draf-klien.md`; jangan membuat desain baru sebelum keputusan perbaiki-di-tempat atau pindah-template (D5). |
 | Disetujui pembimbing | Wajib | Minta. Bila "Tidak" atau "belum", sampaikan risikonya (paper bisa diganti) dan tanyakan apakah tetap dikerjakan. |
 | Judul paper | Opsional | Ambil dari paper. |
 | Pembimbing | Opsional | Baris pembimbing dihilangkan dari cover. Jangan mengarang nama. |
@@ -79,6 +80,8 @@ Tentukan jenis paper sejak intake, karena menentukan jalur kerja:
 - Studi primer atau SR-MA (termasuk systematic review tanpa meta-analisis): ikuti Langkah 2 sampai 6 di bawah.
 - **Guideline, konsensus, atau PNPK**: baca `references/jalur-guideline.md` dan ikuti jalur itu. Slide "Perbandingan dengan Edisi Sebelumnya" wajib dan hanya boleh diisi dari bagian perubahan di guideline baru atau dari PDF edisi lama yang dilampirkan (G2b). Bedanya yang paling penting: setelah ekstraksi, buat peta semua rekomendasi lalu **berhenti dan minta user menyetujui rekomendasi mana yang masuk slide**. Jangan memilih sendiri.
 - **Review article yang bukan systematic review (narrative review, scoping review)**: baca `references/jalur-review.md`. Klasifikasikan dulu jenis review-nya dari bagian Metode (R0). Polanya sama dengan guideline: peta isi berisi semua klaim kunci, lalu **user menyetujui klaim mana yang masuk slide**.
+
+- **Klien sudah punya draf slide** (berlaku untuk semua jenis paper di atas): baca `references/jalur-draf-klien.md`. Ekstraksi tetap dari paper dulu; draf diaudit terhadap paper (angka salah, klaim berlebihan, bagian kosong), dipetakan ke struktur JR, lalu **user memilih** perbaiki di tempat atau pindah ke template Auctus. File klien tidak pernah diubah langsung. Brief, skrip, audio, dan TLDR tetap dibuat seperti biasa dari slide final.
 
 User story/kebutuhan PPDS adalah input utama: alasan memilih paper, kasus pemicu, dan fokus konsulen masuk ke slide 4, ke mockup pertanyaan, dan ke bagian applicability. Bila PPDS tidak memberi kasus pemicu, hapus kotaknya atau isi "[perlu diisi]" merah dan tandai di laporan akhir. Jangan mengarang kasus atau identitas pasien.
 
@@ -112,7 +115,7 @@ Jangan lanjut ke slide sebelum ekstraksi lengkap. Semua deliverable bersumber da
    - `diag` untuk sensitivitas, spesifisitas, PPV, NPV, dan LR.
    - `mean` untuk MD dan SMD.
    Bila hasilnya berbeda dari paper, laporkan angka paper di slide. Selisihnya jadi catatan appraisal, bukan dikoreksi diam-diam. Hitung juga NNT lokal: 1 / (risiko dasar lokal x RRR). Bila risiko dasar lokal tidak diketahui, pakai contoh skenario dan sebut sebagai asumsi.
-2. Nilai validity dengan tool yang sesuai desain. Untuk setiap domain, sebut penilaian dan bukti halaman/tabel. Ikuti aturan overall resmi tool (mis. RoB 2: satu domain High membuat overall High; AMSTAR 2: satu kelemahan kritis membuat overall Low).
+2. Nilai validity dengan tool yang sesuai desain, **per item instrumen, bukan per domain** (berlaku untuk NOS, AGREE II, AMSTAR 2, QUADAS-2, RoB 2, SANRA, PRISMA-ScR). Contoh: domain Selection pada NOS dinilai item demi item (representativeness, pemilihan kelompok non-exposed, penentuan exposure, outcome belum ada di awal), masing-masing dengan keputusan sendiri. Untuk **setiap item** catat tiga hal: (a) penilaian dengan istilah tool, (b) **bukti**: apa yang tertulis di paper beserta lokasinya (hal./tabel/figure) atau "tidak dilaporkan", dan (c) **alasan**: mengapa bukti itu menghasilkan penilaian tersebut, dihubungkan ke kriteria item di instrumen (bukan mengulang bukti). Konsulen sering bertanya "kenapa item ini bintang/skornya segini", dan PPDS harus bisa menjawab dari catatan ini. Ikuti aturan overall resmi tool (mis. RoB 2: satu domain High membuat overall High; AMSTAR 2: satu kelemahan kritis membuat overall Low). Rincian format dan batas minimum: `references/brief-schema.md`, bagian "Appraisal berbasis instrumen".
 3. Tentukan importance (besar efek vs MCID, presisi CI), applicability (populasi, ketersediaan, Fornas/JKN, PNPK), dan GRADE untuk outcome primer.
 4. Tulis kesimpulan penyaji yang boleh berbeda dari penulis, dengan alasan dari appraisal.
 
@@ -120,7 +123,7 @@ Rujukan cepat rumus dan cara membaca: `references/stat-cheatsheet.md`. Contoh ja
 
 ## Langkah 4. Buat slide di Canva
 
-Baca `references/template-map.md` dan `references/desain-visual.md` dulu. Yang kedua memuat aturan tampilan yang wajib dipenuhi semua deck: tidak text wall, ada penekanan dan ikon, kode warna kelas rekomendasi, tabel dan algoritma dibuat ulang (bukan tangkapan layar), serta pustaka ikon beserta `asset_id`-nya.
+Baca `references/template-map.md` dan `references/desain-visual.md` dulu (wajib, termasuk pustaka ikon dan pemetaan ikon per slide; jalur studi juga harus memakai ikon, minimal 2 sampai 3 per slide isi). Yang kedua memuat aturan tampilan yang wajib dipenuhi semua deck: tidak text wall, ada penekanan dan ikon, kode warna kelas rekomendasi, tabel dan algoritma dibuat ulang (bukan tangkapan layar), serta pustaka ikon beserta `asset_id`-nya.
 
 Baca `references/template-map.md` dulu. File itu berisi ID master, daftar halaman, halaman mana dipakai untuk tiap desain studi, dan placeholder tiap halaman.
 
@@ -207,6 +210,8 @@ Tulis `brief.json` mengikuti `references/brief-schema.md`. Contoh lengkap dan ba
 
 Tujuan tiap bagian:
 
+- **Critical appraisal berbasis instrumen (WAJIB breakdown per item).** Tabel validity di brief berisi satu baris per item instrumen (NOS 7 sampai 8, AMSTAR 2 16, AGREE II 23, SANRA 6, dan seterusnya), tiap baris memuat penilaian, bukti berlokasi, dan **alasan mengapa dinilai demikian**. Domain boleh dirangkum di baris tambahan (`rangkuman: true`), tetapi tidak boleh menggantikan item. `build_brief.py` menolak brief yang alasannya kosong atau jumlah barisnya kurang dari item instrumen. Di slide validity, penyajian juga per item: bila tabel template tidak memuat semua item, gandakan halaman validity dan bagi itemnya (alasan singkat di slide, alasan lengkap di speaker notes dan brief). Pertanyaan mockup bagian Appraisal harus mencakup item yang kontroversial atau tidak diberi bintang.
+
 - **Konteks & dasar ilmu.** Hal yang PPDS harus kuasai di luar paper agar tidak gugup saat ditanya, misalnya patofisiologi, mekanisme obat atau tes, posisi guideline atau PNPK, dan istilah metodologi. Ini sering jadi titik lemah PPDS, jadi tulis cukup dalam tetapi padat.
 - **Apa yang dipresentasikan.** Satu baris per slide atau kelompok slide: pesan kunci dan alokasi menit. Total menit sedikit di bawah durasi, untuk menyisakan waktu diskusi.
 - **Mockup pertanyaan.** Isi 12-16 pertanyaan yang realistis untuk paper ini, bukan generik:
@@ -255,6 +260,24 @@ Aturan menulis narasi:
 
 **Aturan bahasa untuk semua keluaran (slide, notes, skrip, brief):** hindari kata "kita", jangan menulis rujukan halaman di subjudul, dan jangan mengisi data yang belum ada dengan asumsi (pakai `[perlu diisi]` merah atau hapus kotaknya). Rincian dan contoh di `references/desain-visual.md` bagian "Gaya bahasa dan isi".
 
+## Langkah 5c. Rangkuman TLDR (TXT)
+
+Dikerjakan paling akhir, setelah slide, brief, skrip, dan audio final, karena TLDR merangkum semuanya dan harus memakai angka yang identik. Satu berkas teks biasa (`tldr-jurnal-reading.txt`, bukan `.md`), tanpa format markdown (tanpa `#`, `**`, atau tabel), supaya bisa ditempel ke WhatsApp, email, atau dibacakan.
+
+Isi, dalam bahasa Indonesia tanpa em dash, **maksimal 2 menit** dibaca atau didengar (sekitar 250 kata pada 130 kata per menit; hitung dengan `wc -w`, jangan melebihi 260), urutan tetap. Bila terlalu panjang, ringkas butir 3, 4, dan 8 dulu, bukan membuang butir 5 (take-home message):
+
+1. Judul: penyaji, judul paper, jurnal dan tahun, DOI, tanggal presentasi.
+2. Pertanyaan penelitian dan desain studi (1 sampai 2 kalimat).
+3. Hasil utama: 3 sampai 5 butir berangka (n/N, persen, ukuran efek dengan 95% CI, p), angka yang sama dengan slide.
+4. Appraisal: tool yang dipakai, skor atau penilaian, dan GRADE atau level evidence; 3 kelemahan utama termasuk temuan penyaji.
+5. Kesimpulan penyaji dan take-home message (satu kalimat).
+6. Applicability dan, bila diminta fokus konsulen, jawaban singkatnya (mis. penerapan di Indonesia, strategi daerah).
+7. Audio: jumlah file, durasi total (dari `audio/daftar-audio.txt`), suara yang dipakai, dan bahasa audio; satu kalimat bahwa audio dibacakan dari `skrip-presentasi.txt` dan belum didengarkan oleh pembuat.
+8. Hal yang harus dicek PPDS (isi `cek_ulang`, versi ringkas).
+9. Tautan: Canva (edit dan view) serta daftar nama file di folder.
+
+Aturan: jangan menambah angka atau klaim yang tidak ada di `extract.md`, skrip, atau brief; salin dari sumber yang sama. Jangan memuat identitas pasien. Jangan membuat berkas TLDR terpisah untuk audio; rangkuman audio cukup butir 7.
+
 ## Langkah 6. Serahkan
 
 Folder output order (mis. `JR-<nama>-<penulis><tahun>/`) berisi:
@@ -263,6 +286,7 @@ Folder output order (mis. `JR-<nama>-<penulis><tahun>/`) berisi:
 - `brief-....html`
 - `skrip-presentasi.txt` dan `skrip-presentasi-tanpa-penanda.txt`
 - `audio/` berisi audio latihan per slide dan `latihan-lengkap.mp3`
+- `tldr-jurnal-reading.txt` (rangkuman TLDR, Langkah 5c)
 - `extract.md` (arsip internal)
 
 Laporkan ke user secara singkat:
@@ -280,9 +304,11 @@ Laporkan ke user secara singkat:
 
 - **Mengisi perbandingan edisi dari ingatan.** Pada guideline, perubahan dari edisi sebelumnya hanya diambil dari bagian perubahan di guideline baru atau dari PDF edisi lama; bila tidak ada, minta PDF-nya.
 - **Langsung mengerjakan begitu menerima PDF.** Tunggu formulir intake lengkap (Langkah 1); tanpa itu hanya boleh meminta formulir.
+- **Menyalin angka dari draf klien.** Draf diaudit terhadap paper, bukan dijadikan sumber `extract.md` (lihat `references/jalur-draf-klien.md`).
 - **Memakai angka dari abstrak.** Abstrak kadang berbeda dari tabel. Ambil dari Results/tabel.
 - **Hanya menampilkan RRR.** Selalu tampilkan angka absolut (n/N, %) dan ARR/NNT.
 - **Appraisal generik.** Contoh yang salah: "sampel kecil" tanpa angka. Setiap kelemahan harus spesifik dan disertai dampaknya (membesarkan atau mengecilkan efek).
+- **Appraisal diringkas per domain.** NOS "Selection: 3/4 bintang" tanpa menjelaskan item mana yang kehilangan bintang dan kenapa. Wajib per item dengan bukti dan alasan.
 - **Slide validity yang salah.** Template punya 6 halaman validity (RoB 2, NOS, QUADAS-2, AMSTAR 2, AGREE II, SANRA). Hanya 1 yang boleh tersisa.
 - **Isi melebihi kotak.** Lebih baik ringkas lalu taruh detail di notes daripada mengecilkan font di bawah 16 pt.
 - **Memilih rekomendasi guideline sendiri.** Pilihan isi slide guideline adalah keputusan user lewat peta rekomendasi, bukan keputusan penyusun.
@@ -292,3 +318,13 @@ Laporkan ke user secara singkat:
 - **Text wall.** Paragraf atau kalimat panjang di slide, tanpa kartu, ikon, atau penekanan. Lihat `references/desain-visual.md`.
 - **Tangkapan layar tabel atau algoritma.** Keduanya dibuat ulang di halaman 37 dan 38.
 - **Edit master.** Master dipakai publik lewat link view; jangan pernah mengubahnya.
+- **Menambah keterangan program studi di baris penyaji.** Pada cover dan slide penutup, tulis cukup "dr. Nama" dan departemen. Jangan menambahkan ", Resident in Obstetrics and Gynecology" (atau padanan program studi lain) di belakang nama penyaji; keputusan pemesan, tim mengedit slide sendiri. Ini hanya berlaku untuk teks slide, brief tetap memuat prodi di meta.
+- **Label kolom dan kartu memakai "Presenter's ...".** Pada slide berbahasa Inggris, tulis kepala kolom "Note" (bukan "Presenter's note") dan kartu "Assessment" (bukan "Presenter's assessment"). Padanan Indonesia: "Catatan" dan "Penilaian". Keputusan pemesan, tim mengedit slide sendiri.
+- **Judul kartu "How to read it".** Pada slide Figur Kunci berbahasa Inggris, tulis judul kartu kanan "Interpretation" (bukan "How to read it"). Padanan Indonesia: "Interpretasi" (bukan "Cara membaca"). Keputusan pemesan, tim mengedit slide sendiri.
+- **Judul kartu panjang untuk data yang tidak dilaporkan.** Pada slide luaran sekunder/maternal/neonatal berbahasa Inggris, judul kartu penjelasan cukup "Reporting Gap" (bukan "What the paper does not show"). Keputusan pemesan, tim mengedit slide sendiri.
+- **Font tabel terlalu kecil.** Teks sel tabel minimal sekitar 22,5 sampai 24 (ukuran yang tampil di Canva) untuk volume teks seperti slide Subgroup dan Statistical Interpretation (3 kolom x 5 baris, satu frasa per sel). Di API `edit-design` angka yang sama terbaca sekitar 30 sampai 32 px (isi sel 31,3 px, kepala kolom 34,3 px, label baris 33,3 px; 1 pt Canva = 1,33 px). Bila isi tidak muat, ringkas kalimatnya atau kurangi jumlah baris/kolom; jangan kecilkan font di bawah batas itu. Setelah mengisi tabel, cek `fontSize` sel hasilnya (mis. lewat `read-design` dengan `open_transaction` pada satu halaman) dan jangan membiarkan sel berukuran lebih kecil dari halaman acuan tadi. Keputusan pemesan, tim mengedit slide sendiri.
+- **PENTING: isi kartu berupa paragraf (wall of text).** Setiap kartu atau kotak yang berisi lebih dari satu klausa (mis. "Authors' conclusion", "Presenter's conclusion", "Clinical practice" di slide Kesimpulan & implikasi) wajib ditulis sebagai butir pendek, satu gagasan per butir, bukan satu paragraf. Pola yang benar: kalimat pembuka pendek bila perlu, lalu 2 sampai 3 butir (mis. "Results are mixed versus ARRIVE:" lalu butir "induction and pre-delivery stay rose", "cesarean did not fall (19.8% to 24.9%, p=0.224)", "the labor ward was strained"). Berlaku untuk semua slide berkartu: Latar belakang, Alasan memilih, Importance & applicability, Kekuatan & kelemahan, Penerapan, Pembahasan tematik, Kesimpulan. Di Canva gunakan `format_text` dengan `list_level: 1` dan `list_marker: "disc"` (atau tulis "• " per baris seperti di template) setelah `replace_text`; pastikan butir yang membungkus baris tetap rapi. Cek thumbnail: tidak boleh ada kartu dengan teks paragraf utuh. Keputusan pemesan, tim mengedit slide sendiri.
+- **Kotak atas menimpa kotak bawah.** Pada slide berpola 2 sampai 3 kartu di atas dan 1 kotak lebar di bawah (Alasan memilih, Latar belakang, PICO, Importance & applicability, Penerapan, Pembahasan tematik, Kesimpulan), kartu atas tidak boleh bertabrakan dengan kotak bawah. Acuan dari slide Alasan memilih yang sudah dirapikan pemesan: kartu atas top 225 tinggi 437 (berakhir 662), kotak bawah top 700 tinggi 209, jadi jarak sekitar 25 sampai 40 px, dan tiap lapis kartu (termasuk bayangan tipis di belakangnya) diberi tinggi yang sama. Untuk tata letak 3 baris (Kesimpulan): baris 1 top 240 tinggi 250, baris 2 top 515 tinggi 230, kotak bawah top 775. Bila teks lebih tinggi dari kartu, turunkan kotak bawah atau perpendek teks; jangan biarkan kartu menembus kotak bawah. Cek thumbnail setiap slide berpola ini. Di master hijau, halaman 4, 5, 6, 17, 20, 29, dan 32 dalam keadaan kosong tidak bertabrakan; tabrakan muncul ketika teks terisi lebih panjang dan kartu ikut membesar (pernah kartu PICO tumbuh dari 420 ke 500 sampai 620 px). Karena itu cek thumbnail setelah mengisi, lalu perkecil teks atau atur ulang tinggi kartu dan posisi kotak bawah seperti acuan di atas. Halaman variasi berbutir 40 sampai 42 di master hijau sudah memakai jarak aman (lihat `template-map.md`); master navy dan maroon juga sudah punya halaman variasi 40 sampai 42.
+- **Tinggi kartu berubah sendiri saat teks diganti.** Di Canva, kartu (grup) menyesuaikan tinggi dengan teks di dalamnya: setelah `replace_text` kartu bisa membesar (mis. kartu PICO 420 menjadi 620 px) atau menyusut (kartu Outcome 465 menjadi 345 px saat teks dipendekkan) sementara kotak di bawahnya tetap. Setelah mengisi slide berkartu, baca ulang tinggi bentuk kartu dan kembalikan ke tinggi seragam dengan `resize_element` pada bentuk kartu di dalam grup (bukan pada grupnya), termasuk bayangan tipis di belakangnya; lalu cek thumbnail.
+- **Ikon di samping judul utama slide.** Judul utama slide (54 px) tidak diberi ikon atau lencana. Ikon hanya untuk kartu, baris tabel (tinggi baris 100 px atau lebih), daftar bernomor, atau kotak isi (lihat `references/desain-visual.md`). Keputusan pemesan, 15 November 2026; deck dr. Putri sempat memasang lencana judul lalu dihapus.
+- **Deck berbahasa Inggris tetap diberi versi Indonesia untuk skrip dan audio.** Bila Bahasa Slide Inggris, buat skrip dan audio Inggris di folder utama (tulis sendiri `skrip-presentasi.txt`, jalankan `build_audio.py` dengan suara Inggris dan tanpa daftar `LAFAL`), lalu buat juga versi Indonesia di subfolder `versi-indonesia/` (`skrip.json` Indonesia, `build_script.py`, lalu `build_audio.py --voice id-ID-GadisNeural --lafal lafal.json --gabung`). Angka dan urutan slide harus identik dengan versi Inggris; nama asing (Shamoun, Bishop, Foley, Newcastle-Ottawa) dan singkatan khusus paper ditambahkan di `ejaan` atau `lafal.json`. Singkatan huruf besar seperti ARRIVE, GRADE, NICU, dan BMI wajib dieja di `ejaan` atau script berhenti. Tulis desimal dengan koma dan ribuan dengan huruf ("seribu sembilan ratus tujuh puluh"), bukan "1.970". Catat durasi total kedua versi di TLDR (butir 7). Permintaan pemesan, 15 November 2026.

@@ -131,7 +131,7 @@ Untuk tiap rekomendasi yang disetujui, tambahkan ke `extract.md`:
 - AGREE II menganjurkan minimal 2 penilai (lebih baik 4). Skor di sini dari satu penilai: tulis itu sebagai keterbatasan di slide validity dan di brief.
 - AGREE II menilai proses penyusunan dan pelaporan, bukan kebenaran klinis tiap rekomendasi. Kebenaran isi dinilai lewat G3 (bukti dasar, kemutakhiran, pembanding).
 
-Di `brief.json`, `appraisal.validity` berisi 6 baris domain dengan `penilaian` berupa persen (mis. "78%") dan `kelas` ("ok" / "mid" / "bad") untuk warna relatif antar domain. `appraisal.grade` dikosongkan. `appraisal.importance` berisi besar manfaat rekomendasi terpilih; `appraisal.applicability` berisi penerapan per rekomendasi di RS Indonesia (ketersediaan obat/alat, Fornas/JKN, SDM, waktu respons).
+Di `brief.json`, `appraisal.validity` berisi **23 baris item** (skor 1 sampai 7, `kelompok` = domain induknya, `bukti` dengan halaman, `alasan` mengapa skor itu), lalu 6 baris skor domain berupa persen (mis. "78%", `rangkuman: true`, `alasan` menyebut item yang menarik skor turun) dan `kelas` ("ok" / "mid" / "bad") untuk warna relatif antar domain. Aturan lengkap di `brief-schema.md` bagian "Appraisal berbasis instrumen". `appraisal.grade` dikosongkan. `appraisal.importance` berisi besar manfaat rekomendasi terpilih; `appraisal.applicability` berisi penerapan per rekomendasi di RS Indonesia (ketersediaan obat/alat, Fornas/JKN, SDM, waktu respons).
 
 ## G5. Susunan slide
 
