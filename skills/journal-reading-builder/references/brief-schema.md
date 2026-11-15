@@ -81,7 +81,7 @@ paper:
   tidak_dipresentasikan   [poin] 1 baris per bagian guideline yang tidak masuk slide
   angka_kunci             [poin] angka studi pendukung yang sudah dicek ke paper aslinya (opsional)
 appraisal:
-  validity                6 baris domain AGREE II: {domain, penilaian: "78%", kelas: "ok"|"mid"|"bad", bukti}
+  validity                23 baris item AGREE II {kelompok: "Domain N. ...", domain: "Item N. ...", penilaian: "6/7", kelas, bukti (hal.), alasan}, boleh ditambah 6 baris skor domain dengan rangkuman: true
   validity_overall        penilaian keseluruhan (_/7), rekomendasi pemakaian, domain terlemah, catatan satu penilai
   grade                   dikosongkan
 ```

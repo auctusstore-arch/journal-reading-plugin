@@ -146,5 +146,5 @@ Dipakai bersama video **Bab 9 (Siap ditanya konsulen)**. Contoh jawaban memakai 
 
 ## Latihan mandiri (H-2)
 1. Pilih 10 pertanyaan yang paling relevan dengan paper Anda. Wajib sertakan minimal 2 dari bagian D (statistik).
-2. Tulis jawaban maksimal 3 kalimat dengan teknik 5 langkah; simpan di **Speaker Notes** slide terkait.
+2. Tulis jawaban maksimal 3 kalimat dengan teknik 5 langkah; simpan di brief (bagian mockup pertanyaan); Speaker Notes slide berisi naskah skrip, bukan jawaban.
 3. Latih dengan teman atau **Prompt F** di `prompt-ai.md` (konsulen AI), lalu latihan dengan timer.
