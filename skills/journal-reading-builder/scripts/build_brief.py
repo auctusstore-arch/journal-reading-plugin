@@ -64,7 +64,7 @@ def words(obj):
     return 0
 
 
-LOKASI = re.compile(r"(hal\.?|halaman|tabel|table|figure|gambar|fig\.|suppl|appendix|lampiran|metode|methods|abstrak|abstract|tidak dilaporkan|not reported)", re.I)
+LOKASI = re.compile(r"(\be\d{2,4}\b|hal\.?|halaman|tabel|table|figure|gambar|fig\.|suppl|appendix|lampiran|metode|methods|abstrak|abstract|tidak dilaporkan|not reported)", re.I)
 # (kata kunci di meta.tool_appraisal, jumlah minimum baris per item, apakah error bila kurang, nama)
 ITEM_MIN = [
     ("newcastle", 7, True, "NOS (7 item cross-sectional, 8 item kohort/case-control)"),

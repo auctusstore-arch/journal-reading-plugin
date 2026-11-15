@@ -1,6 +1,6 @@
 ---
 name: journal-reading-builder
-description: Tim internal Auctus. Membuat paket journal reading lengkap untuk PPDS dari paper + kebutuhan mereka. Hasilnya slide Canva yang benar-benar siap presentasi (dari template journal reading Auctus navy/maroon/hijau) plus Brief & Checklist Persiapan dalam DOCX dan HTML (konteks/dasar ilmu, appraisal, apa yang dipresentasikan, mockup pertanyaan konsulen, checklist H-7 sampai H-0). Pakai skill ini setiap kali ada permintaan journal reading, telaah jurnal, critical appraisal untuk presentasi, "buatkan slide JR", "bikin PPT journal reading", "brief journal reading", order jasa journal reading dari residen/PPDS, atau ada PDF paper yang harus dijadikan presentasi ilmiah (studi primer, SR-MA, guideline/konsensus/PNPK, maupun review article), walaupun user tidak menyebut kata "skill" atau "template".
+description: Tim internal Auctus. Membuat paket journal reading lengkap untuk PPDS dari paper + kebutuhan mereka. Hasilnya slide Canva yang benar-benar siap presentasi (dari template journal reading Auctus navy/maroon/hijau) plus Brief & Checklist Persiapan dalam DOCX dan HTML (konteks/dasar ilmu, appraisal, apa yang dipresentasikan, mockup pertanyaan konsulen, checklist H-7 sampai H-0), serta perangkat sesi Zoom 1-on-1 (form pre-zoom, panduan tutor, form post-zoom). Pakai skill ini setiap kali ada permintaan journal reading, telaah jurnal, critical appraisal untuk presentasi, "buatkan slide JR", "bikin PPT journal reading", "brief journal reading", order jasa journal reading dari residen/PPDS, persiapan sesi Zoom journal reading, "form pre-zoom", "panduan tutor", jawaban form AUCTUS-JAWABAN yang ditempel, atau ada PDF paper yang harus dijadikan presentasi ilmiah (studi primer, SR-MA, guideline/konsensus/PNPK, maupun review article), walaupun user tidak menyebut kata "skill" atau "template".
 ---
 
 # Journal Reading Builder
@@ -13,6 +13,8 @@ Tujuan: dari 1 paper + kebutuhan 1 PPDS, hasilkan 6 deliverable yang bisa langsu
 4. **Skrip presentasi** dalam `.txt`, siap dibacakan TTS, untuk didengarkan PPDS sebagai latihan (dibuat setelah slide final).
 5. **Audio latihan** per slide (`.mp3`, Edge TTS) dari skrip itu, dibacakan kata demi kata.
 6. **Rangkuman TLDR** satu berkas `.txt` (`tldr-jurnal-reading.txt`) yang meringkas journal reading dan audionya (lihat Langkah 5c).
+
+Untuk order yang memuat sesi Zoom (Complete Bundle atau Zoom Only), ada tiga keluaran tambahan: form pre-zoom, panduan tutor, dan form post-zoom (Langkah 7).
 
 "Siap presentasi" artinya tidak ada `[kurung siku]`, kotak kuning PETUNJUK, atau slide validity yang salah desain tersisa. Nomor slide sudah benar (tidak ada footer nama penyaji), figur asli paper sudah ditempel, dan speaker notes berisi poin bicara serta jawaban pertanyaan konsulen. Konsulen akan mengecek angka ke paper, jadi akurasi lebih penting daripada kecepatan. Satu angka karangan bisa mempermalukan PPDS di depan departemennya.
 
@@ -66,6 +68,7 @@ Disetujui pembimbing
 | Pembimbing | Opsional | Baris pembimbing dihilangkan dari cover. Jangan mengarang nama. |
 | Alasan / kasus pemicu | Opsional | Kotak kasus pemicu dihapus atau diisi "[perlu diisi]" merah. Jangan mengarang kasus atau identitas pasien. |
 | Fokus konsulen | Opsional | Pakai sebaran pertanyaan standar di brief. |
+| Format departemen / contoh slide klien | Opsional | Bila klien menempelkan daftar format atau melampirkan contoh deck, baca `references/casp-dan-pakem-klien.md`: pakem klien menjadi kelengkapan minimal dan urutannya diikuti. |
 | Jadwal Zoom | Opsional | Tidak dipakai di slide; catat di brief bila ada. |
 
 Aturan gerbang:
@@ -115,7 +118,7 @@ Jangan lanjut ke slide sebelum ekstraksi lengkap. Semua deliverable bersumber da
    - `diag` untuk sensitivitas, spesifisitas, PPV, NPV, dan LR.
    - `mean` untuk MD dan SMD.
    Bila hasilnya berbeda dari paper, laporkan angka paper di slide. Selisihnya jadi catatan appraisal, bukan dikoreksi diam-diam. Hitung juga NNT lokal: 1 / (risiko dasar lokal x RRR). Bila risiko dasar lokal tidak diketahui, pakai contoh skenario dan sebut sebagai asumsi.
-2. Nilai validity dengan tool yang sesuai desain, **per item instrumen, bukan per domain** (berlaku untuk NOS, AGREE II, AMSTAR 2, QUADAS-2, RoB 2, SANRA, PRISMA-ScR). Contoh: domain Selection pada NOS dinilai item demi item (representativeness, pemilihan kelompok non-exposed, penentuan exposure, outcome belum ada di awal), masing-masing dengan keputusan sendiri. Untuk **setiap item** catat tiga hal: (a) penilaian dengan istilah tool, (b) **bukti**: apa yang tertulis di paper beserta lokasinya (hal./tabel/figure) atau "tidak dilaporkan", dan (c) **alasan**: mengapa bukti itu menghasilkan penilaian tersebut, dihubungkan ke kriteria item di instrumen (bukan mengulang bukti). Konsulen sering bertanya "kenapa item ini bintang/skornya segini", dan PPDS harus bisa menjawab dari catatan ini. Ikuti aturan overall resmi tool (mis. RoB 2: satu domain High membuat overall High; AMSTAR 2: satu kelemahan kritis membuat overall Low). Rincian format dan batas minimum: `references/brief-schema.md`, bagian "Appraisal berbasis instrumen".
+2. **Bila klien meminta checklist CASP** (atau pakemnya memuat CASP), pakai CASP sebagai tool utama dengan jawaban Ya, Tidak, Belum pasti beserta bukti per pertanyaan; pilih checklist menurut desain studi (RCT 11, kohort 12, SR 10, dan seterusnya) dan tampilkan NOS, RoB 2, atau tool lain hanya sebagai pembanding. Rincian pertanyaan dan bentuk slide: `references/casp-dan-pakem-klien.md`. Selain itu, nilai validity dengan tool yang sesuai desain, **per item instrumen, bukan per domain** (berlaku untuk NOS, AGREE II, AMSTAR 2, QUADAS-2, RoB 2, SANRA, PRISMA-ScR). Contoh: domain Selection pada NOS dinilai item demi item (representativeness, pemilihan kelompok non-exposed, penentuan exposure, outcome belum ada di awal), masing-masing dengan keputusan sendiri. Untuk **setiap item** catat tiga hal: (a) penilaian dengan istilah tool, (b) **bukti**: apa yang tertulis di paper beserta lokasinya (hal./tabel/figure) atau "tidak dilaporkan", dan (c) **alasan**: mengapa bukti itu menghasilkan penilaian tersebut, dihubungkan ke kriteria item di instrumen (bukan mengulang bukti). Konsulen sering bertanya "kenapa item ini bintang/skornya segini", dan PPDS harus bisa menjawab dari catatan ini. Ikuti aturan overall resmi tool (mis. RoB 2: satu domain High membuat overall High; AMSTAR 2: satu kelemahan kritis membuat overall Low). Rincian format dan batas minimum: `references/brief-schema.md`, bagian "Appraisal berbasis instrumen".
 3. Tentukan importance (besar efek vs MCID, presisi CI), applicability (populasi, ketersediaan, Fornas/JKN, PNPK), dan GRADE untuk outcome primer.
 4. Tulis kesimpulan penyaji yang boleh berbeda dari penulis, dengan alasan dari appraisal.
 
@@ -156,7 +159,7 @@ Transaksi kedaluwarsa bila lama menganggur. Kerjakan langkah 4c-4e tanpa jeda pa
 
 - Tidak ada `footer`. Template tidak lagi memuat teks nama penyaji di kiri bawah slide (dihapus 12 November 2026 atas permintaan pemesan); nama penyaji hanya di cover dan slide penutup. Jangan menambahkannya kembali.
 - `texts`: setiap locator berflag `B` diisi teks final. Sel tabel `[ ]` dipetakan lewat posisi y,x dan label `T` di sekitarnya. Baris tabel yang tidak terpakai dimasukkan ke `delete` atau diisi "tidak dilaporkan".
-- `notes`: speaker notes untuk setiap page_id (lihat 4e).
+- `notes`: penanda singkat saja; isi akhirnya adalah naskah skrip per slide (lihat 4e dan Langkah 5b).
 - Pertahankan gaya template: judul tetap singkat dan netral. Pesan utama diletakkan di baris kesimpulan slide Hasil Utama dan slide Kesimpulan.
 - Isi harus ringkas agar muat di kotak. Patokan: tidak lebih dari kurang lebih 1,5x panjang placeholder. Satu sel tabel berisi 1 frasa, dan setiap kolom poin maksimal 3 poin.
 
@@ -177,13 +180,14 @@ Script menghapus PETUNJUK (dan sisa footer bila deck dibuat dari salinan lama), 
    - Elemen baru selalu berada di lapisan paling depan. Bila menutupi elemen lain, atur dengan `layer_element`.
    - Teks sumber "Sumber: Penulis et al., Jurnal Tahun, Figure X" wajib ada.
 
-**4e. Speaker notes.** Setiap slide berisi:
+**4e. Speaker notes = naskah skrip per slide (WAJIB).** Catatan pembicara Canva setiap slide berisi **naskah yang akan diucapkan di slide itu**, kata demi kata sama dengan `skrip-presentasi.txt`, dalam bahasa skrip yang dipilih klien (mis. slide Indonesia, skrip dan notes Inggris). Bukan poin bicara, bukan angka beserta lokasinya, dan bukan pertanyaan konsulen: itu semua ada di brief. Pemesan memutuskan ini pada 15 November 2026 karena notes dipakai penyaji membaca langsung saat presentasi.
 
-- 2-4 poin bicara dalam bahasa lisan.
-- Angka penting beserta lokasinya di paper.
-- 1-3 pertanyaan konsulen yang paling mungkin muncul di slide itu, beserta jawaban singkatnya.
-
-Slide Diskusi: tulis jawaban penyaji untuk ketiga pertanyaan diskusi. Notes ditulis untuk dibaca PPDS saat latihan, jadi gunakan sapaan orang pertama ("Saya menilai ...").
+- Selama Langkah 4 isi notes seperlunya (satu kalimat penanda), karena naskah baru ada setelah slide final.
+- Setelah skrip final (Langkah 5b), tulis naskah ke notes: satu operasi `replace_speaker_notes` per `page_id` dengan isi persis paragraf skrip slide itu, tanpa baris "Slide N. Judul." Pembatas bagian dan slide penutup ikut diberi naskah pendeknya.
+- Slide yang tidak dibacakan (Referensi) boleh berisi satu kalimat "Slide ini tidak dibacakan" dan catatan cek rujukan.
+- Pemetaan memakai urutan deck terkini, bukan nomor lama: baca `page_metadata` dari `read-design` dalam transaksi terbuka, karena pemesan bisa menyisipkan atau memecah slide (Identitas Artikel pernah dipecah dua, sehingga satu entri skrip dibagi ke dua halaman). Bila ada slide yang ditambah, tulis dulu naskahnya di skrip, baru ke notes.
+- Hasilkan satu file operasi per halaman dari skrip dengan skrip Python kecil, lalu serahkan ke beberapa subagen (sekitar 10 halaman per subagen) pada transaksi yang sama, lalu commit setelah persetujuan.
+- Setiap revisi slide yang mengubah isi wajib mengubah naskah di skrip dan notes sekaligus, supaya slide, notes, skrip, dan audio tidak berbeda.
 
 **4f. QA visual, lalu commit.**
 
@@ -249,7 +253,8 @@ Aturan menulis narasi:
 - **Angka dan istilah identik dengan slide dan brief.** Skrip bersumber dari `extract.md` yang sama.
 - **Singkatan dan simbol dieja.** Script mengeja yang umum (TDS, mmHg, persen, PCC, dan lain-lain); nama studi atau singkatan khusus paper ditambahkan di `ejaan` (mis. "INTERACT2": "INTERACT dua"), dan singkatan yang memang dibaca sebagai kata di `biarkan`. Script berhenti dengan MASALAH bila masih ada simbol atau singkatan huruf besar yang belum dieja.
 - **Durasi.** Isi `durasi_menit` dengan waktu bicara (durasi presentasi dikurangi waktu diskusi). Patokan 130 kata per menit; script memberi peringatan bila lebih dari 10% di atas target.
-- **Tidak memuat** jawaban pertanyaan konsulen (itu di brief dan speaker notes), penanda cek ulang, atau catatan untuk penyaji. Slide yang masih berisi data sementara harus dibereskan dulu, bukan dinarasikan.
+- **Skrip juga masuk ke speaker notes Canva** (aturan 4e): setelah skrip final, tempel narasi tiap slide ke notes halaman yang sama dan commit.
+- **Tidak memuat** jawaban pertanyaan konsulen (itu di brief), penanda cek ulang, atau catatan untuk penyaji. Slide yang masih berisi data sementara harus dibereskan dulu, bukan dinarasikan.
 - Untuk deck induk (semua rekomendasi masuk), skrip dibuat hanya untuk slide yang lolos pemilahan.
 - **Audio latihan (standar): Edge TTS, satu file per slide.** Setelah skrip final:
   ```
@@ -300,6 +305,17 @@ Laporkan ke user secara singkat:
 - Untuk guideline: siapa yang menyetujui pilihan rekomendasi, berapa yang masuk dari total, dan bahwa skor AGREE II berasal dari satu penilai. Sertakan `peta-rekomendasi.md` di folder output.
 - Untuk review article: jenis review dan dasarnya, siapa yang menyetujui pilihan klaim, hasil cek sitasi (berapa sesuai, dilebihkan, tidak bisa diakses), dan `peta-isi.md` di folder output.
 
+## Langkah 7. Fase Zoom (sesi 1-on-1)
+
+Dikerjakan untuk order yang memuat Zoom, termasuk Zoom Only yang dibeli tanpa slide. Ikuti `references/jalur-zoom.md`; format form dan blok jawaban di `references/format-form.md`.
+
+1. **Form pre-zoom (Z2).** Tulis bagian personal "Cek pemahaman paper" (4 sampai 6 pilihan ganda berkunci dan 1 soal take-home message) dari `extract.md`, lalu `uv run python3 scripts/build_form.py form-pre.json <outdir>/`. Script menambahkan pertanyaan baku kebutuhan sesi dan penilaian diri. Serahkan `form-pre-zoom.txt` ke admin untuk ditempel di portal (H-3 sebelum Zoom).
+2. **Baca jawaban (Z3).** User menempelkan blok `AUCTUS-JAWABAN v1` dari admin. Petakan kebutuhan, gap (self-rating rendah, soal salah, percaya diri berlebih), dan 2 sampai 3 area prioritas.
+3. **Panduan tutor (Z4).** Tulis `tutor.json`, lalu `uv run python3 scripts/build_tutor_guide.py tutor.json <outdir>/`. Isinya kebutuhan klien, peta gap, agenda 60 menit, titik review slide, 6 sampai 8 simulasi tanya-jawab berurutan prioritas, dan kandidat 3 perbaikan. Hanya untuk tutor.
+4. **Form post-zoom (Z5).** Bagian personal "Kebutuhan dokter" (apakah tiap kebutuhan terjawab, 1 sampai 2 soal cek ulang), lalu `build_form.py`. Script menambahkan kepuasan sesi, penilaian diri ulang, dan NPS.
+
+Form post-presentasi (H+1, testimoni dan izin pakai) baku di website; skill tidak membuatnya.
+
 ## Kesalahan yang sering terjadi
 
 - **Mengisi perbandingan edisi dari ingatan.** Pada guideline, perubahan dari edisi sebelumnya hanya diambil dari bagian perubahan di guideline baru atau dari PDF edisi lama; bila tidak ada, minta PDF-nya.
@@ -328,3 +344,9 @@ Laporkan ke user secara singkat:
 - **Tinggi kartu berubah sendiri saat teks diganti.** Di Canva, kartu (grup) menyesuaikan tinggi dengan teks di dalamnya: setelah `replace_text` kartu bisa membesar (mis. kartu PICO 420 menjadi 620 px) atau menyusut (kartu Outcome 465 menjadi 345 px saat teks dipendekkan) sementara kotak di bawahnya tetap. Setelah mengisi slide berkartu, baca ulang tinggi bentuk kartu dan kembalikan ke tinggi seragam dengan `resize_element` pada bentuk kartu di dalam grup (bukan pada grupnya), termasuk bayangan tipis di belakangnya; lalu cek thumbnail.
 - **Ikon di samping judul utama slide.** Judul utama slide (54 px) tidak diberi ikon atau lencana. Ikon hanya untuk kartu, baris tabel (tinggi baris 100 px atau lebih), daftar bernomor, atau kotak isi (lihat `references/desain-visual.md`). Keputusan pemesan, 15 November 2026; deck dr. Putri sempat memasang lencana judul lalu dihapus.
 - **Deck berbahasa Inggris tetap diberi versi Indonesia untuk skrip dan audio.** Bila Bahasa Slide Inggris, buat skrip dan audio Inggris di folder utama (tulis sendiri `skrip-presentasi.txt`, jalankan `build_audio.py` dengan suara Inggris dan tanpa daftar `LAFAL`), lalu buat juga versi Indonesia di subfolder `versi-indonesia/` (`skrip.json` Indonesia, `build_script.py`, lalu `build_audio.py --voice id-ID-GadisNeural --lafal lafal.json --gabung`). Angka dan urutan slide harus identik dengan versi Inggris; nama asing (Shamoun, Bishop, Foley, Newcastle-Ottawa) dan singkatan khusus paper ditambahkan di `ejaan` atau `lafal.json`. Singkatan huruf besar seperti ARRIVE, GRADE, NICU, dan BMI wajib dieja di `ejaan` atau script berhenti. Tulis desimal dengan koma dan ribuan dengan huruf ("seribu sembilan ratus tujuh puluh"), bukan "1.970". Catat durasi total kedua versi di TLDR (butir 7). Permintaan pemesan, 15 November 2026.
+- **Bayangan kotak bawah terlalu tinggi.** Bayangan tipis (bentuk hijau tua opasitas 0,1) di belakang kotak lebar bawah sering tertinggal lebih tinggi dari kotaknya, sehingga garis abu-abu menjulur di bawah kotak (pernah 180 dan 224 px di belakang kotak 166 px, slide CASP 30 sampai 32). Penyebabnya: bayangan bukan bagian grup kotak, jadi tidak ikut menyusut saat teks dipendekkan atau kotak diubah ukurannya. Aturannya: bayangan harus selalu sama lebar dan sama tinggi dengan kotak putihnya, digeser top +10 dan left +6 (kartu atas: top 245, left 106, kartu putih top 235, left 100). Setelah mengisi atau meresize slide berpola kartu atas + kotak bawah, baca tinggi kotak putih (anak grup), lalu `resize_element` bayangan ke lebar dan tinggi yang sama dan `position_element` ke top kotak +10, left kotak +6. Cek thumbnail: tidak boleh ada pita abu-abu di bawah atau di sisi kanan kotak lebih dari sekitar 10 px. Berlaku untuk semua slide berbayangan (Alasan memilih, Latar belakang, PICO, CASP, Applicability, Strategi).
+- **Mengabaikan pakem klien.** Bila klien memberi format atau contoh deck, urutan dan nama bagiannya adalah kelengkapan minimal (pembatas bagian, Identitas, Kriteria Partisipan, Alur, empat slide CASP, Validity, Importance, Applicability, footer sumber halaman). Tambahan penyusun boleh, tetapi tidak boleh menggeser atau menghapus bagian klien. Lihat `references/casp-dan-pakem-klien.md`.
+- **Menilai dengan NOS atau RoB padahal klien meminta CASP.** Pakai CASP sesuai desain dan jawab per pertanyaan (Ya, Tidak, Belum pasti) dengan bukti; tool lain hanya pembanding.
+- **Slide Indonesia, skrip dan audio Inggris** bila klien meminta begitu: skrip mengikuti urutan akhir deck termasuk pembatas bagian dan slide CASP; folder bahasa lain dari urutan lama dipindah ke `arsip-urutan-lama/`.
+- **Kunci jawaban bocor ke klien.** Kunci dan catatan soal cek pemahaman hanya di field `tutor` blok form; jangan menulisnya di teks soal, dan jangan mengirim `panduan-tutor` atau blok jawaban ke klien.
+- **Form pre-zoom generik.** Soal cek pemahaman harus dari angka dan konsep paper ini (mis. arti HR 0,78 di paper itu), bukan "apa itu RCT". Pertanyaan baku sudah disisipkan script; jangan menulis ulang.

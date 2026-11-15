@@ -77,6 +77,17 @@ User boleh memutuskan **semua** rekomendasi, tema, dan figur masuk, untuk dipila
 - Brief memuat tabel semua rekomendasi, sehingga jumlah kata jauh di atas target; peringatan panjang dari `build_brief.py` boleh diabaikan dan disebut di laporan.
 - `rencana_presentasi` tetap menganjurkan 6 sampai 10 rekomendasi untuk dibawakan.
 
+### Mode fokus departemen (revisi deck induk)
+
+Bila pemesan meminta deck dipadatkan untuk satu departemen (contoh: revisi 15 November 2026, guideline ICH untuk PPDS Bedah Saraf), kerjakan di **salinan** deck (`copy-design`), bukan di deck induk:
+
+- **Bagian departemen** tetap lengkap: rangkuman + tabel + algoritma, ditambah slide penjelasan prosedur (lihat G5 butir 10b).
+- **Bagian di luar departemen** dipadatkan menjadi 5 sampai 7 slide rangkuman tematik (halaman 36 yang ada dipakai ulang), tanpa tabel. Tiap slide menggabungkan beberapa bagian bertetangga (mis. 3, 4.1.1, 4.1.2, 4.2 menjadi "Pra-RS dan Diagnosis"). Semua rekomendasi tetap terwakili: frasa yang setema digabung dalam satu butir dengan kelasnya, mis. "Edukasi publik, skrining dispatch, aktivasi EMS (1)". Yang dibuang hanya tabelnya; jangan memilih rekomendasi sendiri.
+- Urutan bagian mengikuti guideline (rangkuman pascaakut ditaruh setelah bagian bedah bila memang begitu urutannya), lalu perbandingan edisi, lalu appraisal.
+- Daftar isi dan peta topik diperbarui ke struktur deck baru (fokus departemen), bukan struktur guideline penuh.
+- Brief: `paper.rekomendasi` hanya rekomendasi bagian departemen; `cek_ulang` dari pendalaman juga dibatasi ke bagian itu. Ini menurunkan jumlah kata ke kisaran yang wajar.
+- Penghapusan dan pemindahan halaman lewat `merge-designs` (satu operasi per panggilan). Pakai pemindahan **mundur** saja (halaman yang dipindah selalu berada di belakang tujuan) supaya nomor `to_after_page_number` tidak ambigu; hitung urutannya dengan skrip kecil sebelum memanggil.
+
 ## G2b. Perbandingan dengan edisi sebelumnya (wajib, tanpa asumsi)
 
 Setiap journal reading guideline **wajib** punya slide khusus "Perbandingan dengan Edisi Sebelumnya" (halaman master 39): apa yang berubah dibanding versi lawas dari **organisasi yang sama** (mis. AHA/ASA 2022 dibanding AHA/ASA 2015). Pembanding lain (PNPK, guideline organisasi lain) bukan pengganti slide ini; itu slide terpisah di halaman 27 dan sifatnya opsional.
@@ -149,11 +160,13 @@ Baca `desain-visual.md` dulu. Urutan untuk guideline:
 | 8 | 12 Figur kunci (opsional) | hanya figur yang memang gambar (infografik, grafik); selalu dengan sumber |
 | 9 | 32 Pembahasan tematik (digandakan) | tema naratif yang disetujui; judul slide = judul tema, tanpa kicker |
 | 10 | per bagian: 36 Rangkuman, lalu 26 Tabel rekomendasi (digandakan) | lihat "Slide per bagian" di bawah |
+| 10b | 12 Figur kunci, dipakai sebagai slide penjelasan prosedur (opsional) | untuk fokus departemen, mis. MIS vs kraniotomi, EVD, trombolitik, supratentorial vs fossa posterior, kraniektomi vs kraniotomi. Kartu gambar dipersempit ke 700 px, kartu teks diperlebar ke 990 px (ubah lebar bentuk dan teks; tinggi kotak teks tidak bisa diubah lewat API, jadi kirim `width` saja). Isi dari teks guideline + uji yang dirujuknya, sitasi dicek di PubMed; angka tanpa sumber tidak ditulis. Gambar: Wikimedia Commons atau figur artikel open access berlisensi CC0/CC BY/CC BY-SA, atribusi di bawah gambar dan di slide Referensi. Wikimedia menolak `upload-asset-from-url` dari Canva: unduh dulu, ratakan latar transparan ke putih, lalu unggah dengan `create-upload-url` |
 | 11 | 37 Algoritma (digandakan) | algoritma guideline disusun ulang sendiri, kotak diwarnai menurut kelas |
 | 12 | 38 Tabel bebas (digandakan) | tabel guideline yang diketik ulang ringkas, dengan sumber |
 | 13 | **39 Perbandingan dengan edisi sebelumnya (wajib, digandakan bila lebih dari 5 baris)** | lihat G2b: hanya dari bagian perubahan di guideline baru atau PDF edisi lama yang dilampirkan |
+| 13a | 36 Rangkuman, dipakai ulang sebagai slide perubahan (opsional, 4 sampai 5 slide) | bila pemesan minta perbandingan yang ilustratif: satu slide ikhtisar (jumlah naik, berubah isi, turun/dihapus, rekomendasi baru) lalu satu slide per tema. Tiga kolom NAIK (hijau, ikon naik), ISI BERUBAH (kuning #fff4c7, ikon panah), TURUN ATAU DIHAPUS (merah, ikon peringatan); tiap butir "Topik: kelas lama ke kelas baru". Tema departemen diberi slide sendiri. Kolom kosong diisi kalimat miring abu-abu; kolom berisi wajib gaya normal warna #0b2545 (ganti gaya bila halaman asal punya kotak kosong). Sumber tetap G2b |
 | 13b | 27 Perbandingan dengan sumber lain (opsional) | PNPK atau guideline organisasi lain, hanya bila benar-benar dibaca |
-| 14 | 28 Validity AGREE II | skor 6 domain + bukti + penilaian keseluruhan + catatan satu penilai |
+| 14 | 28 Validity AGREE II | skor 6 domain + bukti + penilaian keseluruhan + catatan satu penilai; brief tetap per item (23 baris, bukti + alasan) |
 | 15 | 29 Penerapan di RS setempat | yang sudah sesuai praktik, yang belum beserta hambatannya, langkah realistis |
 | 16 | 18 Kekuatan & kelemahan | kelemahan mencakup domain AGREE terlemah dan rekomendasi kuat berbukti lemah |
 | 17 | 20 Kesimpulan & implikasi | "kesimpulan penulis" diisi pesan utama guideline |
