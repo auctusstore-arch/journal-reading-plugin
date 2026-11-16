@@ -81,7 +81,7 @@ checklist_h0:        4 sampai 6 butir untuk klien di hari presentasi
 
 Aturan isi:
 
-- **Simulasi** diurutkan dari area prioritas. Ambil dari `brief.json` bagian `pertanyaan` bila ada (pilih yang paling dekat dengan gap, perdalam bila perlu); bila tidak ada brief, buat dari `extract.md` dan `references/bank-pertanyaan-konsulen.md`. `jawaban_model` 2 sampai 4 kalimat (inti, bukti dengan lokasi, akui batasan). `tanda_lemah` menyebut kesalahan spesifik yang harus ditangkap tutor (mis. "menyebut HR sebagai risiko absolut"). `lanjutan` adalah pertanyaan susulan konsulen bila jawaban pertama benar.
+- **Simulasi** diurutkan dari area prioritas. Ambil dari `brief.json` bagian `pertanyaan` bila ada (pilih yang paling dekat dengan gap, perdalam bila perlu); bila tidak ada brief, buat dari `extract.md` dan `references/bank-pertanyaan-konsulen.md`. `jawaban_model` 2 sampai 4 kalimat mengikuti teknik jawab 5 langkah (`references/bank-pertanyaan-konsulen.md`: klarifikasi bila perlu, jawab inti, bukti berlokasi, akui batasan, dan "belum menemukan datanya, akan dicek" bila tidak tahu). `tanda_lemah` menyebut kesalahan spesifik yang harus ditangkap tutor (mis. "menyebut HR sebagai risiko absolut"). `lanjutan` adalah pertanyaan susulan konsulen bila jawaban pertama benar.
 - **Review slide** merujuk nomor atau judul slide klien. Untuk order Complete Bundle, fokus ke bagian yang disentuh klien setelah serah terima dan ke item `cek_ulang`.
 - **Perbaikan kandidat** spesifik dan bisa dikerjakan sebelum hari H, bukan nasihat umum.
 - Panduan memuat penilaian kesiapan klien dan kunci jawaban. Hanya untuk tutor.

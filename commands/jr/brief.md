@@ -20,7 +20,7 @@ Tujuan tiap bagian:
   - 1 soal dasar ilmu atau patofisiologi;
   - 1 soal applicability di RS Indonesia;
   - 1-2 soal jebakan, yaitu data yang tidak dilaporkan, yang harus dijawab jujur.
-  Sesuaikan dengan fokus konsulen dari intake. Jawaban model ditulis 2-4 kalimat dengan pola: jawab inti, tunjukkan bukti (halaman/tabel), lalu akui batasan.
+  Sesuaikan dengan fokus konsulen dari intake. Jawaban model ditulis 2-4 kalimat mengikuti teknik jawab 5 langkah di `references/bank-pertanyaan-konsulen.md` (klarifikasi bila perlu, jawab inti, bukti berlokasi, akui batasan, dan "belum menemukan datanya, akan dicek" bila tidak tahu; jangan mengarang). Langkah 1 dan 5 dipakai hanya bila relevan untuk pertanyaan itu.
 - **Checklist.** Isi 16-24 item yang bisa dicentang dan spesifik paper, misalnya "bandingkan outcome primer dengan NCT0xxxx", bukan hanya "baca paper". Bila tanggal presentasi kurang dari 7 hari lagi, padatkan kelompok waktunya.
 
 Jalankan:
