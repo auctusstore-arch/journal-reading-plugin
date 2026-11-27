@@ -5,7 +5,8 @@ Plugin internal Auctus untuk membuat paket journal reading PPDS dari satu paper.
 ## Isi
 
 - `skills/journal-reading-builder/`: skill beserta rujukan, script, dan aset (ikon, contoh brief).
-- `TEMPLATE-CANVA.md`: tautan tiga master template Canva dan peta halamannya.
+- `commands/jr/`: command `/jr:*` per tahap.
+- `TEMPLATE-CANVA.md`: ID tiga master template Canva dan peta halamannya.
 - `.claude-plugin/plugin.json`: manifest plugin.
 
 ## Keluaran skill
@@ -21,6 +22,7 @@ Plugin internal Auctus untuk membuat paket journal reading PPDS dari satu paper.
 - Studi primer dan SR-MA.
 - Guideline, konsensus, PNPK (PDF wajib; rekomendasi dipilih pemesan lewat peta rekomendasi).
 - Review article non-sistematis (narrative, scoping).
+- Case report (1 sampai 3 pasien).
 
 ## Prasyarat
 

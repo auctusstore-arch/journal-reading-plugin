@@ -64,6 +64,8 @@ Tentukan jenis paper sejak intake, karena menentukan jalur kerja:
 - **Guideline, konsensus, atau PNPK**: baca `references/jalur-guideline.md` dan ikuti jalur itu. Slide "Perbandingan dengan Edisi Sebelumnya" wajib dan hanya boleh diisi dari bagian perubahan di guideline baru atau dari PDF edisi lama yang dilampirkan (G2b). Bedanya yang paling penting: setelah ekstraksi, buat peta semua rekomendasi lalu **berhenti dan minta user menyetujui rekomendasi mana yang masuk slide**. Jangan memilih sendiri.
 - **Review article yang bukan systematic review (narrative review, scoping review)**: baca `references/jalur-review.md`. Klasifikasikan dulu jenis review-nya dari bagian Metode (R0). Polanya sama dengan guideline: peta isi berisi semua klaim kunci, lalu **user menyetujui klaim mana yang masuk slide**.
 
+- **Case report** (laporan 1 sampai 3 pasien): baca `references/jalur-case-report.md`. Klasifikasikan dulu (C0); case series belum punya jalur.
+
 - **Klien sudah punya draf slide** (berlaku untuk semua jenis paper di atas): baca `references/jalur-draf-klien.md`. Ekstraksi tetap dari paper dulu; draf diaudit terhadap paper (angka salah, klaim berlebihan, bagian kosong), dipetakan ke struktur JR, lalu **user memilih** perbaiki di tempat atau pindah ke template Auctus. File klien tidak pernah diubah langsung. Brief, skrip, audio, dan TLDR tetap dibuat seperti biasa dari slide final.
 
 User story/kebutuhan PPDS adalah input utama: alasan memilih paper, kasus pemicu, dan fokus konsulen masuk ke slide 4, ke mockup pertanyaan, dan ke bagian applicability. Bila PPDS tidak memberi kasus pemicu, hapus kotaknya atau isi "[perlu diisi]" merah dan tandai di laporan akhir. Jangan mengarang kasus atau identitas pasien.

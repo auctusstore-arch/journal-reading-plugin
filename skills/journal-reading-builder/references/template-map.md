@@ -1,12 +1,16 @@
 # Peta template journal reading (Canva)
 
-Tiga desain master di akun Canva Auctus. Strukturnya identik (33 halaman: 24 halaman jalur studi + 9 halaman guideline/review, urutan dan placeholder sama), hanya warna berbeda. Jangan pernah mengedit master langsung: selalu buat desain baru dari master (lihat SKILL.md langkah 4).
+Tiga desain master di akun Canva journal reading Auctus. Strukturnya identik (42 halaman: 24 halaman jalur studi, 9 halaman guideline/review, 6 halaman desain visual, 3 halaman variasi berbutir; urutan dan placeholder sama), hanya warna berbeda. Jangan pernah mengedit master langsung: selalu buat desain baru dari master (lihat SKILL.md langkah 4).
 
-| Warna | design_id master | Link view publik |
-|---|---|---|
-| navy (default) | DAHYiY7-9Ps | https://canva.link/clb266xdufq1ndt |
-| maroon | DAHYiuIiRCg | https://canva.link/g2fw8osptldrzic |
-| hijau tua | DAHYikOThv8 | https://canva.link/slqb1b5gynjpxrv |
+**Connector wajib:** akses master hanya lewat connector Canva yang login ke akun journal reading Auctus. Bila desain master tidak ditemukan atau akses ditolak, hentikan langkah slide dan minta user menghubungkan connector Canva ke akun itu. Jangan memakai master atau salinan dari akun lain sebagai pengganti.
+
+| Warna | design_id master |
+|---|---|
+| navy (default) | DAHcEbhbQOM |
+| maroon | DAHcERXeusY |
+| hijau tua | DAHcEWn5o0o |
+
+Alamat akun dan tautan master dibagikan lewat kanal internal, tidak disimpan di repo. Simpan tiap warna sebagai desain terpisah: connector menolak membuka sesi edit pada desain gabungan 126 halaman (diuji 27 November 2026).
 
 Palet (dipakai juga oleh build_brief.py): navy 0b2545/13807a/e3f2f0, maroon 4a1520/a3313f/f7e8ea, hijau 1e3a2b/3f7d3a/eaf3e6.
 
@@ -26,10 +30,10 @@ Palet (dipakai juga oleh build_brief.py): navy 0b2545/13807a/e3f2f0, maroon 4a15
 | 10 | Karakteristik dasar | Ya (SR-MA: ganti jadi karakteristik studi yang diinklusi) |
 | 11 | Hasil utama | Ya, baris kesimpulan di bawah judul wajib diisi |
 | 12 | Figur kunci | Ya, tempel figur asli + sumber |
-| 13 | Validity RCT (RoB 2) | Hanya bila RCT |
-| 14 | Validity observasional (NOS) | Hanya bila kohort / case-control / cross-sectional |
-| 15 | Validity diagnostik (QUADAS-2) | Hanya bila studi akurasi diagnostik |
-| 16 | Validity SR-MA (AMSTAR 2) | Hanya bila SR / meta-analisis |
+| 13 | Validity RCT (RoB 2) | Hanya bila klien meminta RoB 2 |
+| 14 | Validity observasional (NOS) | Hanya bila klien meminta NOS |
+| 15 | Validity diagnostik (QUADAS-2) | Hanya bila klien meminta QUADAS-2 |
+| 16 | Validity SR-MA (AMSTAR 2) | Hanya bila klien meminta AMSTAR 2 |
 | 17 | Importance & applicability | Ya |
 | 18 | Kekuatan & kelemahan | Ya |
 | 19 | Level of evidence & GRADE | Ya |
@@ -39,16 +43,18 @@ Palet (dipakai juga oleh build_brief.py): navy 0b2545/13807a/e3f2f0, maroon 4a15
 | 23 | Penutup | Ya |
 | 24 | Pembatas bagian | Opsional, biasanya dibuang |
 
-Untuk RCT: halaman yang dipakai = 2-13, 17-23 (19 slide). Observasional = 2-12, 14, 17-23. Diagnostik = 2-12, 15, 17-23. SR-MA = 2-12, 16, 17-23.
+Jalur default (CASP, semua desain studi dan SR-MA; case report lihat `jalur-case-report.md` C5): 2-12, salinan halaman 4 untuk kartu CASP dan satu slide Validity (tulis nomor 4 berulang di `page_numbers`, sesudah 12), lalu 17-23. Bila klien meminta tool lain, ganti salinan itu dengan satu halaman tool: RoB 2 = 13, NOS = 14, QUADAS-2 = 15, AMSTAR 2 = 16.
 
 ### Halaman guideline dan review (25 sampai 33)
 
-Ditambahkan ke ketiga master pada 12 November 2026, setelah halaman 24, sehingga nomor halaman 1 sampai 24 dan daftar `page_numbers` jalur studi tidak berubah. Master sekarang 33 halaman.
+Ditambahkan ke ketiga master pada 12 November 2026, setelah halaman 24, sehingga nomor halaman 1 sampai 24 dan daftar `page_numbers` jalur studi tidak berubah.
 
 Kotak baris pesan di bawah judul pada halaman 11, 26, dan 30 dipersempit menjadi 1540 px (12 November 2026) supaya tidak menabrak hiasan titik di pojok kanan atas. Baris itu muat sekitar 110 karakter per baris pada font 32; untuk pesan dua baris turunkan font ke 24.
 
 Dua hal yang perlu diketahui saat inventaris:
 
+- **Appraisal default = CASP** (studi dan SR/MA): salin halaman 4 (tiga kartu) untuk pertanyaan CASP, tiga per slide, kicker CRITICAL APPRAISAL, lalu satu slide Validity ringkasan (lihat `casp-dan-pakem-klien.md`, "Bentuk slide"). Halaman 13 sampai 16 dihapus dari salinan order kecuali klien meminta tool-nya. Kotak PETUNJUK di halaman itu masih teks lama template.
+- **Case report** tidak punya halaman khusus: pakai ulang halaman sesuai `jalur-case-report.md` C5.
 - Judul halaman internal (kolom judul di `inv.txt`) masih memakai nama halaman asalnya, mis. halaman 26 dan 30 terbaca "Hasil utama", 28 dan 31 "Validity SR-MA", 32 "Latar belakang", 33 "Figur kunci". Kenali halaman dari teks kicker dan judul di slide, bukan dari judul internal.
 - Pada halaman 28 dan 31, baris ringkasan di bawah tabel ("Penilaian keseluruhan ..." / "Total SANRA ...") adalah teks lepas di luar grup tabel. Label baris tabel (nama domain/item) berflag `T` dan boleh diganti lewat `texts` bila perlu (mis. scoping review memakai 6 aspek PRISMA-ScR).
 
@@ -375,7 +381,7 @@ Flag: `B` = teks berisi [placeholder] yang harus diganti, `P` = teks PETUNJUK (d
 - Notes bawaan: SLIDE OPSIONAL. Pakai sebagai pembatas bagian bila presentasi panjang. Hapus bila tidak dipakai.
 ### Halaman variasi berbutir (40 sampai 42, ketiga master)
 
-Ditambahkan 15 November 2026 dari slide hasil rapikan pemesan pada JR dr. Putri Nabila. Isinya semua berupa butir pendek (list disc), bukan paragraf. Pakai sebagai pengganti halaman asalnya, jangan menyertakan keduanya.
+Ditambahkan 15 November 2026 dari slide hasil rapikan pemesan pada JR klien A. Isinya semua berupa butir pendek (list disc), bukan paragraf. Pakai sebagai pengganti halaman asalnya, jangan menyertakan keduanya.
 
 | No | Pengganti halaman | Isi dan placeholder |
 |---|---|---|
