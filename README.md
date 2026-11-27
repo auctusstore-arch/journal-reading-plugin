@@ -19,10 +19,10 @@ Plugin internal Auctus untuk membuat paket journal reading PPDS dari satu paper.
 
 ## Jalur
 
-- Studi primer dan SR-MA.
+- Studi primer dan SR-MA (appraisal default CASP; tool lain atas permintaan klien).
 - Guideline, konsensus, PNPK (PDF wajib; rekomendasi dipilih pemesan lewat peta rekomendasi).
 - Review article non-sistematis (narrative, scoping).
-- Case report (1 sampai 3 pasien).
+- Case report (JBI Case Reports); case series belum punya jalur.
 
 ## Prasyarat
 
