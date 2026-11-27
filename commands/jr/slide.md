@@ -10,7 +10,9 @@ Baca `references/template-map.md` dan `references/desain-visual.md` dulu (wajib,
 
 Baca `references/template-map.md` dulu. File itu berisi ID master, daftar halaman, halaman mana dipakai untuk tiap desain studi, dan placeholder tiap halaman.
 
-**4a. Buat desain baru dari master (jangan edit master).** Panggil `merge-designs` dengan `type: "create_new_design"`, title `JR - <nama penyaji> - <penulis pertama> <tahun>`, dan **satu** operasi `insert_pages` dari master warna pilihan dengan `page_numbers` sesuai desain studi. Contoh RCT: `[2,3,4,5,6,7,8,9,10,11,12,13,17,18,19,20,21,22,23]`.
+**4a. Buat desain baru dari master (jangan edit master).** Panggil `merge-designs` dengan `type: "create_new_design"`, title `JR - <nama penyaji> - <penulis pertama> <tahun>`, dan **satu** operasi `insert_pages` dari master warna pilihan dengan `page_numbers` sesuai desain studi. Contoh RCT jalur default CASP (3 slide validitas, hasil, lokal, lalu Validity ringkasan = 6 salinan halaman 4): `[2,3,4,5,6,7,8,9,10,11,12,4,4,4,4,4,4,17,18,19,20,21,22,23]`. Jumlah salinan mengikuti jumlah pertanyaan checklist (`references/casp-dan-pakem-klien.md`, "Bentuk slide").
+
+**Case report:** abaikan daftar halaman jalur studi; ikuti `references/jalur-case-report.md` C5.
 
 Hal yang perlu diketahui tentang `merge-designs`:
 

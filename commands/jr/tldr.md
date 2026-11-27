@@ -20,6 +20,8 @@ Isi, dalam bahasa Indonesia tanpa em dash, **maksimal 2 menit** dibaca atau dide
 8. Hal yang harus dicek PPDS (isi `cek_ulang`, versi ringkas).
 9. Tautan: Canva (edit dan view) serta daftar nama file di folder.
 
+Untuk case report: butir 2 berisi alasan kasus dilaporkan dan pasiennya; butir 3 berisi perjalanan dan luaran kunci (tanpa ukuran efek, CI, atau p); butir 4 berisi jumlah tiap jawaban JBI tanpa skor, tanpa GRADE atau level evidence karangan, dan 3 kelemahan utama.
+
 Aturan: jangan menambah angka atau klaim yang tidak ada di `extract.md`, skrip, atau brief; salin dari sumber yang sama. Jangan memuat identitas pasien. Jangan membuat berkas TLDR terpisah untuk audio; rangkuman audio cukup butir 7.
 
 ## Langkah 6. Serahkan

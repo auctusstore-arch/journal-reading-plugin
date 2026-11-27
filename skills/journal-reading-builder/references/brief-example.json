@@ -9,7 +9,7 @@
     "tanggal": "Kamis, 12 November 2026",
     "durasi_menit": 30,
     "desain_studi": "RCT paralel, double-blind, plasebo, 3 RS",
-    "tool_appraisal": "Cochrane RoB 2",
+    "tool_appraisal": "CASP RCT Checklist (satu penilai)",
     "warna": "navy",
     "nama_file": "brief-contoh-probiotik"
   },
@@ -46,7 +46,7 @@
       },
       {
         "istilah": "Selective reporting",
-        "arti": "Outcome yang dilaporkan berbeda dari yang direncanakan di protokol/registrasi; domain 5 RoB 2."
+        "arti": "Outcome yang dilaporkan berbeda dari yang direncanakan di protokol/registrasi; ancaman validitas yang perlu disebut walau tidak punya pertanyaan khusus di CASP RCT."
       },
       {
         "istilah": "GRADE",
@@ -107,231 +107,74 @@
   "appraisal": {
     "validity": [
       {
-        "kelompok": "D1 Proses randomisasi",
-        "domain": "1.1 Urutan alokasi acak?",
+        "kelompok": "Desain dasar",
+        "domain": "Q1. Pertanyaan penelitian terfokus?",
         "penilaian": "Ya",
-        "kelas": "ok",
-        "bukti": "Urutan acak blok komputer, Metode hal. 146.",
-        "alasan": "Pembangkitan urutan dengan komputer memenuhi definisi acak sejati di RoB 2, jadi jawabannya Ya."
+        "bukti": "Populasi, intervensi, pembanding, dan luaran AAD 30 hari tertulis, Metode hal. 146.",
+        "alasan": "Keempat unsur PICO dinyatakan jelas, sehingga pertanyaan yang diuji bisa ditelusuri sampai ke hasil."
       },
       {
-        "kelompok": "D1 Proses randomisasi",
-        "domain": "1.2 Alokasi tersembunyi?",
-        "penilaian": "Tidak ada informasi",
-        "kelas": "mid",
-        "bukti": "Cara menyimpan dan mengakses daftar acak tidak dijelaskan, Metode hal. 146.",
-        "alasan": "RoB 2 hanya menerima Ya bila ada mekanisme konkret (mis. amplop buram atau pusat sentral). Paper diam, sehingga tidak boleh diasumsikan baik: Tidak ada informasi."
+        "kelompok": "Desain dasar",
+        "domain": "Q2. Alokasi acak dan tersembunyi?",
+        "penilaian": "Belum pasti",
+        "bukti": "Urutan acak blok komputer; cara menyimpan dan mengakses daftar tidak dijelaskan, Metode hal. 146.",
+        "alasan": "Pembangkitan urutan sudah acak, tetapi tanpa penjelasan penyembunyian alokasi kemungkinan bias seleksi tidak bisa disingkirkan."
       },
       {
-        "kelompok": "D1 Proses randomisasi",
-        "domain": "1.3 Perbedaan baseline mengarah ke masalah randomisasi?",
+        "kelompok": "Desain dasar",
+        "domain": "Q3. Semua peserta diperhitungkan di akhir?",
         "penilaian": "Tidak",
-        "kelas": "ok",
-        "bukti": "Karakteristik dasar seimbang antar kelompok, Tabel 1.",
-        "alasan": "Ketidakseimbangan di luar kewajaran akan mencurigakan; Tabel 1 seimbang, jadi tidak ada petunjuk randomisasi gagal."
+        "bukti": "Analisis per-protocol, 15 vs 25 pasien dikeluarkan setelah randomisasi, Metode hal. 147 dan Figure 1.",
+        "alasan": "Peserta tidak dianalisis sesuai kelompok randomisasi dan kehilangannya tidak seimbang, sehingga efek cenderung membesar."
       },
       {
-        "kelompok": "D1 Proses randomisasi",
-        "domain": "Penilaian domain D1",
-        "penilaian": "Some concerns",
-        "kelas": "mid",
-        "bukti": "Gabungan 1.1 sampai 1.3.",
-        "alasan": "Randomisasi baik dan baseline seimbang, tetapi concealment tidak diketahui. Aturan RoB 2: informasi kunci hilang tanpa tanda masalah lain menghasilkan Some concerns.",
-        "rangkuman": true
-      },
-      {
-        "kelompok": "D2 Deviasi dari intervensi",
-        "domain": "2.1 Peserta tahu alokasi?",
-        "penilaian": "Tidak",
-        "kelas": "ok",
+        "kelompok": "Metode",
+        "domain": "Q4a. Peserta disamarkan?",
+        "penilaian": "Ya",
         "bukti": "Plasebo identik dalam bentuk dan rasa, Metode hal. 146.",
-        "alasan": "Plasebo identik membuat peserta praktis tidak bisa menebak kelompoknya."
+        "alasan": "Plasebo identik membuat peserta praktis tidak bisa menebak kelompok yang diterimanya."
       },
       {
-        "kelompok": "D2 Deviasi dari intervensi",
-        "domain": "2.2 Tenaga pelaksana tahu alokasi?",
-        "penilaian": "Tidak",
-        "kelas": "ok",
+        "kelompok": "Metode",
+        "domain": "Q4b. Investigator disamarkan?",
+        "penilaian": "Ya",
         "bukti": "Tenaga farmasi menyiapkan sediaan berkode, Metode hal. 146.",
-        "alasan": "Sediaan berkode menjaga tenaga yang memberikan terapi tidak mengetahui alokasi."
+        "alasan": "Sediaan berkode menjaga tim yang memberikan terapi tidak mengetahui alokasi tiap pasien."
       },
       {
-        "kelompok": "D2 Deviasi dari intervensi",
-        "domain": "2.3 Deviasi karena konteks uji yang memengaruhi hasil?",
-        "penilaian": "Tidak ada informasi",
-        "kelas": "mid",
-        "bukti": "Tidak dibahas di Metode atau Hasil.",
-        "alasan": "Deviasi seperti pemberian antibiotik berbeda antar kelompok tidak dilaporkan, sehingga tidak bisa dikatakan tidak ada."
+        "kelompok": "Metode",
+        "domain": "Q4c. Penilai atau analis luaran disamarkan?",
+        "penilaian": "Belum pasti",
+        "bukti": "Diare dicatat perawat; status penyamaran penilai dan analis tidak disebut, Metode hal. 146.",
+        "alasan": "Luaran bertumpu pada laporan dan observasi, jadi penyamaran penilai penting dan paper tidak melaporkannya."
       },
       {
-        "kelompok": "D2 Deviasi dari intervensi",
-        "domain": "2.4 Deviasi seimbang antar kelompok?",
-        "penilaian": "Tidak ada informasi",
-        "kelas": "mid",
-        "bukti": "Tidak dilaporkan, lihat Figure 1.",
-        "alasan": "Karena 2.3 tidak jelas, keseimbangan deviasi tidak dapat dinilai dari paper."
+        "kelompok": "Metode",
+        "domain": "Q5. Kelompok serupa di awal?",
+        "penilaian": "Ya",
+        "bukti": "Karakteristik dasar seimbang antar kelompok, Tabel 1.",
+        "alasan": "Tidak ada perbedaan awal yang cukup besar untuk menjelaskan selisih luaran antar kelompok."
       },
       {
-        "kelompok": "D2 Deviasi dari intervensi",
-        "domain": "2.5 Analisis tepat untuk menilai efek penugasan (ITT)?",
-        "penilaian": "Tidak",
-        "kelas": "bad",
-        "bukti": "Analisis per-protocol, Metode hal. 147.",
-        "alasan": "Efek penugasan harus dinilai dengan intention-to-treat. Per-protocol membuang pasien yang tidak patuh dan merusak keseimbangan hasil randomisasi."
-      },
-      {
-        "kelompok": "D2 Deviasi dari intervensi",
-        "domain": "2.6 Ada pasien yang dikeluarkan karena itu?",
-        "penilaian": "Ya, 15 vs 25",
-        "kelas": "bad",
-        "bukti": "15 dan 25 pasien dikeluarkan setelah randomisasi, Figure 1.",
-        "alasan": "Jumlah dikeluarkan berbeda antar kelompok dan terjadi setelah randomisasi, cukup besar untuk memengaruhi hasil."
-      },
-      {
-        "kelompok": "D2 Deviasi dari intervensi",
-        "domain": "2.7 Dampak potensial pengeluaran terhadap hasil?",
-        "penilaian": "Substansial",
-        "kelas": "bad",
-        "bukti": "Alasan pengeluaran berbeda antar kelompok, Figure 1.",
-        "alasan": "Pasien yang dikeluarkan tidak setara (alasan berbeda), jadi bias menuju efek probiotik yang lebih besar."
-      },
-      {
-        "kelompok": "D2 Deviasi dari intervensi",
-        "domain": "Penilaian domain D2",
-        "penilaian": "High",
-        "kelas": "bad",
-        "bukti": "Gabungan 2.1 sampai 2.7.",
-        "alasan": "Blinding baik, tetapi analisis per-protocol dengan pengeluaran tidak setara membuat satu pertanyaan kunci gagal. Aturan RoB 2: satu jawaban yang menentukan sudah membuat domain High.",
-        "rangkuman": true
-      },
-      {
-        "kelompok": "D3 Data outcome hilang",
-        "domain": "3.1 Data tersedia untuk (hampir) semua pasien yang diacak?",
-        "penilaian": "Tidak",
-        "kelas": "mid",
-        "bukti": "Kehilangan data 9% vs 14%, Figure 1.",
-        "alasan": "Ambang resmi tidak ditetapkan RoB 2, tetapi kehilangan yang tidak setara antar kelompok menurunkan keyakinan."
-      },
-      {
-        "kelompok": "D3 Data outcome hilang",
-        "domain": "3.2 Bukti hasil tidak bias oleh data hilang?",
-        "penilaian": "Tidak",
-        "kelas": "mid",
-        "bukti": "Tidak ada analisis sensitivitas atau imputasi, Metode hal. 147.",
-        "alasan": "Tanpa analisis sensitivitas, tidak ada bukti hasil kokoh bila data hilang diisi dengan skenario berbeda."
-      },
-      {
-        "kelompok": "D3 Data outcome hilang",
-        "domain": "3.3 Hilangnya data bisa bergantung nilai sebenarnya?",
-        "penilaian": "Mungkin tidak",
-        "kelas": "mid",
-        "bukti": "Alasan hilang: pindah RS dan menarik diri, Figure 1.",
-        "alasan": "Alasannya tidak langsung terkait outcome, tetapi tidak dapat disingkirkan sepenuhnya."
-      },
-      {
-        "kelompok": "D3 Data outcome hilang",
-        "domain": "Penilaian domain D3",
-        "penilaian": "Some concerns",
-        "kelas": "mid",
-        "bukti": "Gabungan 3.1 sampai 3.3.",
-        "alasan": "Kehilangan data berbeda antar kelompok tanpa sensitivitas, tetapi tidak ada bukti terkait outcome, jadi Some concerns dan bukan High.",
-        "rangkuman": true
-      },
-      {
-        "kelompok": "D4 Pengukuran outcome",
-        "domain": "4.1 Metode pengukuran outcome tidak tepat?",
-        "penilaian": "Tidak",
-        "kelas": "ok",
-        "bukti": "Definisi AAD tertulis jelas, Metode hal. 146.",
-        "alasan": "Definisi operasional diare terkait antibiotik tertulis dan lazim dipakai."
-      },
-      {
-        "kelompok": "D4 Pengukuran outcome",
-        "domain": "4.2 Pengukuran berbeda antar kelompok?",
-        "penilaian": "Tidak",
-        "kelas": "ok",
-        "bukti": "Protokol pencatatan sama, Metode hal. 146.",
-        "alasan": "Pencatatan harian dengan formulir yang sama untuk kedua kelompok."
-      },
-      {
-        "kelompok": "D4 Pengukuran outcome",
-        "domain": "4.3 Penilai outcome tahu alokasi?",
-        "penilaian": "Tidak ada informasi",
-        "kelas": "mid",
-        "bukti": "Diare dicatat perawat; status blinding penilai tidak disebut, Metode hal. 146.",
-        "alasan": "Paper tidak menyatakan perawat buta terhadap alokasi, jadi tidak bisa dianggap buta."
-      },
-      {
-        "kelompok": "D4 Pengukuran outcome",
-        "domain": "4.4 Penilaian bisa dipengaruhi pengetahuan alokasi?",
-        "penilaian": "Mungkin ya",
-        "kelas": "mid",
-        "bukti": "Diare dicatat berdasarkan laporan dan observasi, Metode hal. 146.",
-        "alasan": "Frekuensi dan konsistensi tinja bersifat subjektif, sehingga rentan dipengaruhi pengetahuan alokasi."
-      },
-      {
-        "kelompok": "D4 Pengukuran outcome",
-        "domain": "4.5 Besar kemungkinan dipengaruhi?",
-        "penilaian": "Mungkin tidak",
-        "kelas": "mid",
-        "bukti": "Plasebo identik, Metode hal. 146.",
-        "alasan": "Plasebo yang identik meredam sebagian risiko, tetapi tidak menghilangkannya."
-      },
-      {
-        "kelompok": "D4 Pengukuran outcome",
-        "domain": "Penilaian domain D4",
-        "penilaian": "Some concerns",
-        "kelas": "mid",
-        "bukti": "Gabungan 4.1 sampai 4.5.",
-        "alasan": "Pengukuran tepat dan seragam, namun status blinding penilai pada outcome subjektif tidak diketahui.",
-        "rangkuman": true
-      },
-      {
-        "kelompok": "D5 Pelaporan selektif",
-        "domain": "5.1 Analisis sesuai rencana yang ditetapkan sebelum data tersedia?",
-        "penilaian": "Tidak",
-        "kelas": "bad",
-        "bukti": "Outcome primer di registrasi 'diare apa pun', di paper menjadi AAD, registrasi dan Metode hal. 145.",
-        "alasan": "Outcome primer berubah dari yang didaftarkan tanpa alasan terbuka; ini inti pelaporan selektif."
-      },
-      {
-        "kelompok": "D5 Pelaporan selektif",
-        "domain": "5.2 Hasil dipilih dari beberapa pengukuran outcome?",
-        "penilaian": "Mungkin ya",
-        "kelas": "mid",
-        "bukti": "Beberapa definisi diare diukur, Tabel 2.",
-        "alasan": "Ada lebih dari satu definisi diare yang dianalisis, sehingga pemilihan definisi yang menguntungkan tidak dapat disingkirkan."
-      },
-      {
-        "kelompok": "D5 Pelaporan selektif",
-        "domain": "5.3 Hasil dipilih dari beberapa analisis?",
-        "penilaian": "Tidak ada informasi",
-        "kelas": "mid",
-        "bukti": "Tidak disebut rencana analisis statistik, Metode hal. 147.",
-        "alasan": "Tanpa rencana analisis tertulis, tidak bisa dinilai apakah analisis dipilih belakangan."
-      },
-      {
-        "kelompok": "D5 Pelaporan selektif",
-        "domain": "Penilaian domain D5",
-        "penilaian": "High",
-        "kelas": "bad",
-        "bukti": "Gabungan 5.1 sampai 5.3.",
-        "alasan": "Perubahan outcome primer dari registrasi sudah cukup menetapkan High pada domain ini.",
-        "rangkuman": true
+        "kelompok": "Metode",
+        "domain": "Q6. Perlakuan setara selain intervensi?",
+        "penilaian": "Belum pasti",
+        "bukti": "Jenis antibiotik dan kointervensi per kelompok tidak dilaporkan di Metode maupun Hasil.",
+        "alasan": "Perbedaan antibiotik dapat mengubah risiko diare, dan paper tidak memberi data untuk memastikan kesetaraan."
       }
     ],
-    "validity_overall": "Overall High risk of bias karena dua domain High (D2 dan D5). Arah bias kemungkinan membesarkan efek probiotik.",
+    "validity_overall": "Pertanyaan validitas CASP (satu penilai): 4 Ya, 3 Belum pasti, 1 Tidak. Ancaman terbesar adalah analisis per-protocol dengan kehilangan tidak seimbang; outcome primer yang berbeda dari registrasi menambah kekhawatiran. Arah bias kemungkinan membesarkan efek probiotik.",
     "importance": [
-      "Efek absolut bermakna secara klinis: ARR 10%, NNT 10 pada populasi dengan risiko dasar 18%.",
-      "Presisi rendah: CI NNT 6 sampai 41, artinya efek bisa besar atau kecil.",
-      "Lama rawat turun 0,8 hari, relevan untuk bed occupancy, tetapi outcome ini juga terdampak analisis per-protocol.",
-      "Data harm kurang rinci; angka efek samping serius per kelompok perlu dicek di Tabel 3."
+      "Q7 (Ya): Efek absolut bermakna secara klinis: ARR 10%, NNT 10 pada populasi dengan risiko dasar 18%.",
+      "Q8 (Ya, tetapi lebar): Presisi rendah: CI NNT 6 sampai 41, artinya efek bisa besar atau kecil.",
+      "Q7: Lama rawat turun 0,8 hari, relevan untuk bed occupancy, tetapi outcome ini juga terdampak analisis per-protocol.",
+      "Q9 (Belum pasti): Data harm kurang rinci; angka efek samping serius per kelompok perlu dicek di Tabel 3."
     ],
     "applicability": [
-      "Populasi dewasa rawat inap umum mirip bangsal kita, tetapi pasien imunokompromais dan dengan CVC dieksklusi.",
-      "Produk multi-strain dengan strain dan dosis spesifik; belum tentu sama dengan probiotik yang tersedia di formularium RS.",
-      "Probiotik umumnya tidak ditanggung JKN untuk indikasi ini; perlu dihitung biaya per kasus dicegah (NNT x harga regimen).",
-      "Risiko dasar AAD di RS kita belum diketahui; tanpa data lokal, NNT lokal hanya perkiraan."
+      "Q10 (Belum pasti): Populasi dewasa rawat inap umum mirip bangsal kita, tetapi pasien imunokompromais dan dengan CVC dieksklusi.",
+      "Q10: Produk multi-strain dengan strain dan dosis spesifik; belum tentu sama dengan probiotik yang tersedia di formularium RS.",
+      "Q11 (Belum pasti): Probiotik umumnya tidak ditanggung JKN untuk indikasi ini; perlu dihitung biaya per kasus dicegah (NNT x harga regimen).",
+      "Q11: Risiko dasar AAD di RS kita belum diketahui; tanpa data lokal, NNT lokal hanya perkiraan."
     ],
     "grade": {
       "outcome": "AAD 30 hari",
@@ -376,8 +219,8 @@
       "menit": 4
     },
     {
-      "slide": "Validity RCT (RoB 2)",
-      "pesan": "Overall High: D2 dan D5; tiap domain dengan bukti halaman.",
+      "slide": "Validity (CASP RCT)",
+      "pesan": "CASP validitas: 4 Ya, 3 Belum pasti, 1 Tidak; tiap jawaban dengan bukti halaman.",
       "menit": 4
     },
     {
@@ -410,7 +253,7 @@
     {
       "kategori": "Metode",
       "pertanyaan": "Analisisnya ITT atau per-protocol? Apa konsekuensinya?",
-      "jawaban": "Per-protocol, ITT tidak dilaporkan. Karena 25 pasien plasebo dan 15 pasien probiotik dikeluarkan dengan alasan berbeda, keseimbangan hasil randomisasi bisa hilang dan efek cenderung membesar. Ini alasan saya menilai domain 2 High."
+      "jawaban": "Per-protocol, ITT tidak dilaporkan. Karena 25 pasien plasebo dan 15 pasien probiotik dikeluarkan dengan alasan berbeda, keseimbangan hasil randomisasi bisa hilang dan efek cenderung membesar. Karena itu pertanyaan CASP Q3 saya jawab Tidak."
     },
     {
       "kategori": "Metode",
@@ -434,8 +277,8 @@
     },
     {
       "kategori": "Appraisal",
-      "pertanyaan": "Overall risk of bias-nya apa dan kenapa?",
-      "jawaban": "High, karena dua domain High: deviasi dari intervensi (per-protocol dengan attrition tidak seimbang) dan pelaporan selektif (outcome primer berbeda dari registrasi). Menurut aturan RoB 2, satu domain High sudah cukup membuat overall High."
+      "pertanyaan": "Menurut CASP, apakah hasilnya valid dan kenapa?",
+      "jawaban": "Validitasnya saya ragukan. CASP tidak memberi skor total; dari delapan baris validitas, satu Tidak (per-protocol dengan kehilangan tidak seimbang) dan tiga Belum pasti (penyembunyian alokasi, penyamaran penilai, kesetaraan perlakuan). Outcome primer yang berbeda dari registrasi menambah kekhawatiran."
     },
     {
       "kategori": "Appraisal",
@@ -480,7 +323,7 @@
         "Baca paper lengkap 3 lapis: abstrak dan figur, lalu Methods dan Results, lalu Discussion dan supplementary.",
         "Unduh protokol dan registrasi uji klinis; bandingkan outcome primer dengan paper.",
         "Tulis PICO dari Methods dan cek ulang dengan abstrak.",
-        "Isi worksheet RoB 2 per domain dengan bukti halaman/tabel.",
+        "Isi CASP RCT Checklist per pertanyaan dengan bukti halaman/tabel.",
         "Hitung ulang RR, ARR, NNT, dan MD dengan widget atau effect_calc.py."
       ]
     },
@@ -520,7 +363,7 @@
   ],
   "referensi": [
     "Santoso A, et al. Probiotik multi-strain untuk pencegahan diare terkait antibiotik pada pasien dewasa rawat inap: uji acak terkontrol plasebo. J Clin Gastro Indones. 2025;12(3):145-56. (paper latihan fiktif)",
-    "Sterne JAC, et al. RoB 2: a revised tool for assessing risk of bias in randomised trials. BMJ. 2019;366:l4898.",
+    "Critical Appraisal Skills Programme. CASP Randomised Controlled Trial Checklist. 2024. casp-uk.net.",
     "Guyatt GH, et al. GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. BMJ. 2008;336:924-6.",
     "Straus SE, et al. Evidence-Based Medicine: How to Practice and Teach EBM. 5th ed. Elsevier; 2018."
   ]

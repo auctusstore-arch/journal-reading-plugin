@@ -17,7 +17,7 @@ Tautan hanya terbuka untuk akun Canva yang punya akses ke desain tersebut.
 | 1 | Cara pakai template (tidak ikut ke deck) |
 | 2 | Cover |
 | 3 sampai 12 | Identitas jurnal, alasan memilih, latar belakang, PICO, metode, alur partisipan, karakteristik dasar, hasil utama, figur kunci |
-| 13 sampai 16 | Validity: RoB 2, NOS, QUADAS-2, AMSTAR 2 (pilih satu) |
+| 13 sampai 16 | Validity: RoB 2, NOS, QUADAS-2, AMSTAR 2 (hanya bila klien meminta; default CASP memakai salinan halaman 4) |
 | 17 sampai 19 | Importance & Applicability, Kekuatan & Kelemahan, Level of Evidence & GRADE |
 | 20 sampai 24 | Kesimpulan & Implikasi, Diskusi, Referensi, Terima kasih, pembatas bagian |
 | 25 sampai 29 | Jalur guideline: Ruang Lingkup & Metodologi, Tabel rekomendasi, Perbandingan, Validity AGREE II, Penerapan di RS Setempat |

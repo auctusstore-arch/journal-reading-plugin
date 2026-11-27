@@ -8,7 +8,7 @@ Dipakai bila paper adalah artikel review yang **bukan** systematic review. Polan
 
 | Jenis | Tanda | Jalur | Tool |
 |---|---|---|---|
-| Systematic review (dengan atau tanpa meta-analisis) | pertanyaan terfokus, penelusuran sistematis terdokumentasi, kriteria inklusi, penilaian risiko bias, biasanya PRISMA dan registrasi | jalur SR-MA di SKILL.md | AMSTAR 2 |
+| Systematic review (dengan atau tanpa meta-analisis) | pertanyaan terfokus, penelusuran sistematis terdokumentasi, kriteria inklusi, penilaian risiko bias, biasanya PRISMA dan registrasi | jalur studi (`/jr:ekstrak`) | CASP Systematic Review (AMSTAR 2 bila diminta klien) |
 | Scoping review | memetakan luas bukti, penelusuran sistematis, tanpa penilaian risiko bias wajib, biasanya PRISMA-ScR atau kerangka JBI/Arksey-O'Malley | jalur ini | kelengkapan pelaporan PRISMA-ScR (bukan skor kualitas) |
 | Narrative review (termasuk state-of-the-art, clinical review, seminar, update) | topik luas, penulis ahli, metode penelusuran tidak ada atau ringkas | jalur ini | SANRA |
 
@@ -135,7 +135,7 @@ Minimal 6 masuk ke mockup, dengan jawaban spesifik paper.
 4. Klaim X dasarnya studi apa? Anda sudah baca studi aslinya? Hasilnya berapa?
 5. Klaim mana yang hanya opini ahli?
 6. Level of evidence artikel ini berapa? Bisa dipakai mengubah praktik?
-7. Anda menilai dengan apa? Kenapa bukan AMSTAR 2?
+7. Anda menilai dengan apa? Kenapa bukan CASP atau AMSTAR 2?
 8. Penulisnya siapa, ahli di bidang ini? Ada hubungan dengan industri?
 9. Referensinya sampai tahun berapa? Ada studi baru sesudahnya?
 10. Sesuai dengan guideline atau PNPK kita? Bila berbeda, ikut yang mana?
