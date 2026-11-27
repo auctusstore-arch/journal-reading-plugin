@@ -1,6 +1,6 @@
 # Checklist CASP dan menyesuaikan deck dengan pakem klien
 
-**CASP adalah tool appraisal default** untuk semua studi dan systematic review (keputusan pemesan, 26 November 2026). Bagian 4 dan 6 berlaku untuk setiap order tersebut. Bagian 1, 2, 3, dan 5 dipakai bila klien memberi format departemen atau contoh slide (PPTX, PDF, Canva). Bagian pakem dibuat dari kasus dr. Putri Nabila (15 November 2026), yang memberi contoh deck 38 slide ("Jurding Contoh.pptx", RCT besi intravena). Prinsipnya: **pakem klien adalah kelengkapan minimal.** Urutan, nama bagian, dan jenis slide klien harus ada dan berurutan sama. Isi tambahan penyusun (GRADE, applicability Indonesia, strategi RS daerah, pertanyaan diskusi, referensi) boleh ditambahkan, tetapi tidak boleh menggeser atau menghapus bagian klien.
+**CASP adalah tool appraisal default** untuk semua studi dan systematic review (keputusan pemesan, 26 November 2026). Bagian 4 dan 6 berlaku untuk setiap order tersebut. Bagian 1, 2, 3, dan 5 dipakai bila klien memberi format departemen atau contoh slide (PPTX, PDF, Canva). Bagian pakem dibuat dari kasus klien A (15 November 2026), yang memberi contoh deck 38 slide (berkas PPTX). Prinsipnya: **pakem klien adalah kelengkapan minimal.** Urutan, nama bagian, dan jenis slide klien harus ada dan berurutan sama. Isi tambahan penyusun (GRADE, applicability Indonesia, strategi RS daerah, pertanyaan diskusi, referensi) boleh ditambahkan, tetapi tidak boleh menggeser atau menghapus bagian klien.
 
 ## 1. Membaca pakem klien
 
@@ -9,7 +9,7 @@
 3. Contoh klien adalah paper lain. Jangan menyalin isi, angka, atau kesimpulannya. Ambil hanya struktur dan gaya.
 4. Daftar komponen format departemen (teks yang ditempel klien) dan contoh slide harus disatukan: bila keduanya berbeda, ikuti contoh slide dan sebut selisihnya di laporan.
 
-### Pakem dr. Putri Nabila (referensi, 38 slide)
+### Pakem klien A (referensi, 38 slide)
 
 | Bagian | Slide klien | Bentuk |
 |---|---|---|

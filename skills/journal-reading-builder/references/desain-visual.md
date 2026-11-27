@@ -133,7 +133,7 @@ Pemesan menyunting sendiri deck guideline ICH setelah diserahkan. Perubahannya d
 
 ### Pemetaan ikon untuk jalur studi (RCT, kohort, diagnostik, SR-MA)
 
-Aturan 5 di atas (minimal 2 sampai 3 ikon per slide isi) berlaku untuk **semua** deck, termasuk jalur studi, bukan hanya guideline. Pada deck JR dr. Putri Nabila (15 November 2026) ikon belum dipakai karena `desain-visual.md` tidak dibaca sebelum mengisi slide; jangan diulang. Pola yang dipakai pada deck acuan pemesan: lencana bulat berwarna aksen berisi ikon putih di pojok kanan atas kartu atau di sel pertama tabel.
+Aturan 5 di atas (minimal 2 sampai 3 ikon per slide isi) berlaku untuk **semua** deck, termasuk jalur studi, bukan hanya guideline. Pada deck JR klien A (15 November 2026) ikon belum dipakai karena `desain-visual.md` tidak dibaca sebelum mengisi slide; jangan diulang. Pola yang dipakai pada deck acuan pemesan: lencana bulat berwarna aksen berisi ikon putih di pojok kanan atas kartu atau di sel pertama tabel.
 
 | Slide | Ikon yang disarankan |
 |---|---|

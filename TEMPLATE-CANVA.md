@@ -1,14 +1,14 @@
 # Template Canva journal reading
 
-Tiga master template, isinya sama dan hanya berbeda warna. Masing-masing 39 halaman. **Jangan mengedit master**: skill selalu menyalin halaman yang dibutuhkan ke desain baru.
+Tiga master template, isinya sama dan hanya berbeda warna. Masing-masing 42 halaman. **Jangan mengedit master**: skill selalu menyalin halaman yang dibutuhkan ke desain baru.
 
-| Warna | Design ID | Tautan |
-|---|---|---|
-| Navy (default) | `DAHYiY7-9Ps` | https://canva.link/clb266xdufq1ndt |
-| Maroon | `DAHYiuIiRCg` | https://canva.link/g2fw8osptldrzic |
-| Hijau tua | `DAHYikOThv8` | https://canva.link/slqb1b5gynjpxrv |
+| Warna | Design ID |
+|---|---|
+| Navy (default) | `DAHcEbhbQOM` |
+| Maroon | `DAHcERXeusY` |
+| Hijau tua | `DAHcEWn5o0o` |
 
-Tautan hanya terbuka untuk akun Canva yang punya akses ke desain tersebut.
+Desain hanya terbuka lewat connector Canva yang login ke akun journal reading Auctus. Alamat akun dan tautan master dibagikan lewat kanal internal, tidak disimpan di repo. Tiap warna tetap desain terpisah.
 
 ## Isi halaman
 
@@ -17,7 +17,7 @@ Tautan hanya terbuka untuk akun Canva yang punya akses ke desain tersebut.
 | 1 | Cara pakai template (tidak ikut ke deck) |
 | 2 | Cover |
 | 3 sampai 12 | Identitas jurnal, alasan memilih, latar belakang, PICO, metode, alur partisipan, karakteristik dasar, hasil utama, figur kunci |
-| 13 sampai 16 | Validity: RoB 2, NOS, QUADAS-2, AMSTAR 2 (hanya bila klien meminta; default CASP memakai salinan halaman 4) |
+| 13 sampai 16 | Validity: RoB 2, NOS, QUADAS-2, AMSTAR 2 (hanya bila klien memintanya; default CASP memakai salinan halaman 4) |
 | 17 sampai 19 | Importance & Applicability, Kekuatan & Kelemahan, Level of Evidence & GRADE |
 | 20 sampai 24 | Kesimpulan & Implikasi, Diskusi, Referensi, Terima kasih, pembatas bagian |
 | 25 sampai 29 | Jalur guideline: Ruang Lingkup & Metodologi, Tabel rekomendasi, Perbandingan, Validity AGREE II, Penerapan di RS Setempat |
@@ -25,6 +25,7 @@ Tautan hanya terbuka untuk akun Canva yang punya akses ke desain tersebut.
 | 32 sampai 33 | Slide bebas: Pembahasan tematik, Figur & Pembahasan |
 | 34 sampai 38 | Daftar Isi, Peta Topik, Rangkuman Do / Consider / Don't, Algoritma, Tabel bebas |
 | 39 | Perbandingan dengan Edisi Sebelumnya (wajib pada jalur guideline) |
+| 40 sampai 42 | Variasi berbutir pengganti halaman 4, 6, dan 20 |
 
 Rincian tiap halaman (placeholder, posisi, catatan bawaan) ada di `skills/journal-reading-builder/references/template-map.md`.
 

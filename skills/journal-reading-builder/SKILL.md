@@ -24,7 +24,7 @@ Script ada di `scripts/` (termasuk `extract_recs.py` untuk tabel rekomendasi gui
 
 Contoh hasil akhir brief (paper latihan fiktif) ada di `assets/contoh-output/`. Buka untuk melihat standar kualitas dan tampilan yang dituju.
 
-Langkah slide butuh connector Canva yang terhubung ke akun Canva Auctus (pemilik template master). Bila connector tidak tersedia, tetap kerjakan brief, lalu buat `fill.json` sebagai teks isian per slide dan beri tahu user bahwa slide harus diisi manual dari template.
+Langkah slide butuh connector Canva yang login ke akun journal reading Auctus (akun tempat template master; ID di `references/template-map.md`). Bila master tidak bisa diakses, minta user menghubungkan connector ke akun itu. Bila connector tidak tersedia, tetap kerjakan brief, lalu buat `fill.json` sebagai teks isian per slide dan beri tahu user bahwa slide harus diisi manual dari template.
 
 ---
 

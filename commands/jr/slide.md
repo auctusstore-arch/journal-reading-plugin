@@ -6,6 +6,8 @@ Semua path `scripts/`, `references/`, `assets/` di bawah relatif ke `.claude/ski
 
 ## Langkah 4. Buat slide di Canva
 
+**Sebelum mulai:** connector Canva wajib login ke akun journal reading Auctus. Baca metadata master warna pilihan dengan `read-design`; bila tidak bisa diakses, berhenti dan minta user menghubungkan connector ke akun itu.
+
 Baca `references/template-map.md` dan `references/desain-visual.md` dulu (wajib, termasuk pustaka ikon dan pemetaan ikon per slide; jalur studi juga harus memakai ikon, minimal 2 sampai 3 per slide isi). Yang kedua memuat aturan tampilan yang wajib dipenuhi semua deck: tidak text wall, ada penekanan dan ikon, kode warna kelas rekomendasi, tabel dan algoritma dibuat ulang (bukan tangkapan layar), serta pustaka ikon beserta `asset_id`-nya.
 
 Baca `references/template-map.md` dulu. File itu berisi ID master, daftar halaman, halaman mana dipakai untuk tiap desain studi, dan placeholder tiap halaman.
@@ -77,7 +79,7 @@ Script menghapus PETUNJUK (dan sisa footer bila deck dibuat dari salinan lama), 
    ```
    uv run python3 scripts/cek_tabrakan.py design.json --fix ops_tabrakan/
    ```
-   Script melaporkan kartu atas yang berakhir kurang dari 30 px di atas kotak lebar di bawahnya, bayangan yang tidak sama ukuran atau posisi dengan kartunya, teks yang keluar kartu, dan kartu yang keluar slide, lalu menulis operasi perbaikan per halaman (kecilkan kartu ke batas aman, samakan bayangan). Jalankan untuk **semua halaman**, termasuk halaman yang tidak diedit pada revisi deck lama: tabrakan di deck dr. Jackson Hakim (slide 4, 10-12) berasal dari deck yang dibuat sebelum aturan jarak ada, dan lolos karena revisi hanya memeriksa halaman yang diubah. Kartu yang tidak bisa dikecilkan karena teksnya panjang ditandai "tidak bisa diperbaiki": ringkas teksnya atau turunkan kotak bawah. Samakan juga tinggi kartu dalam satu baris (Alasan memilih, Kekuatan & kelemahan) dan pangkas ruang kosong besar di bawah teks. Temuan QA dari subagen tentang tabrakan atau bayangan tidak boleh dilewati dengan alasan "slide buatan pemesan"; perbaiki atau tanyakan.
+   Script melaporkan kartu atas yang berakhir kurang dari 30 px di atas kotak lebar di bawahnya, bayangan yang tidak sama ukuran atau posisi dengan kartunya, teks yang keluar kartu, dan kartu yang keluar slide, lalu menulis operasi perbaikan per halaman (kecilkan kartu ke batas aman, samakan bayangan). Jalankan untuk **semua halaman**, termasuk halaman yang tidak diedit pada revisi deck lama: tabrakan di deck klien B (slide 4, 10-12) berasal dari deck yang dibuat sebelum aturan jarak ada, dan lolos karena revisi hanya memeriksa halaman yang diubah. Kartu yang tidak bisa dikecilkan karena teksnya panjang ditandai "tidak bisa diperbaiki": ringkas teksnya atau turunkan kotak bawah. Samakan juga tinggi kartu dalam satu baris (Alasan memilih, Kekuatan & kelemahan) dan pangkas ruang kosong besar di bawah teks. Temuan QA dari subagen tentang tabrakan atau bayangan tidak boleh dilewati dengan alasan "slide buatan pemesan"; perbaiki atau tanyakan.
 1. Ambil thumbnail semua halaman (`read-design` dengan thumbnails) dan periksa satu per satu:
    - teks meluber atau terpotong;
    - kotak kosong;
