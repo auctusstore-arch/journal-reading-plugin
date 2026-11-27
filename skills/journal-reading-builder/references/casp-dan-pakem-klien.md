@@ -1,6 +1,6 @@
 # Checklist CASP dan menyesuaikan deck dengan pakem klien
 
-Dipakai bila klien memberi format departemen, contoh slide (PPTX, PDF, Canva), atau meminta appraisal dengan CASP. Dibuat dari kasus dr. Putri Nabila (15 November 2026), yang memberi contoh deck 38 slide ("Jurding Contoh.pptx", RCT besi intravena) sebagai pakem. Prinsipnya: **pakem klien adalah kelengkapan minimal.** Urutan, nama bagian, dan jenis slide klien harus ada dan berurutan sama. Isi tambahan penyusun (GRADE, applicability Indonesia, strategi RS daerah, pertanyaan diskusi, referensi) boleh ditambahkan, tetapi tidak boleh menggeser atau menghapus bagian klien.
+**CASP adalah tool appraisal default** untuk semua studi dan systematic review (keputusan pemesan, 26 November 2026). Bagian 4 dan 6 berlaku untuk setiap order tersebut. Bagian 1, 2, 3, dan 5 dipakai bila klien memberi format departemen atau contoh slide (PPTX, PDF, Canva). Bagian pakem dibuat dari kasus dr. Putri Nabila (15 November 2026), yang memberi contoh deck 38 slide ("Jurding Contoh.pptx", RCT besi intravena). Prinsipnya: **pakem klien adalah kelengkapan minimal.** Urutan, nama bagian, dan jenis slide klien harus ada dan berurutan sama. Isi tambahan penyusun (GRADE, applicability Indonesia, strategi RS daerah, pertanyaan diskusi, referensi) boleh ditambahkan, tetapi tidak boleh menggeser atau menghapus bagian klien.
 
 ## 1. Membaca pakem klien
 
@@ -47,7 +47,7 @@ Ciri gaya klien yang ikut dipertahankan:
 | Kesimpulan | 20 | |
 | Analisis PICO | 6 | dipindah ke bagian Critical Appraisal |
 | CASP | halaman kartu tiga (halaman 4) atau tabel empat kolom | lihat bagian 4 |
-| Validity, Importance, Applicability | 14 (ringkasan), 17, 29 | |
+| Validity, Importance, Applicability | salinan halaman 4 (ringkasan), 17, 29 | |
 
 Urutan akhir selalu mengikuti klien: PICO pindah dari bagian Metode ke Critical Appraisal bila klien menaruhnya di sana.
 
@@ -67,43 +67,90 @@ Pelajaran dari kasus ini (deck 27 slide disusun ulang menjadi 40 slide):
 
 ## 4. Checklist CASP
 
-CASP (Critical Appraisal Skills Programme, casp-uk.net) adalah checklist per desain studi, lisensi CC BY-NC-SA: parafrase pertanyaannya, jangan menempel teks resmi utuh. Jawaban selalu salah satu dari **Ya, Tidak, Belum pasti** (can't tell). Sebut satu penilai (penyaji) di notes, dan setiap jawaban wajib disertai bukti satu kalimat dari paper (angka atau lokasi), bukan jawaban kosong.
+CASP (Critical Appraisal Skills Programme, casp-uk.net/casp-tools-checklists) adalah checklist per desain studi, lisensi CC BY-NC-SA: parafrase pertanyaannya, jangan menempel teks resmi utuh. Jawaban selalu salah satu dari **Ya, Tidak, Belum pasti** (can't tell). Sebut satu penilai (penyaji) di notes, dan setiap jawaban wajib disertai bukti satu kalimat dari paper (angka atau lokasi), bukan jawaban kosong. CASP tidak memberi skor total: jangan menjumlah jawaban Ya menjadi nilai atau ambang "layak".
 
-Pilih checklist menurut desain, bukan menurut selera:
+Pilih checklist menurut desain, bukan menurut selera. Kolom "Baris validity" adalah pertanyaan yang masuk `appraisal.validity` (sub-pertanyaan dihitung satu baris bila dipisah).
 
-| Desain paper | Checklist CASP | Jumlah pertanyaan |
-|---|---|---|
-| RCT | Randomised Controlled Trial | 11 |
-| Kohort (termasuk retrospektif dan pre-post dua kelompok waktu) | Cohort Study | 12 |
-| Kasus-kontrol | Case Control Study | 11 |
-| Systematic review (dengan atau tanpa meta-analisis) | Systematic Review | 10 |
-| Akurasi diagnostik | Diagnostic Test Study | 12 |
-| Kualitatif, ekonomi, prediksi klinis | Qualitative, Economic Evaluation, Clinical Prediction Rule | 10, 12, 12 |
+| Desain paper | Nama di `meta.tool_appraisal` | Pertanyaan | Baris validity |
+|---|---|---|---|
+| RCT | CASP RCT Checklist | 11 | Q1 sampai Q6 (minimum 6) |
+| Kohort (termasuk retrospektif, pre-post dua kelompok waktu, intervensi non-acak) | CASP Cohort Study Checklist | 12 | Q1 sampai Q6b (8) |
+| Kasus-kontrol | CASP Case Control Study Checklist | 11 | Q1 sampai Q6b (7) |
+| Cross-sectional / deskriptif | CASP Cross-Sectional Study Checklist | 11 | Q1 sampai Q6 (6) |
+| Akurasi diagnostik | CASP Diagnostic Test Study Checklist | 12 | Q1 sampai Q6 (6) |
+| Systematic review (dengan atau tanpa meta-analisis) | CASP Systematic Review Checklist | 10 | Q1 sampai Q5 (5) |
+| Kualitatif | CASP Qualitative Checklist | 10 | Q1 sampai Q6 (6) |
+| Evaluasi ekonomi | CASP Economic Evaluation Checklist | 12 | Q1 sampai Q4 (4) |
+| Clinical prediction rule | CASP Clinical Prediction Rule Checklist | 11 | Q1 sampai Q6 (6) |
 
-Guideline dan narrative review tidak memakai CASP (lihat `jalur-guideline.md` dan `jalur-review.md`).
+**Pengecualian:** guideline/konsensus memakai AGREE II (`jalur-guideline.md`), narrative review SANRA dan scoping review PRISMA-ScR (`jalur-review.md`). case report memakai JBI Case Reports (`jalur-case-report.md`) karena CASP tidak punya checklistnya.
 
-### RCT (11 pertanyaan)
+**RoB 2, NOS, QUADAS-2, AMSTAR 2** dipakai hanya bila klien atau departemen memintanya. Saat itu tool yang diminta menjadi tool utama.
 
-- Bagian A, apakah hasil valid: 1 isu terfokus; 2 randomisasi tepat; 3 semua peserta diperhitungkan di akhir; 4 peserta, tenaga, dan penilai luaran disamarkan; 5 kelompok serupa di awal; 6 perlakuan setara selain intervensi.
-- Bagian B, apa hasilnya: 7 besar efek; 8 presisi (IK).
-- Bagian C, berguna secara lokal: 9 semua luaran penting dipertimbangkan; 10 manfaat sebanding dengan bahaya dan biaya; 11 dapat diterapkan pada populasi lokal.
+Urutan pertanyaan di bawah diparafrase dari checklist versi 2024 (kasus-kontrol: Oktober 2026), dibaca 26 November 2026. Bila situs CASP sudah menerbitkan versi baru, ikuti versi baru dan catat tahunnya di notes. Referensi slide dan brief: "Critical Appraisal Skills Programme. CASP [nama] Checklist. [tahun]. casp-uk.net".
 
-### Kohort (12 pertanyaan)
+### RCT (11)
 
-- Bagian A, valid: 1 isu terfokus; 2 kohort direkrut dengan baik; 3 paparan diukur akurat; 4 luaran diukur akurat; 5a confounder penting teridentifikasi; 5b confounder diperhitungkan di desain atau analisis; 6a follow-up cukup lengkap; 6b follow-up cukup lama.
-- Bagian B, hasil: 7 apa hasilnya; 8 seberapa presisi; 9 apakah hasil dapat dipercaya.
-- Bagian C, lokal: 10 dapat diterapkan pada populasi lokal; 11 sesuai bukti lain; 12 implikasi untuk praktik.
+- Validitas desain dan metode: 1 pertanyaan penelitian terfokus; 2 alokasi acak (dan tersembunyi); 3 semua peserta diperhitungkan di akhir; 4 penyamaran: (a) peserta, (b) investigator, (c) penilai atau analis luaran; 5 kelompok serupa di awal; 6 perlakuan setara selain intervensi.
+- Hasil: 7 efek dilaporkan lengkap; 8 presisi dilaporkan; 9 manfaat melebihi bahaya dan biaya.
+- Lokal: 10 dapat diterapkan pada populasi lokal; 11 nilai tambah dibanding intervensi yang sudah ada.
 
-### Systematic review (10 pertanyaan)
+### Kohort (12)
 
-1 isu terfokus; 2 jenis studi yang dicari tepat; 3 semua studi penting terjangkau; 4 kualitas studi dinilai; 5 penggabungan hasil wajar; 6 hasil keseluruhan; 7 presisi hasil; 8 dapat diterapkan lokal; 9 semua luaran penting dipertimbangkan; 10 manfaat sebanding bahaya dan biaya.
+- Validitas: 1 isu terfokus; 2 kohort direkrut dengan baik; 3 paparan diukur akurat; 4 luaran diukur akurat; 5a confounder penting teridentifikasi; 5b confounder diperhitungkan di desain atau analisis; 6a follow-up cukup lengkap; 6b follow-up cukup lama.
+- Hasil: 7 apa hasilnya; 8 seberapa presisi; 9 apakah hasil dapat dipercaya.
+- Lokal: 10 dapat diterapkan pada populasi lokal; 11 sesuai bukti lain; 12 implikasi untuk praktik.
+
+### Kasus-kontrol (11)
+
+- Validitas: 1 isu terfokus; 2 metode tepat untuk pertanyaannya; 3 kasus direkrut dengan baik; 4 kontrol dipilih dengan baik; 5 paparan diukur akurat; 6a confounder penting teridentifikasi; 6b confounder diperhitungkan di desain atau analisis.
+- Hasil: 7 besar efek paparan; 8 presisi; 9 apakah hasil dapat dipercaya.
+- Lokal: 10 dapat diterapkan pada populasi lokal; 11 sesuai bukti lain.
+
+### Cross-sectional (11)
+
+PDF resmi hanya memberi judul bagian pertama; pembagian di bawah adalah pengelompokan skill ini.
+
+- Validitas: 1 isu terfokus; 2 metode tepat; 3 subjek direkrut dengan baik; 4 pengukuran akurat; 5 data dikumpulkan sesuai pertanyaan; 6 jumlah subjek cukup.
+- Hasil: 7 penyajian dan hasil utama; 8 analisis cukup ketat; 9 temuan dinyatakan jelas.
+- Lokal: 10 dapat diterapkan pada populasi lokal; 11 nilai penelitian.
+
+### Diagnostik (12)
+
+- Validitas: 1 pertanyaan terfokus; 2 pembanding baku emas tepat; 3 semua pasien menjalani tes dan baku emas; 4 hasil tes tidak terpengaruh hasil baku emas; 5 status penyakit populasi dijelaskan; 6 cara pemeriksaan dijelaskan rinci.
+- Hasil: 7 apa hasilnya; 8 seberapa yakin (presisi).
+- Lokal: 9 dapat diterapkan pada pasien kita; 10 tesnya dapat dikerjakan pada populasi kita; 11 semua luaran penting dipertimbangkan; 12 dampak pemakaian tes.
+
+### Systematic review (10)
+
+- Validitas: 1 pertanyaan terfokus; 2 jenis studi yang dicari tepat; 3 semua studi penting terjangkau; 4 kualitas studi dinilai; 5 penggabungan hasil wajar.
+- Hasil: 6 hasil keseluruhan; 7 presisi hasil.
+- Lokal: 8 dapat diterapkan lokal; 9 semua luaran penting dipertimbangkan; 10 manfaat sebanding bahaya dan biaya.
+
+### Kualitatif (10)
+
+- Validitas: 1 tujuan jelas; 2 metode kualitatif tepat; 3 desain sesuai tujuan; 4 strategi rekrutmen tepat; 5 pengumpulan data sesuai isu; 6 hubungan peneliti dan partisipan dipertimbangkan.
+- Hasil: 7 etik dipertimbangkan; 8 analisis cukup ketat; 9 temuan dinyatakan jelas.
+- Lokal: 10 nilai penelitian.
+
+### Evaluasi ekonomi (12)
+
+- Validitas: 1 pertanyaan terdefinisi baik; 2 alternatif yang dibandingkan diuraikan; 3 bukti efektivitas ada; 4 efek diidentifikasi, diukur, dan dinilai tepat.
+- Biaya dan konsekuensi: 5 sumber daya dan biaya diidentifikasi, diukur, dan dinilai; 6 discounting; 7 hasil evaluasi; 8 analisis inkremental; 9 analisis sensitivitas.
+- Lokal: 10 efektivitas setara di konteks kita; 11 biaya dapat diterjemahkan ke konteks kita; 12 layak dikerjakan di tempat kita.
+
+### Clinical prediction rule (11)
+
+- Validitas: 1 aturan prediksi terdefinisi jelas; 2 populasi derivasi mewakili; 3 divalidasi pada kelompok pasien berbeda; 4 prediktor dan luaran dinilai tersamar; 5 prediktor dan luaran dievaluasi pada seluruh sampel awal; 6 metode statistik derivasi dan validasi dijelaskan.
+- Hasil: 7 performa aturan dapat dihitung; 8 presisi estimasi.
+- Lokal: 9 andal dan dapat ditafsirkan untuk pasien kita; 10 dapat diterima di tempat kita; 11 mengubah keputusan atau informasi ke pasien.
 
 ### Bentuk slide
 
-- **Kartu tiga per slide** (halaman template tiga kartu): judul kartu `Q1. Fokus masalah`; isi kartu diawali jawaban huruf kapital (`YA.`, `TIDAK.`, `BELUM PASTI.`) lalu bukti satu sampai dua kalimat; kotak bawah: ringkasan bagian. Cocok untuk kohort (empat slide: A satu, A dua, B, C) dan SR.
+- **Kartu tiga per slide** (halaman template tiga kartu): judul kartu `Q1. Fokus masalah`; isi kartu diawali jawaban huruf kapital (`YA.`, `TIDAK.`, `BELUM PASTI.`) lalu bukti satu sampai dua kalimat; kotak bawah: ringkasan bagian. **Ini bentuk default.** Salin halaman 4 sebanyak yang dibutuhkan (tiga pertanyaan per slide; mis. kohort: tiga slide untuk 8 baris validitas, satu hasil, satu lokal). Pengelompokan slide mengikuti bagian checklist di atas.
 - **Tabel empat kolom** (pakem klien): `Pertanyaan dan penilaian | Ya | Tidak | Belum pasti` dengan centang di kolom jawaban; tiga baris per slide, pertanyaan tebal diikuti kalimat bukti. Dipakai bila klien memberi contoh berbentuk tabel; ukuran font tabel minimal sekitar 22,5 sampai 24.
-- Tulis pengelompokan klien apa adanya bila beda dari urutan resmi CASP (mis. klien memecah pertanyaan penyamaran tiga baris). Jangan menghapus pertanyaan resmi; boleh menggabung dua pertanyaan sub (5a dan 5b) dalam satu baris.
-- Setelah slide CASP, buat **satu slide Validity** (ringkasan jawaban bagian A: berapa Ya, Belum pasti, Tidak, dan ancaman terbesar), lalu **Importance** (besar efek, presisi, MCID, NNT atau NNH) dan **Applicability** (populasi, ketersediaan, Fornas atau JKN, PNPK). NOS, RoB 2, atau tool lain boleh ditampilkan sebagai pembanding di slide Validity, tetapi CASP adalah tool utama bila klien memintanya.
+- Tulis pengelompokan klien apa adanya bila beda dari urutan resmi CASP (mis. klien memecah pertanyaan penyamaran tiga baris). Jangan menghapus pertanyaan resmi; di tabel slide boleh menggabung dua pertanyaan sub (5a dan 5b) dalam satu baris; di `brief.json` tetap satu baris per sub-pertanyaan.
+- Setelah slide CASP, buat **satu slide Validity** (ringkasan jawaban pertanyaan validitas: berapa Ya, Belum pasti, Tidak, dan ancaman terbesar), lalu **Importance** (besar efek, presisi, MCID, NNT atau NNH) dan **Applicability** (populasi, ketersediaan, Fornas atau JKN, PNPK). Halaman validity bawaan template (RoB 2, NOS, QUADAS-2, AMSTAR 2) dihapus dari salinan order; tool lain tidak ditampilkan kecuali diminta klien.
 
 ### Aturan jawaban
 
@@ -123,7 +170,7 @@ Pakem klien dapat meminta slide Indonesia sementara skrip dan audio Inggris. Atu
 
 ## 6. Brief untuk appraisal CASP
 
-- Isi `meta.tool_appraisal` dengan "CASP Cohort Study Checklist (satu penilai)" (atau checklist lain). Jangan menyebut NOS di kolom itu: `build_brief.py` lalu menuntut pemecahan NOS per item dan menolak ringkasan.
-- Isi `appraisal.validity` dengan pertanyaan CASP bagian A (Q1 sampai Q6 untuk kohort), tiap baris punya `penilaian` (Ya, Tidak, Belum pasti), `bukti` bermuatan lokasi paper, dan `alasan` minimal 8 kata. Pertanyaan bagian B dan C masuk ke `importance` dan `applicability`.
-- Tulis NOS atau tool lain sebagai pembanding di `validity_overall` saja.
+- Isi `meta.tool_appraisal` dengan nama di tabel bagian 4 ditambah "(satu penilai)", mis. "CASP Cohort Study Checklist (satu penilai)". Jangan menyebut tool lain di kolom itu.
+- Isi `appraisal.validity` dengan pertanyaan validitas (kolom "Baris validity"). Tiap baris: `domain` = nomor dan parafrase pertanyaan, `penilaian` = "Ya" / "Tidak" / "Belum pasti", `bukti` bermuatan lokasi paper, `alasan` minimal 8 kata. `kelas` terisi otomatis (Ya ok, Tidak bad, Belum pasti mid); timpa bila arah pertanyaannya lain. Pertanyaan hasil dan lokal dijawab di `importance` dan `applicability`, tiap poin diawali nomor pertanyaan dan jawabannya.
+- Bila klien meminta perbandingan dengan tool lain, tulis di `validity_overall` saja.
 - Ubah `rencana_presentasi` dan angka "slide N" di checklist mengikuti nomor slide akhir deck (termasuk pembatas bagian).

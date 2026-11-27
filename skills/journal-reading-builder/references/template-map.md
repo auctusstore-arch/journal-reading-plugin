@@ -26,10 +26,10 @@ Palet (dipakai juga oleh build_brief.py): navy 0b2545/13807a/e3f2f0, maroon 4a15
 | 10 | Karakteristik dasar | Ya (SR-MA: ganti jadi karakteristik studi yang diinklusi) |
 | 11 | Hasil utama | Ya, baris kesimpulan di bawah judul wajib diisi |
 | 12 | Figur kunci | Ya, tempel figur asli + sumber |
-| 13 | Validity RCT (RoB 2) | Hanya bila RCT |
-| 14 | Validity observasional (NOS) | Hanya bila kohort / case-control / cross-sectional |
-| 15 | Validity diagnostik (QUADAS-2) | Hanya bila studi akurasi diagnostik |
-| 16 | Validity SR-MA (AMSTAR 2) | Hanya bila SR / meta-analisis |
+| 13 | Validity RCT (RoB 2) | Hanya bila klien meminta RoB 2 |
+| 14 | Validity observasional (NOS) | Hanya bila klien meminta NOS |
+| 15 | Validity diagnostik (QUADAS-2) | Hanya bila klien meminta QUADAS-2 |
+| 16 | Validity SR-MA (AMSTAR 2) | Hanya bila klien meminta AMSTAR 2 |
 | 17 | Importance & applicability | Ya |
 | 18 | Kekuatan & kelemahan | Ya |
 | 19 | Level of evidence & GRADE | Ya |
@@ -39,7 +39,7 @@ Palet (dipakai juga oleh build_brief.py): navy 0b2545/13807a/e3f2f0, maroon 4a15
 | 23 | Penutup | Ya |
 | 24 | Pembatas bagian | Opsional, biasanya dibuang |
 
-Untuk RCT: halaman yang dipakai = 2-13, 17-23 (19 slide). Observasional = 2-12, 14, 17-23. Diagnostik = 2-12, 15, 17-23. SR-MA = 2-12, 16, 17-23.
+Jalur default (CASP, semua desain studi dan SR-MA; case report lihat `jalur-case-report.md` C5): 2-12, salinan halaman 4 untuk kartu CASP dan satu slide Validity (tulis nomor 4 berulang di `page_numbers`, sesudah 12), lalu 17-23. Bila klien meminta tool lain, ganti salinan itu dengan satu halaman tool: RoB 2 = 13, NOS = 14, QUADAS-2 = 15, AMSTAR 2 = 16.
 
 ### Halaman guideline dan review (25 sampai 33)
 
@@ -49,6 +49,8 @@ Kotak baris pesan di bawah judul pada halaman 11, 26, dan 30 dipersempit menjadi
 
 Dua hal yang perlu diketahui saat inventaris:
 
+- **Appraisal default = CASP** (studi dan SR/MA): salin halaman 4 (tiga kartu) untuk pertanyaan CASP, tiga per slide, kicker CRITICAL APPRAISAL, lalu satu slide Validity ringkasan (lihat `casp-dan-pakem-klien.md`, "Bentuk slide"). Halaman 13 sampai 16 dihapus dari salinan order kecuali klien meminta tool-nya. Kotak PETUNJUK di halaman itu masih teks lama template.
+- **Case report** tidak punya halaman khusus: pakai ulang halaman sesuai `jalur-case-report.md` C5.
 - Judul halaman internal (kolom judul di `inv.txt`) masih memakai nama halaman asalnya, mis. halaman 26 dan 30 terbaca "Hasil utama", 28 dan 31 "Validity SR-MA", 32 "Latar belakang", 33 "Figur kunci". Kenali halaman dari teks kicker dan judul di slide, bukan dari judul internal.
 - Pada halaman 28 dan 31, baris ringkasan di bawah tabel ("Penilaian keseluruhan ..." / "Total SANRA ...") adalah teks lepas di luar grup tabel. Label baris tabel (nama domain/item) berflag `T` dan boleh diganti lewat `texts` bila perlu (mis. scoping review memakai 6 aspek PRISMA-ScR).
 

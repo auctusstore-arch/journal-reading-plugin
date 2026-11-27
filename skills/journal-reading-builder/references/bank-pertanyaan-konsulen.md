@@ -38,7 +38,7 @@ Dipakai bersama video **Bab 9 (Siap ditanya konsulen)**. Contoh jawaban memakai 
 ## B. Desain studi & PICO
 
 **4. "Desain studinya apa? Bagaimana Anda tahu?"**
-> "RCT. Peneliti yang memberikan intervensi dan alokasinya acak: di Methods tertulis 'patients were randomly assigned 1:1' (hal. _). Jadi eksperimental, bukan observasional, dan tool appraisal-nya RoB 2."
+> "RCT. Peneliti yang memberikan intervensi dan alokasinya acak: di Methods tertulis 'patients were randomly assigned 1:1' (hal. _). Jadi eksperimental, bukan observasional, dan saya menilainya dengan CASP RCT Checklist."
 
 **5. "Apa bedanya kohort dengan case-control? Kenapa case-control pakai OR?"**
 > "Kohort mulai dari paparan lalu diikuti sampai outcome; case-control mulai dari outcome, kasus dan kontrol, lalu menelusuri paparan ke belakang. Karena jumlah kasus dan kontrol ditentukan peneliti, insidens tidak bisa dihitung, jadi ukuran efeknya OR, bukan RR."
@@ -47,24 +47,24 @@ Dipakai bersama video **Bab 9 (Siap ditanya konsulen)**. Contoh jawaban memakai 
 > "P pasien dewasa rawat inap yang mulai mendapat antibiotik, diambil dari kriteria inklusi di Methods. I probiotik multi-strain selama antibiotik ditambah 7 hari. C plasebo identik. O diare terkait antibiotik dalam 30 hari."
 
 **7. "CONSORT itu untuk menilai kualitas RCT, kan?"**
-> "Bukan, dok. CONSORT adalah reporting guideline, yaitu kelengkapan pelaporan. Untuk risiko bias RCT saya memakai RoB 2. Pelaporan yang lengkap belum tentu risiko biasnya rendah."
+> "Bukan, dok. CONSORT adalah reporting guideline, yaitu kelengkapan pelaporan. Untuk menilai validitas RCT saya memakai CASP RCT Checklist. Pelaporan yang lengkap belum tentu risiko biasnya rendah."
 
 ## C. Metode & validitas
 
 **8. "Bagaimana randomisasi dan allocation concealment-nya?"**
-> "Randomisasi dengan daftar acak komputer (Methods, hal. _). Cara menyembunyikan alokasi **tidak dijelaskan**, jadi domain 1 RoB 2 saya nilai *some concerns*."
+> "Randomisasi dengan daftar acak komputer (Methods, hal. _). Cara menyembunyikan alokasi **tidak dijelaskan**, jadi pertanyaan randomisasi CASP (Q2) saya jawab *belum pasti*."
 
 **9. "Apa bedanya randomisasi dengan allocation concealment?"**
 > "Randomisasi adalah cara membuat urutan acak. Allocation concealment adalah menyembunyikan urutan itu dari perekrut sampai pasien resmi masuk studi, agar perekrut tidak bisa memilih pasien. Tanpa concealment, randomisasi bisa bocor dan menimbulkan selection bias."
 
 **10. "Analisisnya ITT atau per-protocol? Berapa loss to follow-up?"**
-> "Per-protocol, dok. Dari 340 yang dirandomisasi, 300 dianalisis; loss 15 vs 25, tidak seimbang. Ini bisa membesarkan efek, sehingga domain 2 dan 3 RoB 2 saya nilai berisiko. Idealnya ada analisis ITT atau sensitivity analysis; paper ini tidak melaporkannya."
+> "Per-protocol, dok. Dari 340 yang dirandomisasi, 300 dianalisis; loss 15 vs 25, tidak seimbang. Ini bisa membesarkan efek, sehingga pertanyaan kelengkapan peserta CASP (Q3) saya jawab *tidak*. Idealnya ada analisis ITT atau sensitivity analysis; paper ini tidak melaporkannya."
 
 **11. "Siapa saja yang di-blind?"**
-> "Pasien di-blind dengan plasebo identik. Penilai outcome (perawat bangsal) **tidak disebutkan** di-blind, padahal diare dinilai dari frekuensi BAB yang semi-subjektif, jadi domain 4 saya nilai *some concerns*."
+> "Pasien di-blind dengan plasebo identik. Penilai outcome (perawat bangsal) **tidak disebutkan** di-blind, padahal diare dinilai dari frekuensi BAB yang semi-subjektif, jadi pertanyaan penyamaran penilai luaran CASP (Q4c) saya jawab *belum pasti*."
 
 **12. "Outcome primernya sama dengan registrasi/protokol?"**
-> "Tidak sama, dok. Di registrasi tertulis 'diare apa pun', di paper 'diare terkait antibiotik'. Perubahan outcome primer tanpa penjelasan adalah risiko selective reporting, sehingga domain 5 saya nilai *high* dan overall RoB 2 menjadi *high*."
+> "Tidak sama, dok. Di registrasi tertulis 'diare apa pun', di paper 'diare terkait antibiotik'. Perubahan outcome primer tanpa penjelasan adalah risiko selective reporting, dan ini saya catat sebagai ancaman validitas di ringkasan CASP, terkait kelengkapan pelaporan efek (Q7)."
 
 **13. "Apakah sample size tercukupi?"**
 > "Paper menargetkan [n] berdasarkan [asumsi efek, α, power] (Methods, hal. _). Yang dianalisis 300, jadi [tercapai/tidak]." Bila tidak dilaporkan: "Perhitungan besar sampel tidak dilaporkan; ini kelemahan pelaporan."
@@ -73,7 +73,7 @@ Dipakai bersama video **Bab 9 (Siap ditanya konsulen)**. Contoh jawaban memakai 
 > "Dengan [matching / regresi multivariat] untuk [daftar confounder] (Tabel _). Confounder penting yang tidak dikontrol: [sebut]. Jadi masih ada risiko residual confounding, dan ini asosiasi, bukan kausalitas."
 
 **15. (Diagnostik) "Apakah semua pasien mendapat reference standard yang sama?"**
-> "[Ya/Tidak]. Bila hanya pasien tes positif yang diperiksa dengan reference standard, ada verification bias yang membuat sensitivitas tampak lebih tinggi. Ini domain *flow and timing* QUADAS-2."
+> "[Ya/Tidak]. Bila hanya pasien tes positif yang diperiksa dengan reference standard, ada verification bias yang membuat sensitivitas tampak lebih tinggi. Di CASP Diagnostic ini pertanyaan apakah semua pasien menjalani tes dan reference standard (Q3)."
 
 ## D. Statistik dasar
 

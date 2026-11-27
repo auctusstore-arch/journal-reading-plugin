@@ -64,6 +64,8 @@ Pertanyaan baku disisipkan otomatis oleh `build_form.py`, jadi teksnya sama di s
 | `masih_kurang` | post | teks_panjang | Yang masih terasa kurang |
 | `nps` | post | skala 0-10 | Kemungkinan merekomendasikan ke teman sejawat |
 
+Bila `jenis_paper` bernilai `case_report`, label `self_pico`, `self_desain`, `self_statistik`, dan `self_applicability` diganti versi kasus; id tetap sama.
+
 Form post-presentasi (H+1) tidak dibuat skill. Pertanyaannya baku dan tersimpan di kode website: pelaksanaan, kelancaran, pertanyaan konsulen yang muncul, bagian layanan yang paling membantu, rating keseluruhan, NPS, testimoni, dan izin pakai testimoni (nama lengkap, inisial dan departemen, anonim, tidak boleh dipakai).
 
 ## Blok jawaban (ekspor dari admin)

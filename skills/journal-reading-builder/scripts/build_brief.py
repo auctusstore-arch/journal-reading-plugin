@@ -35,6 +35,21 @@ def is_review(b):
     return bool(b.get("paper", {}).get("poin_kunci"))
 
 
+def is_case(b):
+    """Mode case report aktif bila paper.linimasa ada (lihat references/jalur-case-report.md)."""
+    return bool(b.get("paper", {}).get("linimasa"))
+
+
+CASE_BAGIAN = [("ringkasan_pasien", "Informasi pasien & presentasi"), ("diagnosis", "Pemeriksaan & diagnosis"),
+               ("tatalaksana", "Tata laksana"), ("luaran", "Luaran, follow-up & efek samping"),
+               ("pelajaran", "Pelajaran kunci"), ("desain", "Pelaporan: consent, etik, pendanaan, COI")]
+TL_HEAD = ["Waktu", "Kejadian", "Temuan / tindakan"]
+
+
+def tl_rows(pa):
+    return [[r.get("waktu", ""), r.get("kejadian", ""), r.get("temuan", "")] for r in pa["linimasa"]]
+
+
 def kp_rows(pa):
     return [[r["no"], (f'[{r["bagian"]}] ' if r.get("bagian") else "") + r["klaim"], r["bukti"], r["kekuatan"],
              " · ".join(x for x in (r.get("cek_sitasi", ""), r.get("catatan", "")) if x)] for r in pa["poin_kunci"]]
@@ -78,6 +93,57 @@ ITEM_MIN = [
 ]
 
 
+# CASP: (kata kunci nama checklist, jumlah minimum pertanyaan validitas di appraisal.validity)
+CASP_MIN = [
+    (("systematic review",), 5), (("rct", "randomised", "randomized"), 6), (("cohort",), 8),
+    (("case control", "case-control"), 7), (("cross-sectional", "cross sectional", "descriptive"), 6),
+    (("diagnostic",), 6), (("qualitative",), 6), (("economic",), 4), (("prediction",), 6),
+]
+CASP_JAWABAN = {"ya": "ok", "yes": "ok", "tidak": "bad", "no": "bad",
+                "belum pasti": "mid", "can't tell": "mid", "can’t tell": "mid"}
+
+
+def check_casp(tool, rows):
+    errs = []
+    for v in rows:
+        if v.get("rangkuman"):
+            continue
+        jawab = str(v.get("penilaian", "")).strip().lower()
+        if jawab not in CASP_JAWABAN:
+            errs.append(f"validity '{v.get('domain', '?')}': jawaban CASP harus Ya, Tidak, atau Belum pasti "
+                        f"(Yes/No/Can't tell), bukan '{v.get('penilaian', '')}'")
+        else:
+            v.setdefault("kelas", CASP_JAWABAN[jawab])
+    minimum = next((n for kunci, n in CASP_MIN if any(re.search(rf"\b{re.escape(k)}\b", tool) for k in kunci)), None)
+    if minimum is None:
+        errs.append("meta.tool_appraisal CASP harus menyebut checklist-nya, mis. 'CASP Cohort Study Checklist (satu penilai)' "
+                    "(daftar nama: references/casp-dan-pakem-klien.md bagian 4)")
+    else:
+        n = sum(1 for v in rows if not v.get("rangkuman"))
+        if n < minimum:
+            errs.append(f"validity hanya {n} baris; checklist CASP ini butuh semua pertanyaan validitas (min {minimum} baris)")
+    return errs
+
+
+JBI_JAWABAN = {"ya": "ok", "yes": "ok", "tidak": "bad", "no": "bad", "tidak jelas": "mid", "unclear": "mid",
+               "tidak berlaku": "mid", "not applicable": "mid"}
+
+
+def check_jbi_case(rows):
+    errs = []
+    items = [v for v in rows if not v.get("rangkuman")]
+    for v in items:
+        jawab = str(v.get("penilaian", "")).strip().lower()
+        if jawab not in JBI_JAWABAN:
+            errs.append(f"validity '{v.get('domain', '?')}': jawaban JBI harus Ya, Tidak, Tidak jelas, atau Tidak berlaku, "
+                        f"bukan '{v.get('penilaian', '')}'")
+        else:
+            v.setdefault("kelas", JBI_JAWABAN[jawab])
+    if len(items) < 8:
+        errs.append(f"validity hanya {len(items)} baris; JBI Case Reports punya 8 pertanyaan")
+    return errs
+
+
 def check_validity(b):
     """Appraisal berbasis instrumen: tiap baris = satu ITEM, wajib ada bukti berlokasi dan alasan penilaian."""
     errs = []
@@ -92,8 +158,15 @@ def check_validity(b):
         if len(al.split()) < 8:
             errs.append(f"validity '{nama}': 'alasan' wajib (min 8 kata): jelaskan MENGAPA dinilai demikian, "
                         "hubungkan bukti di paper dengan kriteria item instrumen, bukan mengulang bukti")
+    if re.search(r"\bjbi\b", tool) and "case report" in tool:
+        return errs + check_jbi_case(rows)
+    if is_case(b) and re.search(r"\bcasp\b", tool):
+        return errs + ["case report tidak dinilai dengan CASP; pakai 'JBI Critical Appraisal Checklist for Case Reports (satu penilai)'"]
+    if re.search(r"\bcasp\b", tool):
+        return errs + check_casp(tool, rows)
     for kunci, minimum, keras, nama in ITEM_MIN:
-        if kunci in tool:
+        # batas kata: "nos" tidak boleh cocok dengan "diagnostic" atau "prognostic"
+        if re.search(rf"\b{re.escape(kunci)}\b", tool):
             if len(rows) < minimum:
                 msg = (f"validity hanya {len(rows)} baris; {nama} harus dibreakdown PER ITEM (min {minimum} baris), "
                        "bukan ringkasan per domain")
@@ -134,6 +207,16 @@ def check(b):
         if not b.get("meta", {}).get("poin_disetujui"):
             errs.append("meta.poin_disetujui kosong: tulis siapa yang menyetujui pilihan poin kunci dan kapan "
                         "(gerbang persetujuan peta isi belum dilewati?)")
+    elif is_case(b):
+        for i, r in enumerate(pa["linimasa"], 1):
+            for f in ("waktu", "kejadian"):
+                if not str(r.get(f, "")).strip():
+                    errs.append(f"linimasa ke-{i}: field '{f}' kosong")
+        for f, _label in CASE_BAGIAN:
+            if not pa.get(f):
+                errs.append(f"field wajib case report hilang: paper.{f} (tulis 'tidak dilaporkan' bila paper diam)")
+        if b.get("appraisal", {}).get("grade"):
+            errs.append("appraisal.grade harus dikosongkan pada case report")
     elif "paper" in b:
         for f in ("pico", "hasil"):
             if f not in pa:
@@ -178,7 +261,7 @@ def judgement_cls(s, kelas=None):
     s = s.lower()
     if any(k in s for k in ("high", "tinggi", "berisiko", "kritis", "buruk")):
         return "bad"
-    if any(k in s for k in ("some", "unclear", "sedang", "moderate", "tidak jelas")):
+    if any(k in s for k in ("some", "unclear", "sedang", "moderate", "tidak jelas", "belum pasti", "tell")):
         return "mid"
     return "ok"
 
@@ -234,6 +317,15 @@ def build_html(b, pal):
             parts.append("<h3>Bagian yang tidak dipresentasikan (siap bila ditanya)</h3>" + ul(pa["tidak_dipresentasikan"]))
         if pa.get("angka_kunci"):
             parts.append("<h3>Angka kunci dari sumber primer</h3>" + ul(pa["angka_kunci"]))
+        sec.append("".join(parts) + "</section>")
+    elif is_case(b):
+        parts = ["<section><h2><span>3</span>Isi kasus</h2><h3>Linimasa</h3>", table(TL_HEAD, tl_rows(pa))]
+        for f, label in CASE_BAGIAN:
+            parts.append(f"<h3>{esc(label)}</h3>{ul(pa[f])}")
+        if pa.get("perbandingan"):
+            parts.append("<h3>Perbandingan dengan literatur & guideline</h3>"
+                         + table(["Topik", "Kasus ini", "Pembanding", "Catatan"],
+                                 [[c.get("topik", ""), c.get("kasus_ini", ""), c.get("pembanding", ""), c.get("catatan", "")] for c in pa["perbandingan"]]))
         sec.append("".join(parts) + "</section>")
     else:
         pico = pa["pico"]
@@ -444,6 +536,15 @@ def build_docx(b, pal, path):
             doc.add_heading("Bagian yang tidak dipresentasikan (siap bila ditanya)", 2); bullets(pa["tidak_dipresentasikan"])
         if pa.get("angka_kunci"):
             doc.add_heading("Angka kunci dari sumber primer", 2); bullets(pa["angka_kunci"])
+    elif is_case(b):
+        doc.add_heading("3. Isi kasus", 1)
+        doc.add_heading("Linimasa", 2); tbl(TL_HEAD, tl_rows(pa), [3, 6, 8])
+        for f, label in CASE_BAGIAN:
+            doc.add_heading(label, 2); bullets(pa[f])
+        if pa.get("perbandingan"):
+            doc.add_heading("Perbandingan dengan literatur & guideline", 2)
+            tbl(["Topik", "Kasus ini", "Pembanding", "Catatan"],
+                [[c.get("topik", ""), c.get("kasus_ini", ""), c.get("pembanding", ""), c.get("catatan", "")] for c in pa["perbandingan"]], [3, 4.7, 4.7, 4.6])
     else:
         doc.add_heading("3. Isi paper", 1)
         tbl(["", "PICO"], [[x, pa["pico"].get(x, "")] for x in ("P", "I", "C", "O")], [1.2, 15.8])

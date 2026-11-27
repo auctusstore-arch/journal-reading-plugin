@@ -12,6 +12,7 @@ lintas order bisa dibandingkan.
     "jenis": "pre_zoom" | "post_zoom",
     "penyaji": "dr. Nama",                  dipakai di pengantar bawaan
     "paper_singkat": "Shamoun 2026",        dipakai di judul bawaan
+    "jenis_paper": "case_report",            opsional, label penilaian diri untuk laporan kasus
     "judul": "...",                          opsional, menimpa judul bawaan
     "pengantar": "...",                      opsional, menimpa pengantar bawaan
     "bagian": [ {"judul": "...", "deskripsi": "...", "pertanyaan": [ ... ]} ]
@@ -41,12 +42,22 @@ SELF = [
 ]
 
 
-def self_section(judul, deskripsi):
+# Label pengganti untuk case report; id sama supaya perbandingan pre dan post tetap jalan.
+SELF_CASE = {
+    "self_pico": "Menjelaskan mengapa kasus ini penting dan apa yang baru",
+    "self_desain": "Menceritakan kasus runtut sesuai linimasa",
+    "self_statistik": "Menjelaskan diagnosis banding dan arti hasil pemeriksaan",
+    "self_applicability": "Menilai apakah pelajaran kasus bisa diterapkan di RS sendiri",
+}
+
+
+def self_section(judul, deskripsi, jenis_paper=None):
+    ganti = SELF_CASE if jenis_paper == "case_report" else {}
     return {"judul": judul, "deskripsi": deskripsi, "pertanyaan": [
-        {"id": i, "inti": i, "tipe": "skala", "teks": t, "skala": skala()} for i, t in SELF]}
+        {"id": i, "inti": i, "tipe": "skala", "teks": ganti.get(i, t), "skala": skala()} for i, t in SELF]}
 
 
-def core_pre():
+def core_pre(jenis_paper=None):
     kebutuhan = {"judul": "Kebutuhan sesi", "pertanyaan": [
         {"id": "tujuan_sesi", "inti": "tujuan_sesi", "tipe": "teks_panjang",
          "teks": "Apa yang paling ingin dokter dapatkan dari sesi Zoom ini?",
@@ -65,10 +76,10 @@ def core_pre():
                   "Penerapan di RS dan Indonesia", "Alasan memilih paper", "Belum tahu"]},
     ]}
     return [kebutuhan, self_section("Penilaian diri",
-            "Seberapa yakin dokter saat ini? Tidak ada jawaban benar atau salah; ini untuk menentukan fokus sesi.")]
+            "Seberapa yakin dokter saat ini? Tidak ada jawaban benar atau salah; ini untuk menentukan fokus sesi.", jenis_paper)]
 
 
-def core_post_head():
+def core_post_head(jenis_paper=None):
     return [{"judul": "Sesi Zoom", "pertanyaan": [
         {"id": "kebutuhan_terpenuhi", "inti": "kebutuhan_terpenuhi", "tipe": "skala",
          "teks": "Seberapa terpenuhi kebutuhan yang dokter tulis sebelum sesi?",
@@ -79,7 +90,7 @@ def core_post_head():
         {"id": "rating_tutor", "inti": "rating_tutor", "tipe": "skala",
          "teks": "Penilaian keseluruhan dokter terhadap tutor.",
          "skala": skala("Kurang", "Sangat baik")},
-    ]}, self_section("Penilaian diri setelah sesi", "Pertanyaan yang sama dengan sebelum sesi, untuk melihat perubahannya.")]
+    ]}, self_section("Penilaian diri setelah sesi", "Pertanyaan yang sama dengan sebelum sesi, untuk melihat perubahannya.", jenis_paper)]
 
 
 def core_post_tail():
@@ -106,12 +117,12 @@ def assemble(src):
         pengantar = src.get("pengantar") or (
             f"Halo {penyaji}, form singkat ini (sekitar 7 menit) membantu tutor menyiapkan sesi Zoom sesuai kebutuhan dokter. "
             "Bagian cek pemahaman bukan ujian dan tidak dinilai; jawab saja apa adanya tanpa membuka paper, supaya sesi fokus ke bagian yang paling perlu.")
-        bagian = core_pre() + personal
+        bagian = core_pre(src.get("jenis_paper")) + personal
     else:
         judul = src.get("judul") or f"Setelah Zoom: umpan balik sesi {ps}".strip()
         pengantar = src.get("pengantar") or (
             f"Terima kasih {penyaji} sudah mengikuti sesi. Form ini (sekitar 3 menit) membantu kami menilai apakah sesi sudah menjawab kebutuhan dokter.")
-        bagian = core_post_head() + personal + core_post_tail()
+        bagian = core_post_head(src.get("jenis_paper")) + personal + core_post_tail()
     return {"versi": 1, "jenis": jenis, "judul": judul, "pengantar": pengantar, "bagian": bagian}
 
 

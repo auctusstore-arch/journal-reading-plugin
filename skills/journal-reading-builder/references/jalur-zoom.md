@@ -15,6 +15,7 @@ Waktu ideal: form pre-zoom dipublish H-3 sebelum Zoom dan diisi paling lambat H-
 
 - **Order Complete Bundle (slide dan brief sudah dibuat):** pakai `extract.md`, `brief.json`, dan slide final di folder order. Jangan mengekstrak ulang.
 - **Order Zoom saja:** minta PDF paper dan slide klien (PPTX, PDF, atau tautan) bila belum ada di portal. Buat ekstraksi ringan ke `extract.md`: identitas, desain studi dan tool appraisal, PICO, alur partisipan, outcome primer dengan angka dan lokasinya, 3 kelemahan utama. Aturan anti-halusinasi Langkah 2 tetap berlaku. Hitung ulang ukuran efek utama dengan `effect_calc.py`. Tidak perlu brief, skrip, atau audio.
+- **Case report:** ekstraksi ringan memakai butir C1 dan JBI (`jalur-case-report.md`), bukan PICO, alur partisipan, atau `effect_calc.py`; `form-pre.json` dan `form-post.json` memuat `"jenis_paper": "case_report"`; soal cek mengikuti C7; prioritas default: diagnosis banding, alasan terapi, batas kesimpulan satu kasus.
 
 ## Z2. Form pre-zoom
 
