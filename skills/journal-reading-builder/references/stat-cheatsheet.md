@@ -138,11 +138,11 @@ Jenis data outcome menentukan cara penyajian, ukuran efek, **dan** uji statistik
 | RR = 0,080 / 0,180 | **0,44** (95% CI 0,23 sampai 0,84) |
 | RRR = 1 - 0,44 | **56%** |
 | ARR = 0,180 - 0,080 | **0,10** (10 poin persentase; 95% CI 0,025 sampai 0,175) |
-| NNT = 1 / 0,10 | **10** (95% CI sekitar 6 sampai 40) |
+| NNT = 1 / 0,10 | **10** (95% CI sekitar 6 sampai 41) |
 | OR = (12 × 123) / (138 × 27) | **0,40** (95% CI 0,19 sampai 0,82): lebih jauh dari 1 daripada RR karena outcome tidak jarang |
 | Chi-square (tanpa koreksi) | χ² = 6,63, **p = 0,010** · Fisher exact p = 0,015 |
 
-> CI NNT = kebalikan dari batas CI ARR (1/0,175 ≈ 6 dan 1/0,025 = 40). Jika CI ARR melewati 0, CI NNT mencakup "NNH ... ∞ ... NNT", jadi tulis dengan hati-hati.
+> CI NNT = kebalikan dari batas CI ARR (1/0,17526 = 5,7 dan 1/0,02474 = 40,4), lalu dibulatkan ke atas ke pasien utuh: 6 sampai 41. Jika CI ARR melewati 0, CI NNT mencakup "NNH ... ∞ ... NNT", jadi tulis dengan hati-hati.
 
 **Catatan penting**
 - OR ≈ RR **hanya jika** outcome jarang (aturan praktis < ~10%). Jika outcome sering, OR tampak lebih ekstrem daripada RR; jangan dibaca sebagai RR.

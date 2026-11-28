@@ -5,7 +5,7 @@ Dipakai bersama video **Bab 9 (Siap ditanya konsulen)**. Contoh jawaban memakai 
 
 **Ringkasan paper latihan (fiktif):**
 - 340 dirandomisasi, 300 dianalisis (loss 15 vs 25), analisis **per-protocol**.
-- Diare terkait antibiotik dalam 30 hari: **12/150 (8%)** vs **27/150 (18%)**. RR 0,44 (95% CI 0,23 sampai 0,84), RRR 56%, ARR 10% (95% CI 2,5% sampai 17,5%), NNT 10 (sekitar 6 sampai 40), OR 0,40, chi-square p = 0,010.
+- Diare terkait antibiotik dalam 30 hari: **12/150 (8%)** vs **27/150 (18%)**. RR 0,44 (95% CI 0,23 sampai 0,84), RRR 56%, ARR 10% (95% CI 2,5% sampai 17,5%), NNT 10 (sekitar 6 sampai 41), OR 0,40, chi-square p = 0,010.
 - Lama rawat: 5,2 ± 1,8 vs 6,0 ± 2,1 hari; MD -0,8 hari (95% CI -1,24 sampai -0,36), t-test p < 0,001.
 - Lama diare pada yang diare: median 3 hari (IQR 2 sampai 5).
 - Cara menyimpan daftar acak tidak dijelaskan; penilai outcome tidak disebut di-blind; didanai produsen probiotik; outcome primer di registrasi "diare apa pun".
@@ -94,7 +94,7 @@ Dipakai bersama video **Bab 9 (Siap ditanya konsulen)**. Contoh jawaban memakai 
 > "Fisher dipakai bila ada sel harapan kurang dari 5. Di paper ini sel terkecil 12 kejadian, jadi chi-square boleh. Hasil Fisher pun mirip, p = 0,015."
 
 **21. "Berapa NNT-nya dan apa artinya?"**
-> "CER 18%, EER 8%, ARR 10%, NNT 10 (saya hitung ulang di widget). Artinya perlu memberi probiotik pada 10 pasien untuk mencegah 1 kasus diare. 95% CI-nya lebar, sekitar 6 sampai 40, jadi presisinya rendah."
+> "CER 18%, EER 8%, ARR 10%, NNT 10 (saya hitung ulang di widget). Artinya perlu memberi probiotik pada 10 pasien untuk mencegah 1 kasus diare. 95% CI-nya lebar, sekitar 6 sampai 41, jadi presisinya rendah."
 
 **22. "RR 0,44 artinya apa? Kenapa tidak cukup RR saja?"**
 > "Risiko diare pada kelompok probiotik 0,44 kali kelompok plasebo, atau turun relatif 56%. Tapi efek relatif bergantung risiko dasar; di RS dengan risiko dasar 5%, ARR hanya sekitar 2,8% dan NNT sekitar 36. Karena itu saya tampilkan ARR dan NNT."
